@@ -9,8 +9,8 @@ public class Word {
 
     public Word(){}
     public Word(String english, String vietNam) {
-        English = english;
-        VietNam = vietNam;
+        setVietNam(vietNam);
+        setEnglish(english);
     }
 
     public String getEnglish() {
@@ -18,7 +18,9 @@ public class Word {
     }
 
     public void setEnglish(String english) {
-        English = english;
+        english = english.trim();
+        english = english.toLowerCase();
+        this.English = english;
     }
 
     public String getVietNam() {
@@ -26,7 +28,10 @@ public class Word {
     }
 
     public void setVietNam(String vietNam) {
-        VietNam = vietNam;
+        vietNam = vietNam.trim();
+        vietNam = vietNam.toLowerCase();
+
+        this.VietNam = vietNam;
     }
 
     @Override
