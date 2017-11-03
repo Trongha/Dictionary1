@@ -17,7 +17,7 @@
                   <AnchorPane prefHeight="50.0" prefWidth="159.0">
                      <children>
                         <Button id="searchButton" fx:id="searchButton" layoutX="169.0" layoutY="24.0" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="68.0" text="Search" />
-                        <TextField id="input" fx:id="input" prefHeight="25.0" prefWidth="237.0" />
+                        <TextField id="input" fx:id="input" onAction="#search" prefHeight="25.0" prefWidth="237.0" />
                      </children>
                   </AnchorPane>
                   <ListView fx:id="listWord" prefHeight="409.0" prefWidth="237.0" />

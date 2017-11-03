@@ -1,8 +1,7 @@
 package data;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 
 /**
@@ -20,6 +19,22 @@ public class Group {
         this.loadFile();
     }
 
+    /**
+     * Lấy tất cả key của map
+     * @param map
+     * @return
+     */
+    public static String[] getKeyOfHashMap(HashMap<String, Word> map){
+        String[] keyArray = new String[map.size()];
+
+        Set<String> set = map.keySet();
+        Iterator i = set.iterator();
+        int i_key =0;
+        while (i.hasNext()){
+            keyArray[i_key++] = (String)i.next();
+        }
+        return keyArray;
+    }
     public HashMap<String, Word> getListWords() {
         return listWords;
     }
@@ -58,20 +73,35 @@ public class Group {
         }
     }
     public Word search(String key){
-
         System.out.println("List dang search: " + this);
         if (!listWords.isEmpty()){
             System.out.println("key: " + key);
             if (this.listWords.containsKey(key))
                 return this.listWords.get(key);
         }
-
-        Word error = new Word("error", "");
+        Word error = new Word(key, "");
         if (listWords.isEmpty()){
             error.setVietNam("groups is empty");
         }
         else error.setVietNam("ko tim thay");
         return error;
+    }
+
+    /**
+     * Search English
+     * @param key
+     * @return    hashmap Các từ có chứa key
+     */
+    public HashSet<String> search2(String key){
+        HashSet<String> mapSearch = new HashSet<>();
+        if (!listWords.isEmpty()){
+            for(String x: getKeyOfHashMap(this.listWords)){
+                if (x.indexOf(key)==0){
+                    mapSearch.add(x);
+                }
+            }
+        }
+        return mapSearch;
     }
 
     @Override

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-public class General {
+public class Generall {
     public static String[] getKeyOfHashMap(HashMap<String, Word> map){
         String[] keyArray = new String[map.size()];
 
@@ -13,7 +13,8 @@ public class General {
         Iterator i = set.iterator();
         int i_key =0;
         while (i.hasNext()){
-            keyArray[i_key++] = i.
+            keyArray[i_key++] =(String)i.next();
         }
+        return keyArray;
     }
 }

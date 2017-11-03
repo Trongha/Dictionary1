@@ -32,32 +32,40 @@ public class SearchController {
     private TextArea output2;
 
     @FXML
-    private ListView<Word> listWord;
-    private ObservableList<Word> listWordData = FXCollections.observableArrayList();
+    private ListView<String> listWord;
+    private ObservableList<String> listWordData = FXCollections.observableArrayList();
 
 
-    public SearchController() {
-        HashMap<String, Word> list = manager.AppManager.getGroups().get(0).getListWords();
-        Collection c1 = list.values();
+    public SearchController() {    }
 
-        Set set = list.entrySet();
-        // Lay mot iterator
-        Iterator i = set.iterator();
-        // Hien thi cac phan tu
-        while(i.hasNext()) {
-            Map.Entry me = (Map.Entry)i.next();
-            listWordData.add((Word) me.getValue());
-        }
-
+    public void reOutput2(String s){
+        output2.clear();
+        output2.appendText(s);
     }
 
     public void search(ActionEvent e) {
         String s = String.format("%s", data.search(input.getText()));
-        output2.appendText(s);
+        reOutput2(s);
         System.out.println(s);
     }
+
+    public void search2() {
+        listWordData.clear();
+        ArrayList<String> wordEnglishs = data.search2(input.getText());
+        listWordData.addAll(wordEnglishs);
+        listWord.setItems(listWordData);
+    }
+    public void search2(ActionEvent e) {
+        search2();
+    }
+
     @FXML
     private void initialize(){
-        listWord.setItems(listWordData);
+        input.textProperty().addListener((observable, oldValue, newValue) -> {
+            search2();
+        });
+        listWord.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            reOutput2(data.search(newValue).toString());
+        });
     }
 }
