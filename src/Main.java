@@ -1,4 +1,4 @@
-import ConsoleView.Console;
+import consoleView.Console;
 import data.Group;
 import manager.AppManager;
 import view.GUI;

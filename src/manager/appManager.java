@@ -1,43 +1,49 @@
 package manager;
 
+import data.Group;
 import data.Word;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 /**
  * Created by Trong on 28/10/2017.
  */
 
-public class appManager {
-    private HashMap<String, Word> data = new HashMap();
+public class AppManager {
+    private static ArrayList<Group> groups = new ArrayList<>();
 
-    public appManager(){}
+    public AppManager(){}
 
-    public appManager(HashMap data) {
-        this.data = data;
+
+    public static void addGroup(Group group){
+        groups.add(group);
     }
 
-    public HashMap getData() {
-        return data;
+    public static ArrayList<Group> getGroups() {
+        return groups;
     }
 
-    public void setData(HashMap data) {
-        this.data = data;
+    public static void setGroups(ArrayList<Group> groups) {
+        AppManager.groups = groups;
     }
-    public void loadData(){
-        data.put("hello", new Word("hello", "xin chào"));
-        data.put("one", new Word("one", "1"));
-        data.put("popular", new Word("popular", "Phổ biến"));
-        data.put("image", new Word("image", "ảnh"));
-        data.put("manage", new Word("manage", "Quản lý"));
-    }
-    public Word searchE(String english){
-        /*if (data.isEmpty())
-            return "data is Empty";
 
-        if (!data.containsKey(english))
-            return "chua update";*/
-        english = english.toLowerCase();
-        return data.get(english);
+    public Word search(String key){
+        key.toLowerCase();
+        if (!groups.isEmpty()){
+            for (int i=0 ; i<groups.size() ; i++){
+                return groups.get(i).search(key);
+            }
+        }
+        Word error = new Word("error", "");
+        if (groups.isEmpty()){
+            error.setVietNam("groups is empty");
+        }
+        return error;
     }
+
+    public void deleteGroup(int index){
+        groups.remove(index);
+    }
+
 }
