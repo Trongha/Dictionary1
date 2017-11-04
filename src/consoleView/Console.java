@@ -12,15 +12,7 @@ public class Console {
     private Scanner in = new Scanner(System.in);
     AppManager app = new AppManager();
 
-    public Console(){};
-    public void addGroup(){
-        System.out.println("Name Group: ");
-        String name = in.nextLine();
-        System.out.println("Patch: ");
-        String patch = in.nextLine();
-
-        AppManager.addGroup(new Group(name, patch));
-    }
+    public Console(){}
 
     public void search(){
         System.out.println("Key search: ");
@@ -29,5 +21,17 @@ public class Console {
     }
     public void groupPrint(Group group){
         System.out.println(group);
+    }
+    public void addGroup(){
+        System.out.println("name: ");
+        String name = in.nextLine();
+        System.out.println("patch: ");
+        String patch = in.nextLine();
+        AppManager.addGroup(new Group(name, patch));
+    }
+    public void printAllGroup(){
+        for (Group group: AppManager.getGroups()){
+            System.out.println(group);
+        }
     }
 }

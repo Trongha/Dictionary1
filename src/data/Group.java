@@ -1,6 +1,5 @@
 package data;
 
-import java.io.IOException;
 import java.util.*;
 
 
@@ -14,8 +13,13 @@ public class Group {
     public Group(){}
 
     public Group(String name, String patch) {
-        this.name = name;
         this.patch = patch;
+        this.setName(name);
+        this.loadFile();
+    }
+    public Group(String patch){
+        this.patch = patch;
+        this.setName("");
         this.loadFile();
     }
 
@@ -35,6 +39,7 @@ public class Group {
         }
         return keyArray;
     }
+
     public HashMap<String, Word> getListWords() {
         return listWords;
     }
@@ -47,12 +52,23 @@ public class Group {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String _name) {
+        _name = _name.trim();
+        if (_name.equals(""))
+            this.setName(patch.substring(patch.lastIndexOf('\\')+1, patch.lastIndexOf('.')));
+        else this.name = _name;
     }
 
     public String getPatch() {
         return patch;
+    }
+
+    /**
+     * Gộp thêm một group nữa
+     * @param x
+     */
+    public void addGroup(Group x){
+        this.listWords.putAll(x.getListWords());
     }
 
     public void setPatch(String patch) {
@@ -72,6 +88,17 @@ public class Group {
             System.out.println("delete Complete!");
         }
     }
+
+    public boolean delete(String englishKey){
+        if (this.getListWords().containsKey(englishKey)){
+            this.getListWords().remove(englishKey);
+            System.out.println(">>>>>>>>>>Delete complete!");
+            return  true;
+        }
+        System.out.println(">>>>>>>>>>Delete failed!");
+        return  true;
+    }
+
     public Word search(String key){
         System.out.println("List dang search: " + this);
         if (!listWords.isEmpty()){
@@ -106,7 +133,7 @@ public class Group {
 
     @Override
     public String toString() {
-        String s  = "";
+        String s  ="  * " + this.name + " :\n";
         ArrayList<Word> listWord = new ArrayList<>(listWords.values());
         for (int i=0 ; i<listWord.size() ; i++){
             s+= String.format("%d. %s%n",i,  listWord.get(i));
@@ -119,9 +146,14 @@ public class Group {
      * @return
      */
     public Group loadFile(){
-        InputFile inputFile = new InputFile(patch);
+        Input inputFile = new Input(patch);
         this.listWords = inputFile.loadMap();
         return this;
+    }
+    public void outFile(){
+        Output outputFile = new Output(this.getName());
+        outputFile.outFile(this.getListWords());
+        System.out.println("OutFile Complete!");
     }
 }
 

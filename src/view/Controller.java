@@ -1,7 +1,6 @@
 package view;
 
 
-import javafx.scene.Node;
 import manager.AppManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -30,7 +30,6 @@ public class Word {
     public void setVietNam(String vietNam) {
         vietNam = vietNam.trim();
         vietNam = vietNam.toLowerCase();
-
         this.VietNam = vietNam;
     }
 
