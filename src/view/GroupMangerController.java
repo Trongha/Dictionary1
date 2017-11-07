@@ -13,6 +13,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import manager.AppManager;
 import javafx.event.ActionEvent;
+import manager.Learning;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -77,9 +79,13 @@ public class GroupMangerController {
 
     @FXML
     private void initialize(){
-        setListGroups();
+               setListGroups();
         listGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             setListWords(manager.getGroup(newValue));
+            Learning learn = new Learning(manager.getGroup(newValue).getListWords());
+            editGroup.setDisable(false);
+            deleteGroup.setDisable(false);
+            this.learn.setDisable(false);
         });
 
     }

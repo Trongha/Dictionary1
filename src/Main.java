@@ -21,9 +21,7 @@ public class Main {
         GUI gui = new GUI();
         gui.main(args);
 
-        Learning learn = new Learning(AppManager.getGroups().get(0).getListWords(), 5);
-        learn.sinhTests();
-        System.out.println(learn);
+
         Console consol = new Console();
 
         //consol.printAllGroup();

@@ -42,6 +42,12 @@ public class Test {
         return numDapAn;
     }
 
+    public boolean checkDapAn(String chose){
+        if (chose.equals(this.keyAsk.getVietNam()))
+            return true;
+        else return false;
+    }
+
     @Override
     public String toString() {
         String s = this.getKeyAsk().getEnglish();
