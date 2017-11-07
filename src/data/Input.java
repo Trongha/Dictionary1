@@ -65,7 +65,7 @@ public class Input {
         }catch (IOException e){
             e.printStackTrace();
         }
-
+        System.out.println(String.format("%-70s", path) + " Load Complete!");
         return map;
     }
 }

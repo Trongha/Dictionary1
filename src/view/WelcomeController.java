@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-public class Controller {
+public class WelcomeController {
     @FXML
     private Button searchButton;
 
@@ -23,7 +23,9 @@ public class Controller {
     @FXML
     private Label output;
     @FXML
-    private Button movetoabc;
+    private Button search;
+    @FXML
+    private Button groupManager;
 
 
     public void search(ActionEvent e) {
@@ -34,12 +36,18 @@ public class Controller {
         System.out.println(s);
     }
 
-    public void Moveabc(ActionEvent e) throws Exception{
+    public void moveSearch(ActionEvent e) throws Exception{
         Stage abc = new Stage();
         Parent root = new FXMLLoader(getClass().getResource("Search.fxml")).load();
         abc.setTitle("Hello World");
         abc.setScene(new Scene(root, 600, 275));
-
         abc.show();
+    }
+    public void moveGroupManager(ActionEvent e) throws Exception{
+        Stage groupManager = new Stage();
+        Parent root = new FXMLLoader(getClass().getResource("GroupManager.fxml")).load();
+        groupManager.setTitle("Group Manager");
+        groupManager.setScene(new Scene(root, 600, 275));
+        groupManager.show();
     }
 }

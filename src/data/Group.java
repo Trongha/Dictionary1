@@ -40,6 +40,13 @@ public class Group {
         return keyArray;
     }
 
+    /**
+     * Get Key of this group
+     * @return
+     */
+    public String[] getKeyOfGroup(){
+        return getKeyOfHashMap(this.listWords);
+    }
     public HashMap<String, Word> getListWords() {
         return listWords;
     }

@@ -2,8 +2,6 @@
 package view;
 
 
-import data.Word;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
@@ -11,16 +9,15 @@ import manager.AppManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-import javafx.stage.Stage;
-
 import java.util.*;
 
 
 /**
  * Created by Trong on 2/11/2017.
  */
-public class SearchController {
-    private AppManager data = new AppManager();
+public class
+SearchController {
+    private AppManager manager = new AppManager();
 
     @FXML
     private Button searchButton;
@@ -44,14 +41,14 @@ public class SearchController {
     }
 
     public void search(ActionEvent e) {
-        String s = String.format("%s", data.search(input.getText()));
+        String s = String.format("%s", manager.search(input.getText()));
         reOutput2(s);
         System.out.println(s);
     }
 
     public void search2() {
         listWordData.clear();
-        ArrayList<String> wordEnglishs = data.search2(input.getText());
+        ArrayList<String> wordEnglishs = manager.search2(input.getText());
         listWordData.addAll(wordEnglishs);
         listWord.setItems(listWordData);
     }
@@ -65,7 +62,7 @@ public class SearchController {
             search2();
         });
         listWord.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            reOutput2(data.search(newValue).toString());
+            reOutput2(manager.search(newValue).toString());
         });
     }
 }
