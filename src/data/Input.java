@@ -45,6 +45,7 @@ public class Input {
 
                 String eng="" ;
                 String vie="" ;
+                String pathImage = "";
             //doc ô 1
                 if (cellIterator.hasNext()){
                     Cell keyEnglish = cellIterator.next();
@@ -57,8 +58,16 @@ public class Input {
                     vie = keyVietNam.getStringCellValue();
                     vie = vie.trim();
                 }
+//                đọc ô 3
+                if (cellIterator.hasNext()){
+                    Cell pathImageCell = cellIterator.next();
+                    pathImage = pathImageCell.getStringCellValue().toString();
+
+
+                }
+
                 if (!vie.equals("") && !eng.equals("")){
-                    Word newWord = new Word(eng, vie);
+                    Word newWord = new Word(eng, vie, pathImage);
                     map.put(newWord.getEnglish(), newWord);
                 }
             }

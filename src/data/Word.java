@@ -6,11 +6,17 @@ package data;
 public class Word {
     private String English = "";
     private String VietNam = "";
+    private String pathImage = "";
 
     public Word(){}
     public Word(String english, String vietNam) {
         setVietNam(vietNam);
         setEnglish(english);
+    }
+    public Word(String english, String vietNam, String pathImage) {
+        setVietNam(vietNam);
+        setEnglish(english);
+        setPathImage(pathImage);
     }
 
     public String getEnglish() {
@@ -31,6 +37,15 @@ public class Word {
         vietNam = vietNam.trim();
         vietNam = vietNam.toLowerCase();
         this.VietNam = vietNam;
+    }
+
+
+    public String getPathImage() {
+        return pathImage;
+    }
+
+    public void setPathImage(String pathImage) {
+        this.pathImage = pathImage;
     }
 
     @Override

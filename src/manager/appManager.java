@@ -14,14 +14,26 @@ import java.util.HashSet;
 
 public class AppManager {
     private static ArrayList<Group> groups = new ArrayList<>();
-
+    private static Group allGroup = new Group();
     public AppManager(){}
-
 
     public static void addGroup(Group group){
         groups.add(group);
+        allGroup.addGroup(group);
     }
 
+    /**
+     * Tìm Group theo tên
+     * @param nameGroup
+     * @return
+     */
+    public Group getGroup(String nameGroup){
+        for (Group group : groups){
+            if (nameGroup.equals(group.getName()))
+                return group;
+        }
+        return groups.get(0);
+    }
     public static ArrayList<Group> getGroups() {
         return groups;
     }
@@ -37,16 +49,8 @@ public class AppManager {
      */
     public Word search(String key){
         key = key.toLowerCase().trim();
-        if (!groups.isEmpty()){
-            for (int i=0 ; i<groups.size() ; i++){
-                return groups.get(i).search(key);
-            }
-        }
-        Word error = new Word(key, "");
-        if (groups.isEmpty()){
-            error.setVietNam("groups is empty");
-        }
-        return error;
+
+        return allGroup.search(key);
     }
     public ArrayList<String> search2(String key){
         key = key.toLowerCase().trim();
@@ -59,8 +63,11 @@ public class AppManager {
         return  new ArrayList<String>(mapSearch);
     }
 
-    public void deleteGroup(int index){
-        groups.remove(index);
+    public void deleteGroup(String name) {
+        for (int i=0 ; i<groups.size() ; i++){
+            if (name.equals(groups.get(i).getName()))
+                groups.remove(i);
+        }
     }
 
 }

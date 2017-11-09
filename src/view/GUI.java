@@ -11,9 +11,9 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = new FXMLLoader(getClass().getResource("Welcome.fxml")).load();
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Welcome.fxml")).load();
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 275));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 

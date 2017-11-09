@@ -10,7 +10,7 @@ public class Main {
             "E:\\Java\\Dictionary\\src\\resrc\\xlsx\\Region Of The World.xlsx",
             "E:\\Java\\Dictionary\\src\\resrc\\xlsx\\Region Of Viet Nam.xlsx",
             "E:\\java\\Dictionary\\src\\resrc\\xlsx\\MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx",
-            "E:\\java\\Dictionary\\src\\resrc\\xlsx\\Place.xlsx"  ,
+           /* "E:\\java\\Dictionary\\src\\resrc\\xlsx\\Place.xlsx"  ,*/
             /*"E:\\java\\Dictionary\\src\\resrc\\xlsx\\Steel.xlsx"*/
     };
 

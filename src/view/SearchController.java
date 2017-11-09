@@ -2,13 +2,17 @@
 package view;
 
 
+import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import manager.AppManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
+import java.io.File;
 import java.util.*;
 
 
@@ -29,22 +33,30 @@ SearchController {
     private TextArea output2;
 
     @FXML
+    private ImageView image;
+
+    @FXML
     private ListView<String> listWord;
     private ObservableList<String> listWordData = FXCollections.observableArrayList();
 
 
     public SearchController() {    }
 
-    public void reOutput2(String s){
+    public void reOutput2(Word word){
         output2.clear();
-        output2.appendText(s);
+        output2.appendText(word.toString());
+        File f = new File(word.getPathImage());
+        image.setImage(new Image(f.toURI().toString()));
     }
 
+
     public void search(ActionEvent e) {
-        String s = String.format("%s", manager.search(input.getText()));
-        reOutput2(s);
-        System.out.println(s);
+        Word word = manager.search(input.getText());
+        String s = String.format("%s", word.toString());
+        reOutput2(word);/*
+        System.out.println(s);*/
     }
+
 
     public void search2() {
         listWordData.clear();
@@ -62,7 +74,7 @@ SearchController {
             search2();
         });
         listWord.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            reOutput2(manager.search(newValue).toString());
+            reOutput2(manager.search(newValue));
         });
     }
 }

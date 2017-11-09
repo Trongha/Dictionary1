@@ -9,20 +9,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import manager.AppManager;
 import javafx.event.ActionEvent;
 import manager.Learning;
+import sun.plugin2.message.Message;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GroupMangerController {
     private AppManager manager = new AppManager();
     @FXML
     private ListView<String> listGroups;
+    //Danh sách tất cả group đang chạy
     ObservableList<String> listGroupName = FXCollections.observableArrayList();
     @FXML
     private ListView<String> listWords;
@@ -60,26 +62,33 @@ public class GroupMangerController {
         List<File> selectedFiles = fileChooser.showOpenMultipleDialog(null);
         if (selectedFiles != null){
             for(File file:selectedFiles){
-               manager.addGroup(new Group(file.getPath()));
+                Group newGroup = new Group(file.getPath());
+                manager.addGroup(newGroup);
+                MessageBox.show( "Đã thêm " + newGroup.getName(), "Thêm nhóm từ");
             }
+
         setListGroups();
         } else {
+            MessageBox.show("ERROR", "Thêm nhóm từ");
             System.out.println("File not found!");
         }
-
     }
+
 
     public void moveLearn(ActionEvent e) throws Exception{
         Stage abc = new Stage();
-        Parent root = new FXMLLoader(getClass().getResource("Learning.fxml")).load();
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Learning.fxml")).load();
         abc.setTitle("Hello World");
-        abc.setScene(new Scene(root, 600, 275));
+        abc.setScene(new Scene(root));
         abc.show();
     }
 
     @FXML
     private void initialize(){
-               setListGroups();
+           setListGroups();
+           listGroups.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+
         listGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             setListWords(manager.getGroup(newValue));
             Learning learn = new Learning(manager.getGroup(newValue).getListWords());
