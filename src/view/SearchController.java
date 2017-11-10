@@ -5,9 +5,13 @@ package view;
 import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import manager.AppManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,9 +26,16 @@ import java.util.*;
 public class
 SearchController {
     private AppManager manager = new AppManager();
+    private GUI gui = new GUI();
 
     @FXML
     private Button searchButton;
+
+    @FXML
+    private Button back;
+
+    @FXML
+    private Button addWord;
 
     @FXML
     private TextField input;
@@ -57,6 +68,9 @@ SearchController {
         System.out.println(s);*/
     }
 
+    public void back(ActionEvent e){
+        gui.backHome();
+    }
 
     public void search2() {
         listWordData.clear();
@@ -68,6 +82,14 @@ SearchController {
         search2();
     }
 
+    public void moveAddWord(ActionEvent e) throws Exception{
+        Stage primaryStage = new Stage();
+        Parent root = new FXMLLoader(getClass().getResource("fxml/AddWord.fxml")).load();
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
     @FXML
     private void initialize(){
         input.textProperty().addListener((observable, oldValue, newValue) -> {

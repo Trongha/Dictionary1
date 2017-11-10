@@ -1,6 +1,7 @@
 package view;
 
 
+import javafx.scene.Node;
 import manager.AppManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 
 
 public class WelcomeController {
+    private GUI gui = new GUI();
     @FXML
     private Button searchButton;
 
@@ -37,17 +39,11 @@ public class WelcomeController {
     }
 
     public void moveSearch(ActionEvent e) throws Exception{
-        Stage abc = new Stage();
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Search.fxml")).load();
-        abc.setTitle("Hello World");
-        abc.setScene(new Scene(root));
-        abc.show();
+        gui.move("fxml\\Search.fxml", "Search");
     }
-    public void moveGroupManager(ActionEvent e) throws Exception{
-        Stage groupManager = new Stage();
-        Parent root = new FXMLLoader(getClass().getResource("fxml/GroupManager.fxml")).load();
-        groupManager.setTitle("Group Manager");
-        groupManager.setScene(new Scene(root));
-        groupManager.show();
+
+    public void moveGroupManager(ActionEvent e){
+        gui.move("fxml\\GroupManager.fxml", "Group Manager");
     }
+
 }

@@ -14,10 +14,11 @@
       <Label layoutX="432.0" layoutY="45.0" text="Quản lý Group" />
       <SplitPane dividerPositions="0.44680851063829785" prefHeight="402.0" prefWidth="331.0">
          <items>
-            <ListView fx:id="listGroups" prefHeight="400.0" prefWidth="200.0" />
+            <ListView fx:id="listviewGroups" prefHeight="400.0" prefWidth="200.0" />
             <ListView fx:id="listWords" prefHeight="400.0" prefWidth="152.0" />
          </items>
       </SplitPane>
       <Button fx:id="learn" disable="true" layoutX="445.0" layoutY="266.0" mnemonicParsing="false" onAction="#moveLearn" text="Học từ" />
+      <Button id="searchButton" fx:id="back" layoutX="454.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="34.0" text="&lt;--" />
    </children>
 </AnchorPane>

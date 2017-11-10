@@ -53,5 +53,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="poi" level="project" />
+    <orderEntry type="library" name="jfoenix" level="project" />
+    <orderEntry type="library" name="font-awesome-4.7.0" level="project" />
   </component>
 </module>
