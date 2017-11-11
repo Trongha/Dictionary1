@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 
+
 /**
  * Created by Trong on 28/10/2017.
  */
@@ -20,6 +21,7 @@ public class AppManager {
     public static void addGroup(Group group){
         groups.add(group);
         allGroup.addGroup(group);
+        allGroup.setName("allGroup");
     }
 
     /**
