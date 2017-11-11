@@ -19,7 +19,7 @@ public class AddWordController {
     private ChoiceBox groupChoice;
     @FXML
     private Button imgChoice;
-    ObservableList<String> listGroupName = FXCollections
+
 
     @FXML
     private void initialize(){

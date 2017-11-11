@@ -107,7 +107,7 @@ public class Group {
     }
 
     public Word search(String key){
-        System.out.println("List dang search: " + this);
+        System.out.println("List dang search: " + this.getName());
         if (!listWords.isEmpty()){
             System.out.println("key: " + key);
             if (this.listWords.containsKey(key))
