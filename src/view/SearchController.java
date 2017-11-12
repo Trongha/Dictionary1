@@ -2,6 +2,7 @@
 package view;
 
 
+import com.jfoenix.controls.JFXButton;
 import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,13 +30,16 @@ SearchController {
     private GUI gui = new GUI();
 
     @FXML
-    private Button searchButton;
+    private JFXButton searchButton;
 
     @FXML
-    private Button back;
+    private JFXButton addWord;
 
     @FXML
-    private Button addWord;
+    private JFXButton editWord;
+
+    @FXML
+    private JFXButton deleteWord;
 
     @FXML
     private TextField input;
@@ -89,6 +93,15 @@ SearchController {
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+    @FXML
+    void setDeleteWord(ActionEvent event) {
+
+    }
+
+    @FXML
+    void setEditWord(ActionEvent event) {
+
     }
     @FXML
     private void initialize(){

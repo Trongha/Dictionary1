@@ -55,5 +55,6 @@
     <orderEntry type="library" name="poi" level="project" />
     <orderEntry type="library" name="jfoenix" level="project" />
     <orderEntry type="library" name="fontawesomefx-8.9" level="project" />
+    <orderEntry type="library" name="lib_asw" level="project" />
   </component>
 </module>

@@ -2,6 +2,7 @@ package view;
 
 
 import javafx.application.Application;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -40,12 +41,12 @@ public class GUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         myPrimaryStage = primaryStage;
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Welcome.fxml")).load();
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Home.fxml")).load();
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

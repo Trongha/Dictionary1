@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib_asw">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/asw/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/asw/lib" recursive="false" />
+  </library>
+</component>

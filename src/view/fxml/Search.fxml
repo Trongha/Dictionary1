@@ -2,47 +2,54 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
    <children>
-      <HBox layoutX="14.0" layoutY="33.0" prefHeight="452.0" prefWidth="561.0">
+      <AnchorPane layoutX="14.0" layoutY="33.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="237.0">
          <children>
-            <VBox prefHeight="452.0" prefWidth="237.0">
-               <children>
-                  <AnchorPane prefHeight="50.0" prefWidth="159.0">
-                     <children>
-                        <Button id="searchButton" fx:id="searchButton" layoutX="169.0" layoutY="24.0" mnemonicParsing="false" onAction="#search" prefHeight="25.0" prefWidth="68.0" text="Search" />
-                        <TextField id="input" fx:id="input" onAction="#search" prefHeight="25.0" prefWidth="237.0" />
-                     </children>
-                  </AnchorPane>
-                  <ListView fx:id="listWord" prefHeight="409.0" prefWidth="237.0" />
-               </children>
-            </VBox>
-            <AnchorPane prefHeight="452.0" prefWidth="282.0">
-               <children>
-                  <TextArea fx:id="output2" layoutX="14.0" layoutY="70.0" prefHeight="382.0" prefWidth="237.0" />
-                  <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="58.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
-               </children>
-            </AnchorPane>
-            <VBox prefHeight="235.0" prefWidth="45.0">
-               <children>
-                  <JFXButton fx:id="addWord" onAction="#moveAddWord" prefHeight="30.0" prefWidth="44.0" text="Add" />
-               </children>
-            </VBox>
+            <TextField id="input" fx:id="input" onAction="#search" prefHeight="25.0" prefWidth="184.0" promptText="Search..." />
+            <JFXButton fx:id="searchButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="154.0" onAction="#search" prefHeight="25.0" prefWidth="27.0" text=" ">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SEARCH" size="15" text="" />
+               </graphic>
+               <font>
+                  <Font />
+               </font>
+            </JFXButton>
          </children>
-      </HBox>
-      <Button id="searchButton" fx:id="back" contentDisplay="CENTER" layoutX="14.0" layoutY="-3.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="29.0" textAlignment="CENTER" textFill="#ffffff00">
-         <graphic>
-            <FontAwesomeIconView glyphName="ARROW_LEFT" size="25" />
-         </graphic>
-      </Button>
+      </AnchorPane>
+      <ListView fx:id="listWord" layoutX="14.0" layoutY="67.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="426.0" prefWidth="184.0" />
+      <AnchorPane layoutX="199.0" layoutY="33.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="460.0" prefWidth="358.0">
+         <children>
+            <ButtonBar buttonMinWidth="30.0" layoutX="14.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+               <buttons>
+                  <JFXButton fx:id="addWord" contentDisplay="CENTER" onAction="#moveAddWord" prefHeight="28.0" prefWidth="39.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView fill="#0943ff" glyphName="PLUS" size="20" text="" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="editWord" contentDisplay="CENTER" onAction="#setEditWord" prefHeight="28.0" prefWidth="39.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView fill="#0c9024" glyphName="PENCIL_SQUARE_ALT" size="20" text="" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="deleteWord" contentDisplay="CENTER" onAction="#setDeleteWord" prefHeight="13.0" prefWidth="39.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView fill="#d30000" glyphName="REMOVE" size="20" textAlignment="JUSTIFY" textOrigin="CENTER" />
+                     </graphic>
+                  </JFXButton>
+               </buttons>
+            </ButtonBar>
+            <TextArea fx:id="output2" layoutX="14.0" layoutY="34.0" prefHeight="426.0" prefWidth="347.0" />
+            <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="161.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

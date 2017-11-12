@@ -1,5 +1,6 @@
 package view;
 
+import com.jfoenix.controls.JFXButton;
 import data.Group;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.stage.FileChooser;
@@ -35,13 +37,25 @@ public class GroupMangerController {
     private ListView<String> listWords;
     ObservableList<String> listWordData = FXCollections.observableArrayList();
     @FXML
-    private Button editGroup;
+    private JFXButton addGroupFX;
+
     @FXML
-    private Button deleteGroup;
+    private JFXButton editGroupFX;
+
     @FXML
-    private Button show;
+    private JFXButton deleteGroupFX;
     @FXML
-    private Button addGroup;
+    private Label groupName;
+
+    @FXML
+    private JFXButton addWord;
+
+    @FXML
+    private JFXButton editWord;
+
+    @FXML
+    private JFXButton deleteWord;
+
     @FXML
     private Button learn;
     @FXML
@@ -58,6 +72,7 @@ public class GroupMangerController {
     }
 
     public void setListWords(Group group){
+        groupName.setText(group.getName());
         listWordData.clear();
         listWordData.addAll(group.getKeyOfGroup());
         listWords.setItems(listWordData);
@@ -93,10 +108,24 @@ public class GroupMangerController {
         ((Node)e.getSource()).getScene().getWindow().hide();
 
     }
+
     public void back(ActionEvent e){
         gui.backHome();
     }
+    @FXML
+    void setAddWord(ActionEvent event) {
 
+    }
+
+    @FXML
+    void setDeleteWord(ActionEvent event) {
+
+    }
+
+    @FXML
+    void setEditWord(ActionEvent event) {
+
+    }
 
     @FXML
     private void initialize(){
@@ -108,8 +137,6 @@ public class GroupMangerController {
             if (listGroupSelected.size() == 1){
                 setListWords(manager.getGroup(newValue));
                 Learning learn = new Learning(manager.getGroup(newValue).getListWords());
-                editGroup.setDisable(false);
-                deleteGroup.setDisable(false);
                 this.learn.setDisable(false);
             }
 

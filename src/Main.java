@@ -6,12 +6,13 @@ import view.GUI;
 
 public class Main {
     private static String[] patchs =
-            {"E:\\Java\\Dictionary\\src\\resrc\\xlsx\\family.xlsx",
-            "E:\\Java\\Dictionary\\src\\resrc\\xlsx\\Region Of The World.xlsx",
-            "E:\\Java\\Dictionary\\src\\resrc\\xlsx\\Region Of Viet Nam.xlsx",
-            "E:\\java\\Dictionary\\src\\resrc\\xlsx\\MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx",
-           /* "E:\\java\\Dictionary\\src\\resrc\\xlsx\\Place.xlsx"  ,*/
-            /*"E:\\java\\Dictionary\\src\\resrc\\xlsx\\Steel.xlsx"*/
+            {"src\\data\\dataFile\\xlsx\\family.xlsx",
+            "src\\data\\dataFile\\xlsx\\Steel.xlsx" ,
+            "src\\data\\dataFile\\xlsx\\Place.xlsx" ,
+            "src\\data\\dataFile\\xlsx\\Region Of Viet Nam.xlsx" ,
+            "src\\data\\dataFile\\xlsx\\MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx" ,
+            "src\\data\\dataFile\\xlsx\\building dictionary.xlsx",
+            "src\\data\\dataFile\\xlsx\\Region Of The World.xlsx"
     };
 
     public static void main(String[] args) {
