@@ -2,7 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,95 +11,117 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeController">
    <children>
-      <VBox alignment="TOP_CENTER" style="-fx-background-color: #1194F6;">
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="625.0" prefWidth="185.0" style="-fx-background-color: #1194F6;">
          <children>
-            <Pane prefHeight="156.0" prefWidth="220.0">
-               <children>
-                  <Label layoutX="54.0" layoutY="58.0" text="LOGO">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <JFXButton fx:id="home" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="50.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="home" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="HOME" size="30" text="" />
+                  <FontAwesomeIconView glyphName="HOME" size="40" text="" />
                </graphic>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="dictionary" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setDictionary" prefHeight="50.0" prefWidth="225.0" text="Dictionary" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="dictionary" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setDictionary" prefHeight="40.0" prefWidth="225.0" text="Dictionary" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="BOOK" size="30" text="" />
+                  <FontAwesomeIconView glyphName="BOOK" size="40" text="" />
                </graphic>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </JFXButton>
-            <JFXButton fx:id="wordManager" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setWordManager" prefHeight="50.0" prefWidth="225.0" text="Word Manager" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="wordManager" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setWordManager" prefHeight="35.0" prefWidth="225.0" text="Word Manager" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="LIST" size="30" text="" />
+                  <FontAwesomeIconView glyphName="LIST" size="40" text="" />
                </graphic>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </JFXButton>
-            <JFXButton fx:id="learn" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Learn" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="learn" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="225.0" text="Learn" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="LEANPUB" size="30" text="" />
+                  <FontAwesomeIconView glyphName="LEANPUB" size="40" text="" />
                </graphic>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </JFXButton>
-            <JFXButton fx:id="statistical" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="statistical" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="CALENDAR" size="30" />
+                  <FontAwesomeIconView glyphName="CALENDAR" size="40" />
                </graphic>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </JFXButton>
-            <JFXButton fx:id="exit" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setExit" prefHeight="50.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="exit" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="CLOSE" size="30" text="" />
+                  <FontAwesomeIconView glyphName="CLOSE" size="40" text="" />
                </graphic>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </JFXButton>
          </children>
       </VBox>
-      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="580.0" style="-fx-background-color: #F4F4F4;">
+      <VBox>
          <children>
-            <AnchorPane fx:id="homeView" prefHeight="500.0" prefWidth="580.0">
+            <HBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="805.0" style="-fx-background-color: #1194F6;" />
+            <AnchorPane fx:id="paneView" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;">
                <children>
-                  <Pane layoutY="188.0" prefHeight="312.0" prefWidth="580.0">
+                  <AnchorPane layoutY="-1.0" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;" />
+                  <AnchorPane fx:id="homeView" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;">
                      <children>
-                        <ImageView fitHeight="272.0" fitWidth="621.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../resrc/img/learnE.png" />
-                           </image>
-                        </ImageView>
+                        <Pane layoutX="2.0" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="540.0" prefWidth="815.0">
+                           <children>
+                              <ImageView fitHeight="540.0" fitWidth="815.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resrc/img/learnE.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
                      </children>
-                  </Pane>
+                  </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="exitView" prefHeight="500.0" prefWidth="580.0">
-               <children>
-                  <Label layoutX="252.0" layoutY="209.0" mouseTransparent="true" text="EXIT">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="paneView" prefHeight="200.0" prefWidth="200.0" />
+            <HBox prefHeight="5.0" style="-fx-background-color: #1194F6;" />
          </children>
-      </AnchorPane>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="5.0" style="-fx-background-color: #1194F6;" />
    </children>
 </HBox>

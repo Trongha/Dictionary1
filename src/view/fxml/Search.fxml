@@ -9,23 +9,30 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
+
+<VBox prefHeight="540.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="33.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="561.0">
+      <HBox>
          <children>
-            <TextField id="input" fx:id="input" onAction="#search" prefHeight="25.0" prefWidth="184.0" promptText="Search..." />
-            <JFXButton fx:id="searchButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="154.0" onAction="#search" prefHeight="25.0" prefWidth="27.0" text=" ">
-               <graphic>
-                  <FontAwesomeIconView glyphName="SEARCH" size="15" text="" />
-               </graphic>
-               <font>
-                  <Font />
-               </font>
-            </JFXButton>
-            <ButtonBar buttonMinWidth="30.0" layoutX="184.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+            <AnchorPane>
+               <children>
+                  <TextField id="input" fx:id="input" onAction="#search" prefHeight="25.0" prefWidth="200.0" promptText="Search..." />
+                  <JFXButton fx:id="searchButton" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="170.0" onAction="#search" prefHeight="25.0" prefWidth="27.0" text=" ">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SEARCH" size="15" text="" />
+                     </graphic>
+                     <font>
+                        <Font />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <ButtonBar buttonMinWidth="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                <buttons>
                   <JFXButton fx:id="addWord" contentDisplay="CENTER" onAction="#moveAddWord" prefHeight="28.0" prefWidth="39.0" text=" ">
                      <graphic>
@@ -45,21 +52,25 @@
                </buttons>
             </ButtonBar>
          </children>
-      </AnchorPane>
-      <ListView fx:id="listWord" layoutX="14.0" layoutY="67.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="426.0" prefWidth="184.0" />
-      <AnchorPane layoutX="201.0" layoutY="67.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="426.0" prefWidth="372.0">
+      </HBox>
+      <HBox>
          <children>
-            <TextArea fx:id="output2" prefHeight="426.0" prefWidth="375.0" />
-            <Pane layoutX="171.0" layoutY="233.0" prefHeight="200.0" prefWidth="200.0">
+            <ListView fx:id="listWord" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="433.0" prefWidth="200.0" />
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="426.0" prefWidth="372.0">
                <children>
-                  <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="-5.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../data/dataFile/img/nguoc.jpg" />
-                     </image>
-                  </ImageView>
+                  <TextArea fx:id="output2" prefHeight="433.0" prefWidth="615.0" />
+                  <Pane layoutX="171.0" layoutY="233.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="-5.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../data/dataFile/img/nguoc.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
                </children>
-            </Pane>
+            </AnchorPane>
          </children>
-      </AnchorPane>
+      </HBox>
    </children>
-</AnchorPane>
+</VBox>

@@ -22,22 +22,20 @@ public class HomeController {
     private JFXButton wordManager;
 
     @FXML
+    private JFXButton learn;
+
+    @FXML
     private JFXButton statistical;
 
     @FXML
     private JFXButton exit;
 
     @FXML
-    private JFXButton learn;
-
-    @FXML
     private AnchorPane paneView;
-    @FXML
 
+    @FXML
     private AnchorPane homeView;
 
-    @FXML
-    private AnchorPane exitView;
 
 
     public void setDictionary(ActionEvent e) throws Exception{
@@ -56,19 +54,8 @@ public class HomeController {
         paneView.getChildren().setAll(root);
     }
 
-    public void setStatistical(ActionEvent e) throws Exception {
-        this.statistical = statistical;
-    }
-
-    public void setExit(ActionEvent e) throws Exception{
-        exitView.toFront();
-        exitView.setVisible(true);
-    }
-    public void setLearn(ActionEvent e) throws Exception{
-        this.learn = learn;
-    }
     private void initialize(){
-        exitView.setVisible(false);
+
 
     }
 

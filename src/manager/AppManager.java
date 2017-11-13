@@ -2,6 +2,7 @@ package manager;
 
 import data.Group;
 import data.Word;
+import sun.java2d.opengl.WGLSurfaceData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,6 +20,8 @@ public class AppManager {
     public AppManager(){}
 
     public static void addGroup(Group group){
+
+
         groups.add(group);
         allGroup.addGroup(group);
         allGroup.setName("allGroup");
@@ -36,6 +39,16 @@ public class AppManager {
         }
         return groups.get(0);
     }
+    public void addWord(Word word, String nameGroup){
+        Group group = this.getGroup(nameGroup);
+        group.addWord(word);
+        allGroup.addWord(word);
+        System.out.println(String.format("add %s %s to %s Complete!", word.getEnglish(), word.getVietNam(), group.getName()));
+    }
+    public static Group getAllGroup() {
+        return allGroup;
+    }
+
     public static ArrayList<Group> getGroups() {
         return groups;
     }
