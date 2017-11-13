@@ -15,7 +15,7 @@
    <children>
       <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="625.0" prefWidth="185.0" style="-fx-background-color: #1194F6;">
          <children>
-            <JFXButton fx:id="home" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="20.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="home" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="20.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -54,7 +54,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="learn" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="225.0" text="Learn" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="learn" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setLearn" prefHeight="35.0" prefWidth="225.0" text="Learn" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>

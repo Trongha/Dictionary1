@@ -106,7 +106,6 @@ public class AddWordController {
     @FXML
     private void initialize() {
         setListChoice();
-
     }
 }
 

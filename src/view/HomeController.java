@@ -31,10 +31,10 @@ public class HomeController {
     private JFXButton exit;
 
     @FXML
-    private AnchorPane paneView;
+    private AnchorPane homeView;
 
     @FXML
-    private AnchorPane homeView;
+    private AnchorPane paneView;
 
 
     @FXML
@@ -46,7 +46,7 @@ public class HomeController {
     @FXML
     public void setHome(ActionEvent e) throws Exception {
         homeView.toFront();
-        homeView.setVisible(true);
+
     }
     @FXML
     public void setWordManager(ActionEvent e) throws Exception {
@@ -54,18 +54,21 @@ public class HomeController {
         paneView.getChildren().setAll(root);
     }
     @FXML
+    void setLearn(ActionEvent event) throws Exception {
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Learning.fxml")).load();
+        paneView.getChildren().setAll(root);
+    }
+    @FXML
     void exit(ActionEvent event) {
-        Boolean save = ConfirmationBox.show("\n Lưu trước khi thoát ko?", "", "Yes", "No");
+        /*Boolean save = ConfirmationBox.show("\n Lưu trước khi thoát ko?", "", "Yes", "No");
         if (save){
             System.out.println("Save");
         }else {
             System.out.println("Don't save");
-        }
+        }*/
         GUI.myPrimaryStage.close();
     }
     private void initialize(){
-
-
     }
 
 }

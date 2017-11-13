@@ -13,18 +13,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GroupMangerController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="510.0" prefWidth="785.0" style="-fx-background-color: #CEE3F6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GroupMangerController">
    <children>
-      <SplitPane dividerPositions="0.34324942791762014" layoutY="1.0" prefHeight="500.0" prefWidth="580.0">
+      <SplitPane dividerPositions="0.49742268041237114" layoutY="1.0" prefHeight="500.0" prefWidth="778.0" style="-fx-background-color: #CEE3F6;">
          <items>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #1194F6;" text="List Word Sets">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #CEE3F6;" text="List Word Sets">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <HBox prefHeight="57.0" prefWidth="212.0">
+                  <HBox prefHeight="57.0" prefWidth="212.0" style="-fx-background-color: #CEE3F6;">
                      <children>
                         <ButtonBar buttonMinWidth="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                            <buttons>
@@ -55,12 +55,12 @@
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="groupName" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #1194F6;">
+                  <Label fx:id="groupName" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #CEE3F6;">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ButtonBar buttonMinWidth="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                  <ButtonBar buttonMinWidth="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #CEE3F6;">
                      <buttons>
                         <JFXButton fx:id="addWord" contentDisplay="CENTER" onAction="#setAddWord" prefHeight="28.0" prefWidth="39.0" text=" ">
                            <graphic>
