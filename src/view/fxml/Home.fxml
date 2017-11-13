@@ -13,7 +13,7 @@
 
 <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeController">
    <children>
-      <VBox style="-fx-background-color: #1194F6;">
+      <VBox alignment="TOP_CENTER" style="-fx-background-color: #1194F6;">
          <children>
             <Pane prefHeight="156.0" prefWidth="220.0">
                <children>
@@ -24,7 +24,7 @@
                   </Label>
                </children>
             </Pane>
-            <JFXButton fx:id="home" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="50.0" prefWidth="225.0" text="Home">
+            <JFXButton fx:id="home" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="50.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -32,7 +32,7 @@
                   <FontAwesomeIconView glyphName="HOME" size="30" text="" />
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="dictionary" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setDictionary" prefHeight="50.0" prefWidth="225.0" text="Dictionary">
+            <JFXButton fx:id="dictionary" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setDictionary" prefHeight="50.0" prefWidth="225.0" text="Dictionary" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -40,7 +40,7 @@
                   <FontAwesomeIconView glyphName="BOOK" size="30" text="" />
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="wordManager" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setWordManager" prefHeight="50.0" prefWidth="225.0" text="Word Manager">
+            <JFXButton fx:id="wordManager" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setWordManager" prefHeight="50.0" prefWidth="225.0" text="Word Manager" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -48,7 +48,7 @@
                   <FontAwesomeIconView glyphName="LIST" size="30" text="" />
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="learn" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Learn">
+            <JFXButton fx:id="learn" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Learn" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -56,7 +56,7 @@
                   <FontAwesomeIconView glyphName="LEANPUB" size="30" text="" />
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="statistical" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Statistical">
+            <JFXButton fx:id="statistical" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -64,7 +64,7 @@
                   <FontAwesomeIconView glyphName="CALENDAR" size="30" />
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="exit" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setExit" prefHeight="50.0" prefWidth="225.0" text="Exit">
+            <JFXButton fx:id="exit" alignment="TOP_LEFT" graphicTextGap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setExit" prefHeight="50.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -91,7 +91,7 @@
             </AnchorPane>
             <AnchorPane fx:id="exitView" prefHeight="500.0" prefWidth="580.0">
                <children>
-                  <Label layoutX="252.0" layoutY="209.0" text="EXIT">
+                  <Label layoutX="252.0" layoutY="209.0" mouseTransparent="true" text="EXIT">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>

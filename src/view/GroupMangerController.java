@@ -135,11 +135,16 @@ public class GroupMangerController {
         listviewGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             listGroupSelected = listviewGroups.getSelectionModel().getSelectedItems();
             if (listGroupSelected.size() == 1){
+                editGroupFX.setDisable(false);
+                deleteGroupFX.setDisable(false);
+
                 setListWords(manager.getGroup(newValue));
                 Learning learn = new Learning(manager.getGroup(newValue).getListWords());
                 this.learn.setDisable(false);
+            }else if (listGroupSelected.size() > 1){
+                editGroupFX.setDisable(true);
+                deleteGroupFX.setDisable(false);
             }
-
         });
     }
 

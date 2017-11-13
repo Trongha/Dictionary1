@@ -60,6 +60,13 @@ SearchController {
     public void reOutput2(Word word){
         output2.clear();
         output2.appendText(word.toString());
+        if (AppManager.getAllGroup().getListWords().containsKey(word.getEnglish())){
+            deleteWord.setDisable(false);
+            editWord.setDisable(false);
+        }else {
+            deleteWord.setDisable(true);
+            editWord.setDisable(true);
+        }
         File f = new File(word.getPathImage());
         image.setImage(new Image(f.toURI().toString()));
     }
@@ -87,12 +94,9 @@ SearchController {
     }
 
     public void moveAddWord(ActionEvent e) throws Exception{
-        Stage primaryStage = new Stage();
-        Parent root = new FXMLLoader(getClass().getResource("fxml/AddWord.fxml")).load();
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
-        primaryStage.show();
+        AddWordController addWord = new AddWordController();
+        addWord.show();
+
     }
     @FXML
     void setDeleteWord(ActionEvent event) {
