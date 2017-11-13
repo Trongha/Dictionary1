@@ -27,7 +27,8 @@ public class Console {
         String name = in.nextLine();
         System.out.println("patch: ");
         String patch = in.nextLine();
-        AppManager.addGroup(new Group(name, patch));
+        AppManager appManager = new AppManager();
+        appManager.addGroup(new Group(name, patch));
     }
     public void printAllGroup(){
         for (Group group: AppManager.getGroups()){

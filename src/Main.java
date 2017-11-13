@@ -17,7 +17,8 @@ public class Main {
 
     public static void main(String[] args) {
        for (String patch : patchs){
-           AppManager.addGroup(new Group(patch));
+           AppManager appManager = new AppManager();
+           appManager.addGroup(new Group(patch));
        }
         GUI gui = new GUI();
         gui.main(args);

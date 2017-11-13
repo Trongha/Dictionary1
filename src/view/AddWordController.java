@@ -2,7 +2,6 @@ package view;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import data.Group;
 import data.Word;
 import javafx.collections.FXCollections;
@@ -10,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
@@ -53,23 +53,23 @@ public class AddWordController {
 
     private String english = "";
     private String vietnam = "";
-    private String pathImg = "" ;
+    private String pathImg = "";
 
-    public void setListChoice(){
-        for (Group group : AppManager.getGroups()){
+    public void setListChoice() {
+        for (Group group : AppManager.getGroups()) {
             groupChoice.getItems().add(group.getName());
         }
         groupChoice.setValue(AppManager.getGroups().get(0).getName());
     }
 
     @FXML
-    void choiceImg(){
+    void choiceImg() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File("src\\resrc\\img"));
         File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null){
+        if (selectedFile != null) {
             img.setImage(new Image(selectedFile.toURI().toString()));
-            pathImg =(String) selectedFile.getPath();
+            pathImg = (String) selectedFile.getPath();
             linkImg.setText(pathImg);
         } else {
             MessageBox.show("\nFILE ERROR", "ERROR");
@@ -81,16 +81,18 @@ public class AddWordController {
     void addWord(ActionEvent event) {
         english = englishInp.getText().trim();
         vietnam = vietNamInp.getText().trim();
-        if (english.equals("") || vietnam.equals("")){
+        if (english.equals("") || vietnam.equals("")) {
             MessageBox.show("\nInput is Empty", "");
-        }else {
+        } else {
             AppManager manager = new AppManager();
             manager.addWord(new Word(english, vietnam), groupChoice.getValue());
             MessageBox.show("\nAdd Complete!", "");
+            stage.close();
+            ((Node)event.getSource()).getScene().getWindow().hide();
         }
     }
 
-    public void show() throws Exception{
+    public void show() throws Exception {
 
         stage.initModality(Modality.APPLICATION_MODAL);
 
@@ -102,7 +104,7 @@ public class AddWordController {
     }
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         setListChoice();
 
     }

@@ -83,7 +83,7 @@ public class GroupMangerController {
     }
     public void addGroupButton(ActionEvent e){
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("E:\\java\\Dictionary\\src\\resrc\\xlsx\\"));
+        fileChooser.setInitialDirectory(new File("src\\data\\dataFile\\xlsx"));
         List<File> selectedFiles = fileChooser.showOpenMultipleDialog(null);
         if (selectedFiles != null){
             for(File file:selectedFiles){
@@ -105,7 +105,7 @@ public class GroupMangerController {
         abc.setTitle("Hello World");
         abc.setScene(new Scene(root));
         abc.show();
-        ((Node)e.getSource()).getScene().getWindow().hide();
+
 
     }
 
@@ -113,8 +113,9 @@ public class GroupMangerController {
         gui.backHome();
     }
     @FXML
-    void setAddWord(ActionEvent event) {
-
+    void setAddWord(ActionEvent event) throws Exception{
+        AddWordController addWordController = new AddWordController();
+        addWordController.show();
     }
 
     @FXML

@@ -96,7 +96,8 @@ SearchController {
     public void moveAddWord(ActionEvent e) throws Exception{
         AddWordController addWord = new AddWordController();
         addWord.show();
-
+        search2();
+        search(e);
     }
     @FXML
     void setDeleteWord(ActionEvent event) {
