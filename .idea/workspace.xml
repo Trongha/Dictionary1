@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dc3ecc4-e4f2-4c79-87ef-23900a27b47f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/Main.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/consoleView/Console.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/consoleView/Console.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/GUI.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/GUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/manager/AppManager.java" afterPath="$PROJECT_DIR$/src/manager/AppManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/GUI.java" afterPath="$PROJECT_DIR$/src/view/GUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/fxml/Search.fxml" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/fxml/Search.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ConfirmationBox.java" afterPath="$PROJECT_DIR$/src/view/ConfirmationBox.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/HomeController.java" afterPath="$PROJECT_DIR$/src/view/HomeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/GroupManager.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/GroupManager.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Home.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Home.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Search.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Search.fxml" />
     </list>
@@ -25,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AddWordController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddWordController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/AddWordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="-587">
+              <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,11 +63,34 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="331">
+              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Learning.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/fxml/Learning.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfirmationBox.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/ConfirmationBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,16 +136,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/Group.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -196,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/manager/GUI.java" />
         <option value="$PROJECT_DIR$/src/view/LearningController.java" />
         <option value="$PROJECT_DIR$/src/view/MessageBox.java" />
-        <option value="$PROJECT_DIR$/src/view/ConfirmationBox.java" />
         <option value="$PROJECT_DIR$/src/view/WelcomeController.java" />
         <option value="$PROJECT_DIR$/src/view/fxml/addWord.fxml" />
         <option value="$PROJECT_DIR$/src/view/fxml/AddWord.fxml" />
@@ -210,13 +221,15 @@
         <option value="$PROJECT_DIR$/src/view/SearchController.java" />
         <option value="$PROJECT_DIR$/src/view/GUI.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/view/HomeController.java" />
         <option value="$PROJECT_DIR$/src/view/fxml/Home.fxml" />
+        <option value="$PROJECT_DIR$/src/view/ConfirmationBox.java" />
+        <option value="$PROJECT_DIR$/src/view/HomeController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="347" />
+    <option name="x" value="672" />
+    <option name="y" value="114" />
     <option name="width" value="630" />
     <option name="height" value="735" />
   </component>
@@ -295,12 +308,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dictionary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dictionary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
@@ -617,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510536624448</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update giao diện">
+      <created>1510573387331</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1510573387331</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -703,7 +717,8 @@
     <MESSAGE value="giao diện lần 1" />
     <MESSAGE value="add Word ok" />
     <MESSAGE value="Sửa 1 chút phần thêm từ, buồn ngủ quá" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sửa 1 chút phần thêm từ, buồn ngủ quá" />
+    <MESSAGE value="update giao diện" />
+    <option name="LAST_COMMIT_MESSAGE" value="update giao diện" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -735,7 +750,7 @@
         <state relative-caret-position="340">
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
-            <marker date="1510525330431" expanded="true" signature="5317:5430" ph="..." />
+            <marker date="1510578391308" expanded="true" signature="5393:5506" ph="..." />
           </folding>
         </state>
       </provider>
@@ -768,7 +783,7 @@
         <state relative-caret-position="1785">
           <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding>
-            <marker date="1510569147665" expanded="true" signature="6867:6882" ph="..." />
+            <marker date="1510578676471" expanded="true" signature="7339:7354" ph="..." />
           </folding>
         </state>
       </provider>
@@ -824,7 +839,7 @@
         <state relative-caret-position="493">
           <caret line="29" column="82" lean-forward="false" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
           <folding>
-            <marker date="1510568671036" expanded="true" signature="3736:3757" ph="..." />
+            <marker date="1510578100592" expanded="true" signature="3736:3757" ph="..." />
           </folding>
         </state>
       </provider>
@@ -868,7 +883,7 @@
         <state relative-caret-position="595">
           <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding>
-            <marker date="1510525330431" expanded="true" signature="5317:5430" ph="..." />
+            <marker date="1510578391308" expanded="true" signature="5393:5506" ph="..." />
           </folding>
         </state>
       </provider>
@@ -881,7 +896,7 @@
         <state relative-caret-position="1479">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
-            <marker date="1510569147665" expanded="true" signature="6867:6882" ph="..." />
+            <marker date="1510578676471" expanded="true" signature="7339:7354" ph="..." />
           </folding>
         </state>
       </provider>
@@ -945,7 +960,7 @@
         <state relative-caret-position="493">
           <caret line="29" column="82" lean-forward="false" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
           <folding>
-            <marker date="1510568671036" expanded="true" signature="3736:3757" ph="..." />
+            <marker date="1510578100592" expanded="true" signature="3736:3757" ph="..." />
           </folding>
         </state>
       </provider>
@@ -969,7 +984,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1510525330431" expanded="true" signature="5317:5430" ph="..." />
+            <marker date="1510578391308" expanded="true" signature="5393:5506" ph="..." />
           </folding>
         </state>
       </provider>
@@ -992,7 +1007,7 @@
         <state relative-caret-position="1496">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <marker date="1510569147665" expanded="true" signature="6867:6882" ph="..." />
+            <marker date="1510578676471" expanded="true" signature="7339:7354" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1066,17 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/fxml/Learning.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1100,7 +1104,7 @@
         <state relative-caret-position="362">
           <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding>
-            <marker date="1510568671036" expanded="true" signature="3736:3757" ph="..." />
+            <marker date="1510578100592" expanded="true" signature="3736:3757" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1113,14 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/ConfirmationBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/GroupManager.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1129,7 +1125,7 @@
         <state relative-caret-position="17">
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding>
-            <marker date="1510525330431" expanded="true" signature="5317:5430" ph="..." />
+            <marker date="1510578391308" expanded="true" signature="5393:5506" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1210,16 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -1238,18 +1224,47 @@
         <state relative-caret-position="288">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
-            <marker date="1510569147665" expanded="true" signature="6867:6882" ph="..." />
+            <marker date="1510578676471" expanded="true" signature="7339:7354" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/AddWordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="104" column="0" lean-forward="true" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state relative-caret-position="-587">
+          <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/ConfirmationBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/Learning.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

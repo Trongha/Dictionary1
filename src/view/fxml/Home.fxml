@@ -82,7 +82,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="exit" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="exit" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#exit" prefHeight="50.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="23.0" />
                </font>
@@ -101,10 +101,9 @@
       <VBox>
          <children>
             <HBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="805.0" style="-fx-background-color: #1194F6;" />
-            <AnchorPane fx:id="paneView" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;">
                <children>
-                  <AnchorPane layoutY="-1.0" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;" />
-                  <AnchorPane fx:id="homeView" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;">
+                  <AnchorPane fx:id="homeView" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3f6;">
                      <children>
                         <Pane layoutX="2.0" layoutY="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="540.0" prefWidth="815.0">
                            <children>
@@ -117,6 +116,11 @@
                         </Pane>
                      </children>
                   </AnchorPane>
+                  <HBox prefHeight="25.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;" />
+                  <VBox prefHeight="540.0" prefWidth="23.0" style="-fx-background-color: #CEE3F6;" />
+                  <HBox layoutY="508.0" prefHeight="32.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;" />
+                  <VBox layoutX="792.0" prefHeight="540.0" prefWidth="23.0" style="-fx-background-color: #CEE3F6;" />
+                  <AnchorPane fx:id="paneView" layoutX="15.0" layoutY="15.0" prefHeight="510.0" prefWidth="785.0" style="-fx-background-color: #CEE3F6;" />
                </children>
             </AnchorPane>
             <HBox prefHeight="5.0" style="-fx-background-color: #1194F6;" />

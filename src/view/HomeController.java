@@ -37,23 +37,32 @@ public class HomeController {
     private AnchorPane homeView;
 
 
-
+    @FXML
     public void setDictionary(ActionEvent e) throws Exception{
         Parent root = new FXMLLoader(getClass().getResource("fxml/Search.fxml")).load();
         paneView.getChildren().setAll(root);
         paneView.toFront();
     }
-
+    @FXML
     public void setHome(ActionEvent e) throws Exception {
         homeView.toFront();
         homeView.setVisible(true);
     }
-
+    @FXML
     public void setWordManager(ActionEvent e) throws Exception {
         Parent root = new FXMLLoader(getClass().getResource("fxml/GroupManager.fxml")).load();
         paneView.getChildren().setAll(root);
     }
-
+    @FXML
+    void exit(ActionEvent event) {
+        Boolean save = ConfirmationBox.show("\n Lưu trước khi thoát ko?", "", "Yes", "No");
+        if (save){
+            System.out.println("Save");
+        }else {
+            System.out.println("Don't save");
+        }
+        GUI.myPrimaryStage.close();
+    }
     private void initialize(){
 
 

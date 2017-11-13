@@ -17,7 +17,7 @@ public class ConfirmationBox
 	static boolean btnYesClicked;
 
 	public static boolean show(String message, String title,
-		String textYes, String textNo)
+							   String textYes, String textNo)
 	{
 		btnYesClicked = false;
 

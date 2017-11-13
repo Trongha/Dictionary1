@@ -14,10 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox prefHeight="540.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
+<VBox prefHeight="510.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
    <children>
-      <HBox>
+      <HBox maxWidth="1.7976931348623157E308">
          <children>
             <AnchorPane>
                <children>
@@ -53,15 +52,15 @@
             </ButtonBar>
          </children>
       </HBox>
-      <HBox>
+      <AnchorPane>
          <children>
-            <ListView fx:id="listWord" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="433.0" prefWidth="200.0" />
-            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="426.0" prefWidth="372.0">
+            <ListView fx:id="listWord" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="200.0" />
+            <AnchorPane layoutX="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="494.0" prefWidth="585.0">
                <children>
-                  <TextArea fx:id="output2" prefHeight="433.0" prefWidth="615.0" />
-                  <Pane layoutX="171.0" layoutY="233.0" prefHeight="200.0" prefWidth="200.0">
+                  <TextArea fx:id="output2" layoutX="4.0" prefHeight="480.0" prefWidth="571.0" />
+                  <Pane layoutX="371.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutX="-5.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/dataFile/img/nguoc.jpg" />
                            </image>
@@ -71,6 +70,6 @@
                </children>
             </AnchorPane>
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </VBox>
