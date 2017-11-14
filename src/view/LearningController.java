@@ -95,33 +95,33 @@ public class LearningController {
         //groupChoice.setValue(AppManager.getGroups().get(0).getName());
     }
 
-    public void setListNumber(){
+    public void setListNumber() {
         numTest.getItems().clear();
-        for (int num = 1 ; num < maxNumTest ; num++){
+        for (int num = 1; num < maxNumTest; num++) {
             numTest.getItems().add(num);
         }
     }
 
     @FXML
     void userReady(ActionEvent event) {
-        if (ready.isSelected()){
+        if (ready.isSelected()) {
             groupChoice.setDisable(true);
             numTest.setDisable(true);
             start.setDisable(false);
-        }else {
+        } else {
             start.setDisable(true);
             groupChoice.setDisable(false);
             numTest.setDisable(false);
         }
     }
 
-    public void LearnLearn(){
+    public void LearnLearn() {
 
     }
 
     @FXML
     void startLearn(ActionEvent event) {
-        if(groupChoice.getValue() == null){
+        if (groupChoice.getValue() == null) {
             MessageBox.show("Chưa chọn bộ từ", "");
         } else if (numTest.getValue() == null) {
             MessageBox.show("Chưa chọn số lượng test", "");
@@ -136,61 +136,53 @@ public class LearningController {
         }
     }
 
-    public void unCheck(){
-        if (radio4.isSelected()){
+    public void unCheck() {
+        if (radio4.isSelected()) {
             radio4.setSelected(false);
-        }else if (radio3.isSelected()){
+        } else if (radio3.isSelected()) {
             radio3.setSelected(false);
-        }else if (radio2.isSelected()){
+        } else if (radio2.isSelected()) {
             radio2.setSelected(false);
-        }else if (radio1.isSelected()){
+        } else if (radio1.isSelected()) {
             radio1.setSelected(false);
         }
-        waiting.toFront();
     }
 
-    public void setAsk(){
-//        unCheck();
-        Test test = new Test(learnManager.getTests()[nowTest]);
-        keyAsk.setText((nowTest+1) + ". " + test.getKeyAsk().getEnglish());
+    public void setAsk() {
+        unCheck();
         waiting.toFront();
+        Test test = new Test(learnManager.getTests()[nowTest]);
+        keyAsk.setText((nowTest + 1) + ". " + test.getKeyAsk().getEnglish());
         radio1.setText(test.getDapAn()[0]);
-//        radio1.setSelected(false);
         radio2.setText(test.getDapAn()[1]);
-//        radio2.setSelected(false);
         radio3.setText(test.getDapAn()[2]);
-//        radio3.setSelected(false);
         radio4.setText(test.getDapAn()[3]);
-//        radio4.setSelected(false);
-
+        choiceDapAn.setDisable(false);
         scores.setText(String.format("Scores:\n%d/%d", learnManager.getScores(), learnManager.getMaxScores()));
 
     }
 
-    public void setKetQua(boolean rightOrWrong){
-        if (rightOrWrong == true){
+    public void setKetQua(boolean rightOrWrong) {
+        choiceDapAn.setDisable(true);
+        if (rightOrWrong == true) {
             trueIcon.toFront();
             learnManager.trueIncrease();
-
-        }else {
+        } else {
             falseIcon.toFront();
         }
 
     }
 
-    public void check(ActionEvent event){
+    public void check(ActionEvent event) {
         String dapan = "";
-        if (radio1.isSelected()){
-            dapan+=radio1.getText();
-        }
-        else if (radio2.isSelected()){
-            dapan+=radio2.getText();
-        }
-        else if (radio3.isSelected()){
-            dapan+=radio3.getText();
-        }
-        else if (radio4.isSelected()){
-            dapan+=radio4.getText();
+        if (radio1.isSelected()) {
+            dapan += radio1.getText();
+        } else if (radio2.isSelected()) {
+            dapan += radio2.getText();
+        } else if (radio3.isSelected()) {
+            dapan += radio3.getText();
+        } else if (radio4.isSelected()) {
+            dapan += radio4.getText();
         }
         setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapan));
 //        ketQua.setText(learn.getTests()[nowTest].checkDapAn(dapan) ? "Đúng" : "Sai");
@@ -202,15 +194,15 @@ public class LearningController {
         }*/
     }
 
-    public void next(ActionEvent event){
-        if (nowTest<learnManager.getNumOfTest())
+    public void next(ActionEvent event) {
+        if (nowTest < learnManager.getNumOfTest())
             nowTest++;
 //        unCheck();
         setAsk();
     }
 
     @FXML
-    void changeGroup(ActionEvent event) throws Exception{
+    void changeGroup(ActionEvent event) throws Exception {
         System.out.println("change");
         maxNumTest = manager.getGroup(groupChoice.getValue()).getListWords().size();
         System.out.println(maxNumTest);
@@ -218,7 +210,7 @@ public class LearningController {
     }
 
     @FXML
-    public void initialize(){
+    public void initialize() {
         prepare.toFront();
         setListChoice();
         groupChoice.valueProperty().addListener(new ChangeListener<String>() {
@@ -230,32 +222,16 @@ public class LearningController {
             }
         });
 
-        /*DapAn.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
-            @Override
-            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-                if (DapAn.selectedToggleProperty().toString() != null){
-                    String[] dapAnSelected = DapAn.selectedToggleProperty().toString().split("\'");
-                    setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapAnSelected[1]));
-                    //Value được chọn nằm ở giữa 2 dấu ' .
-                }
-
-            }
-        });*/
         DapAn.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
-
-                    String[] dapAnSelected =newVal.toString().split("\'");
-                            System.out.println(newVal + " was selected");
-            setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapAnSelected[1]));
-        }
-
+                    if(newVal!=null){
+                        String[] dapAnSelected = newVal.toString().split("\'");
+                        System.out.println(newVal + " was selected");
+                        setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapAnSelected[1]));
+                    }
+                }
         );
 
 
-//        learn.sinhTests();
-        /*System.out.println("Size List Learn : " + Learning.getListWords().size());
-
-
-        setAsk();*/
 
     }
 }

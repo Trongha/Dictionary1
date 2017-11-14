@@ -3,7 +3,6 @@ package manager;
 import data.Group;
 import data.Test;
 import data.Word;
-import org.apache.xmlbeans.impl.xb.ltgfmt.TestsDocument;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,17 +15,42 @@ public class Learning {
     private Test[] tests;
     private int numOfTest = 5;
     private static HashSet<String> keyAsks;
+    private int scores = 0;
+    private final int scorePerTest = 10;
+    private int maxScores;
 
     public Learning(){}
     public Learning(HashMap<String, Word> listWords, int numOfTest) {
         setListWords(listWords);
         this.numOfTest = numOfTest;
         keyAsks = new HashSet<String>();
+        this.scores = 0;
+        this.maxScores = numOfTest*scorePerTest;
     }
     public Learning(HashMap<String, Word> listWords) {
         setListWords(listWords);
         this.numOfTest = this.listWords.size()-1;
         keyAsks = new HashSet<String>();
+    }
+
+    public int getScores() {
+        return scores;
+    }
+
+    public void setScores(int scores) {
+        this.scores = scores;
+    }
+
+    public int getScorePerTest() {
+        return scorePerTest;
+    }
+
+    public int getMaxScores() {
+        return maxScores;
+    }
+
+    public void setMaxScores(int maxScores) {
+        this.maxScores = maxScores;
     }
 
     public int getNumOfTest() {
@@ -81,7 +105,7 @@ public class Learning {
     }
 
     public void sinhTests() {
-        String[] listKey = Group.getKeyOfHashMap(listWords);
+        String[] listKey = Group.getKeyOfHashMap(listWords);    //Lấy tất cả các từ tiếng anh
         System.out.println("Size list sinh test: " + listWords.size());
         tests = new Test[numOfTest];
         for (int i=0 ; i<numOfTest ; i++){
@@ -90,7 +114,9 @@ public class Learning {
 
     }
 
-
+    public void trueIncrease(){
+        this.scores+= this.scorePerTest;
+    }
 
     @Override
     public String toString() {

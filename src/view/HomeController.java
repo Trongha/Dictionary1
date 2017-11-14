@@ -11,6 +11,8 @@ import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+
 public class HomeController {
     @FXML
     private JFXButton home;
@@ -37,27 +39,36 @@ public class HomeController {
     private AnchorPane paneView;
 
 
-    @FXML
-    public void setDictionary(ActionEvent e) throws Exception{
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Search.fxml")).load();
-        paneView.getChildren().setAll(root);
-        paneView.toFront();
+    public void setPaneView(String path) {
+        try {
+            Parent root = new FXMLLoader(getClass().getResource(path)).load();
+            paneView.getChildren().setAll(root);
+            paneView.toFront();
+        } catch (IOException x) {
+            x.printStackTrace();
+        }
     }
+
+    @FXML
+    public void setDictionary(ActionEvent e) throws Exception {
+        this.setPaneView("fxml/Search.fxml");
+    }
+
     @FXML
     public void setHome(ActionEvent e) throws Exception {
         homeView.toFront();
-
     }
+
     @FXML
     public void setWordManager(ActionEvent e) throws Exception {
-        Parent root = new FXMLLoader(getClass().getResource("fxml/GroupManager.fxml")).load();
-        paneView.getChildren().setAll(root);
+        this.setPaneView("fxml/GroupManager.fxml");
     }
+
     @FXML
     void setLearn(ActionEvent event) throws Exception {
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Learning.fxml")).load();
-        paneView.getChildren().setAll(root);
+        this.setPaneView("fxml/Learning.fxml");
     }
+
     @FXML
     void exit(ActionEvent event) {
         /*Boolean save = ConfirmationBox.show("\n Lưu trước khi thoát ko?", "", "Yes", "No");
@@ -68,7 +79,9 @@ public class HomeController {
         }*/
         GUI.myPrimaryStage.close();
     }
-    private void initialize(){
-    }
 
+    @FXML
+    private void initialize() {
+        homeView.toFront();
+    }
 }
