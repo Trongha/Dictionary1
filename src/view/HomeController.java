@@ -39,6 +39,7 @@ public class HomeController {
     private AnchorPane paneView;
 
 
+
     public void setPaneView(String path) {
         try {
             Parent root = new FXMLLoader(getClass().getResource(path)).load();

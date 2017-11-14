@@ -21,7 +21,13 @@ import javafx.event.ActionEvent;
 public class LearningController {
 
     @FXML
+    private AnchorPane prepare;
+
+    @FXML
     private AnchorPane learning;
+
+    @FXML
+    private AnchorPane finish;
 
     @FXML
     private Label keyAsk;
@@ -63,9 +69,6 @@ public class LearningController {
     private Pane waiting;
 
     @FXML
-    private AnchorPane prepare;
-
-    @FXML
     private JFXCheckBox ready;
 
     @FXML
@@ -73,6 +76,12 @@ public class LearningController {
 
     @FXML
     private Label scores;
+
+    @FXML
+    private Label finishLabel;
+
+    @FXML
+    private JFXButton reLearn;
 
     @FXML
     private JFXComboBox<Integer> numTest;
@@ -159,7 +168,6 @@ public class LearningController {
         radio4.setText(test.getDapAn()[3]);
         choiceDapAn.setDisable(false);
         scores.setText(String.format("Scores:\n%d/%d", learnManager.getScores(), learnManager.getMaxScores()));
-
     }
 
     public void setKetQua(boolean rightOrWrong) {
@@ -194,11 +202,25 @@ public class LearningController {
         }*/
     }
 
+    public void setFinishLabel(){
+        finishLabel.setText(String.format("Điểm số của bạn là:\n%d/%d", learnManager.getScores(), learnManager.getMaxScores()));
+    }
     public void next(ActionEvent event) {
-        if (nowTest < learnManager.getNumOfTest())
+        if (nowTest < numTestWasChoose-1){
             nowTest++;
-//        unCheck();
-        setAsk();
+            setAsk();
+        }else{
+            setFinishLabel();
+            finish.toFront();
+        }
+    }
+
+
+    @FXML
+    void reLearn(ActionEvent event) {
+        ready.setSelected(false);
+        userReady(event);
+        prepare.toFront();
     }
 
     @FXML
