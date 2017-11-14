@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeController">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeController">
    <children>
-      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="625.0" prefWidth="185.0" style="-fx-background-color: #1194F6;">
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="625.0" prefWidth="185.0" style="-fx-background-color: #1194F6;" stylesheets="@../css/Home.css">
          <children>
             <JFXButton fx:id="home" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="20.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
@@ -100,7 +100,7 @@
       </VBox>
       <VBox>
          <children>
-            <HBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="80.0" prefWidth="805.0" style="-fx-background-color: #1194F6;" />
+            <HBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="805.0" style="-fx-background-color: #1194F6;" />
             <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3F6;">
                <children>
                   <AnchorPane fx:id="homeView" prefHeight="540.0" prefWidth="815.0" style="-fx-background-color: #CEE3f6;">
