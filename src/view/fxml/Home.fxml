@@ -13,7 +13,7 @@
 
 <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1005.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.HomeController">
    <children>
-      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="580.0" prefWidth="124.0" style="-fx-background-color: #1194F6;" stylesheets="@../css/Home.css">
+      <VBox fx:id="menuPane" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="580.0" prefWidth="124.0" style="-fx-background-color: #1194F6;" stylesheets="@../css/Home.css">
          <children>
             <Pane prefHeight="146.0" prefWidth="124.0">
                <children>

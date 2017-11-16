@@ -2,6 +2,11 @@ package view;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import data.Group;
+import data.Level;
+import data.Word;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,23 +14,27 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import manager.FlashcardsManager;
+
+import java.io.File;
 
 public class FlashcardController {
     @FXML
     private JFXButton next;
 
     @FXML
-    private JFXComboBox<?> level;
+    private JFXComboBox<String> levels;
 
     @FXML
     private JFXButton rotate;
 
     @FXML
-    private HBox vnFace;
+    private HBox vnFace, enFace, waiting;
 
     @FXML
     private ImageView imgVN;
@@ -34,13 +43,10 @@ public class FlashcardController {
     private Label vnText;
 
     @FXML
-    private HBox enFace;
+    private Label enText;
 
     @FXML
     private ImageView icon;
-
-    @FXML
-    private Label enText;
 
     @FXML
     private JFXButton close;
@@ -54,6 +60,11 @@ public class FlashcardController {
 
     private FrontPane frontPane = FrontPane.enFece;
 
+    private Group group= new Group();
+    private int numCard = 0;
+    private int indexCard = 1;
+    private FlashcardsManager cardManager ;
+
     @FXML
     void closeFlashcard(ActionEvent event) {
         System.out.println("Flashcard is Exit");
@@ -63,6 +74,11 @@ public class FlashcardController {
     @FXML
     void next(ActionEvent event) {
         System.out.println(">>>>>>>>>>>> next Flashcard!");
+        waiting.toFront();
+
+        newCard(cardManager.newWordToCard());
+        enFace.toFront();
+        frontPane = FrontPane.enFece;
     }
 
     @FXML
@@ -76,16 +92,64 @@ public class FlashcardController {
         }
     }
 
+    public void newCard(Word word){
 
-    public void show() throws Exception {
+        System.out.println("dkmdkdm" + word.getVietNam());
+
+        Word word1 = new Word(word.getEnglish(), word.getVietNam());
+        enText.setText((String)word.getEnglish());
+        vnText.setText((String)word.getVietNam());
+
+        if(!word.getPathImage().equals("")){
+            File f = new File(word.getPathImage());
+            imgVN.setImage(new Image(f.toURI().toString()));
+        }
+        if (word.getLevel() != Level.nothing){
+            levels.setValue(word.getLevel().toString());
+        }
+    }
+
+    public void loadLevels(){
+        for (Level level : Level.values()){
+            levels.getItems().add(level.toString());
+        }
+    }
+
+    public void show(Group _group, int _numCard) throws Exception {
+
+        System.out.println(_group.getName());
+
+        this.numCard = _numCard;
 
         stage.initModality(Modality.APPLICATION_MODAL);
+        cardManager = new FlashcardsManager(_group);
 
         Parent root = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
         GUI gui = new GUI();
         gui.setMyStyle(stage, root);
         stage.setTitle("Add Word");
         stage.setScene(new Scene(root));
+
         stage.showAndWait();
+
+
+
     }
+
+    public void initialize() {
+
+        loadLevels();
+
+        levels.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (levels.getItems().equals(Level.nothing)){
+                    next.setDisable(true);
+                }
+                else next.setDisable(false);
+            }
+        });
+
+    }
+
 }

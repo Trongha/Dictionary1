@@ -39,8 +39,8 @@ public class StudyController {
 
     @FXML
     void openFlashcard(ActionEvent event) throws Exception {
-        FlashcardController flashcardController = new FlashcardController();
-        flashcardController.show();
+      /*  FlashcardController flashcardController = new FlashcardController();
+        flashcardController.show();*/
     }
 
 

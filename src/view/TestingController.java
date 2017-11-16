@@ -3,6 +3,7 @@ package view;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXRadioButton;
 import data.Group;
 import data.Test;
 import javafx.beans.value.ChangeListener;
@@ -24,10 +25,15 @@ import manager.TestsManager;
 
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+
 public class TestingController {
 
     @FXML
     private AnchorPane prepare;
+
+    @FXML
+    private AnchorPane preparePane;
 
     @FXML
     private AnchorPane learning;
@@ -42,37 +48,19 @@ public class TestingController {
     private VBox choiceDapAn;
 
     @FXML
-    private RadioButton radio1;
+    private RadioButton radio1, radio2, radio3, radio4;
 
     @FXML
     private ToggleGroup DapAn;
 
     @FXML
-    private RadioButton radio2;
-
-    @FXML
-    private RadioButton radio3;
-
-    @FXML
-    private RadioButton radio4;
-
-    @FXML
-    private Button check;
-
-    @FXML
-    private Button next;
+    private Button check, next;
 
     @FXML
     private ImageView img;
 
     @FXML
-    private Pane trueIcon;
-
-    @FXML
-    private Pane falseIcon;
-
-    @FXML
-    private Pane waiting;
+    private Pane falseIcon, waiting, trueIcon;
 
     @FXML
     private JFXCheckBox ready;
@@ -91,16 +79,22 @@ public class TestingController {
 
     @FXML
     private JFXComboBox<Integer> numTest;
+    private String numTestPromptText = "";
 
     @FXML
     private JFXComboBox<String> groupChoice;
+    private String groupChoicePromptText = "";
 
+    @FXML
+    private JFXRadioButton checkToTest, checkToFlash;
+
+    @FXML
+    private ToggleGroup action;
 
     @FXML
     private JFXButton close;
 
     private Stage stage = new Stage();
-
 
     private int maxNumTest;
 
@@ -126,9 +120,13 @@ public class TestingController {
 
     public void refresh(){
         ready.setSelected(false);
+        userReady( new ActionEvent());
         start.setDisable(true);
-        groupChoice.setDisable(false);
-        numTest.setDisable(false);
+
+        groupChoice.setPromptText(groupChoicePromptText);
+        numTest.setPromptText(numTestPromptText);
+
+
         prepare.toFront();
         nowTest = 0;
     }
@@ -136,13 +134,14 @@ public class TestingController {
     @FXML
     void userReady(ActionEvent event) {
         if (ready.isSelected()) {
-            groupChoice.setDisable(true);
-            numTest.setDisable(true);
+//            HomeController.setMenuPaneDisable(true);
+            preparePane.setDisable(true);
             start.setDisable(false);
         } else {
             start.setDisable(true);
-            groupChoice.setDisable(false);
-            numTest.setDisable(false);
+//HomeController.setMenuPaneDisable(false);
+            preparePane.setDisable(false);
+
         }
     }
 
@@ -156,15 +155,28 @@ public class TestingController {
             MessageBox.show("Chưa chọn bộ từ", "");
         } else if (numTest.getValue() == null) {
             MessageBox.show("Chưa chọn số lượng test", "");
-        } else {
+        } else{
             numTestWasChoose = numTest.getValue();
             groupTest = manager.getGroup(groupChoice.getValue());
-            learnManager = new TestsManager(groupTest.getListWords(), numTestWasChoose);
-            learnManager.sinhTests();
-            learning.toFront();
-            waiting.toFront();
-            setAsk();
+            if (checkToTest.isSelected()){
+                System.out.println("----->goto Test");
+                learnManager = new TestsManager(groupTest.getListWords(), numTestWasChoose);
+                learnManager.sinhTests();
+                learning.toFront();
+                waiting.toFront();
+                setAsk();
+            }else {
+                System.out.println("----->goto Fashcard");
+                FlashcardController flashcardController = new FlashcardController();
+                try{
+                    flashcardController.show(groupTest, numTestWasChoose);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
+
     }
 
     public void unCheck() {
@@ -261,8 +273,8 @@ public class TestingController {
         gui.setMyStyle(stage, root);
         stage.setTitle("Kiểm Tra");
         stage.setScene(new Scene(root));
-
         stage.showAndWait();
+
     }
 
     public void close(ActionEvent e){
@@ -273,7 +285,26 @@ public class TestingController {
     @FXML
     public void initialize() {
         prepare.toFront();
+
+        action.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
+            if(newVal != null){
+                String ifo = newVal.toString();
+                if (ifo.indexOf(checkToTest.getId()) > 0){
+                    System.out.println("choice Test");
+                    groupChoicePromptText = "Nhóm muốn kiểm tra: ";
+                    numTestPromptText = "Số câu hỏi: ";
+                    refresh();
+                }else if(ifo.indexOf(checkToFlash.getId()) > 0){
+                    System.out.println("choice Flashcard");
+                    groupChoicePromptText = "Nhóm muốn học: ";
+                    numTestPromptText = "Số thẻ: ";
+                    refresh();
+                }
+            }
+        });
         setListChoice();
+
+
         groupChoice.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -285,14 +316,13 @@ public class TestingController {
 
         DapAn.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
                     if(newVal!=null){
+                        System.out.println(newVal.toString());
                         String[] dapAnSelected = newVal.toString().split("\'");
                         System.out.println(newVal + " was selected");
                         setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapAnSelected[1]));
                     }
                 }
         );
-
-
 
     }
 }

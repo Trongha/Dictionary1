@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -16,9 +17,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="515.0" prefWidth="795.0" style="-fx-background-color: #1194F6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TestingController">
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TestingController">
    <children>
-      <StackPane layoutX="5.0" layoutY="2.0">
+      <StackPane layoutX="1.0" layoutY="10.0">
          <children>
             <AnchorPane fx:id="finish" prefHeight="510.0" prefWidth="785.0" style="-fx-background-color: #CEE3F6;">
                <children>
@@ -129,8 +131,18 @@
                         <Font size="24.0" />
                      </font>
                   </JFXButton>
-                  <JFXComboBox fx:id="numTest" labelFloat="true" layoutX="212.0" layoutY="235.0" prefHeight="25.0" prefWidth="80.0" promptText="Số Câu Hỏi" />
-                  <JFXComboBox fx:id="groupChoice" labelFloat="true" layoutX="180.0" layoutY="144.0" onAction="#changeGroup" prefHeight="25.0" prefWidth="231.0" promptText="Bộ từ muốn học" />
+                  <AnchorPane fx:id="preparePane" layoutX="118.0" layoutY="130.0" prefHeight="143.0" prefWidth="550.0">
+                     <children>
+                        <JFXComboBox fx:id="numTest" labelFloat="true" layoutX="351.0" layoutY="91.0" prefHeight="25.0" prefWidth="80.0" promptText="Số Câu Hỏi" />
+                        <JFXComboBox fx:id="groupChoice" labelFloat="true" layoutX="319.0" onAction="#changeGroup" prefHeight="25.0" prefWidth="231.0" promptText="Chọn bộ từ" />
+                        <JFXRadioButton fx:id="checkToTest" layoutY="26.0" selected="true" text=" Kiểm tra">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="action" />
+                           </toggleGroup>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="checkToFlash" layoutY="108.0" text="FlashCard" toggleGroup="$action" />
+                     </children>
+                  </AnchorPane>
                   <JFXCheckBox fx:id="ready" layoutX="110.0" layoutY="343.0" onAction="#userReady" prefHeight="78.0" prefWidth="204.0" text="I'm Ready!" AnchorPane.bottomAnchor="89.0" AnchorPane.rightAnchor="471.0" AnchorPane.topAnchor="343.0">
                      <font>
                         <Font size="25.0" />
@@ -143,7 +155,7 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <JFXButton fx:id="close" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="736.0" layoutY="3.0" onAction="#close" prefHeight="32.0" prefWidth="45.0" ripplerFill="RED" text=" " textFill="RED">
+      <JFXButton fx:id="close" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="732.0" layoutY="11.0" onAction="#close" prefHeight="32.0" prefWidth="45.0" ripplerFill="RED" text=" " textFill="RED">
          <font>
             <Font name="Material Icons" size="24.0" />
          </font>

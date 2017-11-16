@@ -1,33 +1,25 @@
 package view;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class HomeController {
-    @FXML
-    private JFXButton home;
 
     @FXML
-    private JFXButton dictionary;
+    private static VBox menuPane;
 
     @FXML
-    private JFXButton wordManager;
+    private JFXButton home, dictionary, wordManager, learn, statistical, exit;
 
-    @FXML
-    private JFXButton learn;
-
-    @FXML
-    private JFXButton statistical;
-
-    @FXML
-    private JFXButton exit;
 
     @FXML
     private AnchorPane homeView;
@@ -82,6 +74,14 @@ public class HomeController {
             System.out.println("Don't save");
         }*/
         GUI.myPrimaryStage.close();
+    }
+
+    public VBox getMenuPane() {
+        return menuPane;
+    }
+
+    public static void setMenuPaneDisable(boolean disable) {
+        menuPane.setDisable(disable);
     }
 
     @FXML
