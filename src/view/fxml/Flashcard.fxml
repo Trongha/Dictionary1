@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="enFace" prefHeight="190.0" prefWidth="380.0" style="-fx-background-color: #04B404;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="190.0" prefWidth="380.0" style="-fx-background-color: #04B404;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FlashcardController">
    <children>
       <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="180.0" prefWidth="370.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
          <children>
@@ -73,10 +73,11 @@
             </StackPane>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="close" layoutX="348.0" onAction="#close" text="X" textAlignment="CENTER" textFill="RED">
+      <JFXButton fx:id="close" layoutX="348.0" onAction="#closeFlashcard" text="X" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="Copperplate Gothic Bold" size="15.0" />
          </font>
       </JFXButton>
+      <Circle fill="WHITE" layoutX="6.0" layoutY="9.0" radius="3.0" stroke="WHITE" strokeType="INSIDE" />
    </children>
 </AnchorPane>

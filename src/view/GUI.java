@@ -47,7 +47,7 @@ public class GUI extends Application {
 
     public void setMyStyle(Stage primaryStage, Parent root){
         primaryStage.initStyle(StageStyle.UNDECORATED );
-
+        primaryStage.setResizable(false);
         //Di chuyển cửa sổ
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -75,7 +75,6 @@ public class GUI extends Application {
 
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setResizable(false);
         primaryStage.show();
 
     }

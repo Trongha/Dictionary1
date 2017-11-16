@@ -15,7 +15,7 @@ public class StudyController {
     private JFXButton test;
 
     @FXML
-    private JFXButton test1;
+    private JFXButton flashcard;
 
 
     private Parent testPane;
@@ -23,12 +23,12 @@ public class StudyController {
 
 
     public void loadParent() {
-        try {
+/*        try {
             testPane = new FXMLLoader(getClass().getResource("fxml/Testing.fxml")).load();
             studyPane = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
         }catch (IOException e){
             e.printStackTrace();
-        }
+        }*/
     }
 
     @FXML
@@ -38,8 +38,9 @@ public class StudyController {
     }
 
     @FXML
-    void setStudy(ActionEvent event) {
-
+    void openFlashcard(ActionEvent event) throws Exception {
+        FlashcardController flashcardController = new FlashcardController();
+        flashcardController.show();
     }
 
 

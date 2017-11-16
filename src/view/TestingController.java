@@ -9,6 +9,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -260,13 +261,13 @@ public class TestingController {
         gui.setMyStyle(stage, root);
         stage.setTitle("Kiểm Tra");
         stage.setScene(new Scene(root));
-        stage.setResizable(false);
+
         stage.showAndWait();
     }
 
     public void close(ActionEvent e){
-        System.out.println("da nhan");
-        this.stage.close();
+        System.out.println("Testing is Exit");
+        ((Node)e.getSource()).getScene().getWindow().hide();
     }
 
     @FXML

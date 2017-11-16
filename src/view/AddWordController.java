@@ -87,7 +87,7 @@ public class AddWordController {
             AppManager manager = new AppManager();
             manager.addWord(new Word(english, vietnam), groupChoice.getValue());
             MessageBox.show("\nAdd Complete!", "");
-            stage.close();
+//            stage.close();
             ((Node)event.getSource()).getScene().getWindow().hide();
         }
     }
@@ -99,7 +99,6 @@ public class AddWordController {
         Parent root = new FXMLLoader(getClass().getResource("fxml/AddWord.fxml")).load();
         stage.setTitle("Add Word");
         stage.setScene(new Scene(root));
-        stage.setResizable(false);
         stage.showAndWait();
     }
 

@@ -2,41 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dc3ecc4-e4f2-4c79-87ef-23900a27b47f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/Level.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/TestingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/fxml/Study.fxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dictionary/manager/Learning.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/LearningController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/fxml/Learning.fxml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/Main.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/data/Input.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/data/Input.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/data/Output.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/data/Output.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/data/Word.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/data/Word.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/manager/FlashcardsManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/view/FlashcardController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/GUI.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/GUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/GroupMangerController.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/GroupMangerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/SearchController.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/SearchController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/Place.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/Place.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/Region Of The World.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/Region Of The World.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/Region Of Viet Nam.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/Region Of Viet Nam.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/Steel.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/Steel.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/building dictionary.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/building dictionary.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/family.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/family.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/fxml/Search.fxml" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/fxml/Search.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Input.java" afterPath="$PROJECT_DIR$/src/data/Input.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Output.java" afterPath="$PROJECT_DIR$/src/data/Output.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Word.java" afterPath="$PROJECT_DIR$/src/data/Word.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/AddWordController.java" afterPath="$PROJECT_DIR$/src/view/AddWordController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/GUI.java" afterPath="$PROJECT_DIR$/src/view/GUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/GroupMangerController.java" afterPath="$PROJECT_DIR$/src/view/GroupMangerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/HomeController.java" afterPath="$PROJECT_DIR$/src/view/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/SearchController.java" afterPath="$PROJECT_DIR$/src/view/SearchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Home.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Home.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Search.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Search.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/manager/Learning.java" afterPath="$PROJECT_DIR$/src/manager/TestsManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/LearningController.java" afterPath="$PROJECT_DIR$/src/view/StudyController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/fxml/Learning.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Testing.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/StudyController.java" afterPath="$PROJECT_DIR$/src/view/StudyController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/TestingController.java" afterPath="$PROJECT_DIR$/src/view/TestingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Flashcard.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Flashcard.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Study.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Study.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,8 +29,8 @@
       <file leaf-file-name="SearchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/SearchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="104" column="7" lean-forward="true" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -66,8 +41,8 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="328">
+              <caret line="83" column="33" lean-forward="false" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
@@ -75,18 +50,17 @@
                 <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
                 <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
                 <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
-                <element signature="method#exit#0;class#HomeController#0" expanded="false" />
                 <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudyController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="StudyController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/StudyController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,22 +71,20 @@
       <file leaf-file-name="AddWordController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/AddWordController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-389">
-              <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="38" />
+            <state relative-caret-position="189">
+              <caret line="90" column="12" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3067#3068#0" expanded="true" />
-                <element signature="e#3098#3099#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/TestingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="268" column="27" lean-forward="true" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
+            <state relative-caret-position="172">
+              <caret line="268" column="43" lean-forward="false" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setListChoice#0;class#TestingController#0" expanded="false" />
@@ -136,37 +108,73 @@
       </file>
       <file leaf-file-name="Study.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/fxml/Study.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="67">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlashcardsManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/manager/FlashcardsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Testing.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/fxml/Testing.fxml">
+      <file leaf-file-name="Flashcard.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/fxml/Flashcard.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1510798088431" expanded="true" signature="764:4823" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="921:4464" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="941:4444" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="1153:1404" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="1178:1295" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="1317:1379" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="1736:1915" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="1761:1890" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="2000:4423" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="2026:4398" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="4586:4702" ph="..." />
+                <marker date="1510798088431" expanded="true" signature="4602:4683" ph="..." />
+              </folding>
+            </state>
+          </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="710">
-              <caret line="98" column="14" lean-forward="false" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
+            <state relative-caret-position="131">
+              <caret line="71" column="70" lean-forward="false" selection-start-line="71" selection-start-column="70" selection-end-line="71" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlashcardController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/FlashcardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#FrontPane#0;class#FlashcardController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -177,8 +185,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -190,6 +198,7 @@
       <find>myPath</find>
       <find>E:\\java\\Dictionary\\</find>
       <find>dapan</find>
+      <find>enFace</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -210,8 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/view/view.fxml" />
-        <option value="$PROJECT_DIR$/src/ConsoleView/Console.java" />
         <option value="$PROJECT_DIR$/src/view/search.fxml" />
         <option value="$PROJECT_DIR$/src/view/abc.fxml" />
         <option value="$PROJECT_DIR$/src/view/Welcome.fxml" />
@@ -247,7 +254,6 @@
         <option value="$PROJECT_DIR$/src/view/GroupMangerController.java" />
         <option value="$PROJECT_DIR$/src/view/fxml/Home.fxml" />
         <option value="$PROJECT_DIR$/src/view/ConfirmationBox.java" />
-        <option value="$PROJECT_DIR$/src/view/AddWordController.java" />
         <option value="$PROJECT_DIR$/src/manager/Learning.java" />
         <option value="$PROJECT_DIR$/src/view/LearningController.java" />
         <option value="$PROJECT_DIR$/src/data/Level.java" />
@@ -259,14 +265,18 @@
         <option value="$PROJECT_DIR$/src/view/fxml/Study.fxml" />
         <option value="$PROJECT_DIR$/src/view/HomeController.java" />
         <option value="$PROJECT_DIR$/src/view/GUI.java" />
-        <option value="$PROJECT_DIR$/src/view/StudyController.java" />
+        <option value="$PROJECT_DIR$/src/manager/FlashcardsManager.java" />
+        <option value="$PROJECT_DIR$/src/view/AddWordController.java" />
         <option value="$PROJECT_DIR$/src/view/TestingController.java" />
+        <option value="$PROJECT_DIR$/src/view/FlashcardController.java" />
+        <option value="$PROJECT_DIR$/src/view/StudyController.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="672" />
-    <option name="width" value="630" />
+    <option name="x" value="-30" />
+    <option name="y" value="153" />
+    <option name="width" value="688" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -302,7 +312,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -316,19 +325,6 @@
               <item name="Dictionary" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dictionary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dictionary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dictionary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Dictionary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Dictionary" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="dataFile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Dictionary" type="b2602c69:ProjectViewProjectNode" />
@@ -359,6 +355,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -709,7 +706,14 @@
       <option name="project" value="LOCAL" />
       <updated>1510656045935</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="vẽ xong thẻ&#10;sửa cấu trúc Study">
+      <created>1510794078876</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1510794078876</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -802,7 +806,9 @@
     <MESSAGE value="Có thể coi là xong Learn" />
     <MESSAGE value="Thêm một chút css" />
     <MESSAGE value="chinh sua in/out" />
-    <option name="LAST_COMMIT_MESSAGE" value="chinh sua in/out" />
+    <MESSAGE value="vẽ xong thẻ&#10;sửa cấu trúc Study" />
+    <MESSAGE value="Chạy được 1 flashcard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chạy được 1 flashcard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -815,59 +821,26 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/view/AddWordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/fxml/Testing.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/GroupMangerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/GroupManager.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/fxml/Home.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/Home.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
@@ -889,7 +862,6 @@
             <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
             <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
             <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
-            <element signature="method#exit#0;class#HomeController#0" expanded="false" />
             <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
           </folding>
         </state>
@@ -906,9 +878,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/AddWord.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -916,6 +885,9 @@
             <marker date="1510531713333" expanded="true" signature="2597:2612" ph="..." />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/GUI.java">
@@ -929,36 +901,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="82" lean-forward="false" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/fxml/Testing.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/Testing.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/GroupManager.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/AddWordController.java">
@@ -967,21 +939,19 @@
           <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/Home.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
@@ -996,9 +966,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +985,7 @@
         <state relative-caret-position="68">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1033,7 +1001,6 @@
             <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
             <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
             <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
-            <element signature="method#exit#0;class#HomeController#0" expanded="false" />
             <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
           </folding>
         </state>
@@ -1047,14 +1014,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/Search.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/Object.java">
@@ -1087,20 +1054,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/GroupManager.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="20" column="25" lean-forward="false" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/fxml/AddWord.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/AddWord.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1108,6 +1072,9 @@
             <marker date="1510531713333" expanded="true" signature="2597:2612" ph="..." />
           </folding>
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/manager/AppManager.java">
@@ -1125,14 +1092,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/Home.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2159">
           <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data/Test.java">
@@ -1148,7 +1115,7 @@
         <state relative-caret-position="1972">
           <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1173,10 +1140,10 @@
             <element signature="method#Word#2;class#Word#0" expanded="false" />
             <element signature="method#setEnglish#0;class#Word#0" expanded="false" />
             <element signature="method#setVietNam#0;class#Word#0" expanded="false" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="false" />
+            <element signature="e#1024#1025#0" expanded="false" />
+            <element signature="e#1065#1066#0" expanded="false" />
+            <element signature="e#1099#1100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1225,14 +1192,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/Welcome.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/WelcomeController.java">
@@ -1245,50 +1212,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/SearchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="104" column="7" lean-forward="true" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="104" column="7" lean-forward="false" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="76" column="47" lean-forward="false" selection-start-line="76" selection-start-column="47" selection-end-line="76" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/fxml/Study.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/fxml/Testing.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="98" column="14" lean-forward="false" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/Flashcard.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="98" column="14" lean-forward="false" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510798088431" expanded="true" signature="764:4823" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="921:4464" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="941:4444" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="1153:1404" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="1178:1295" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="1317:1379" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="1736:1915" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="1761:1890" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="2000:4423" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="2026:4398" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="4586:4702" ph="..." />
+            <marker date="1510798088431" expanded="true" signature="4602:4683" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="71" column="70" lean-forward="false" selection-start-line="71" selection-start-column="70" selection-end-line="71" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/FlashcardsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+        <state relative-caret-position="328">
+          <caret line="83" column="33" lean-forward="false" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
@@ -1296,38 +1284,25 @@
             <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
             <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
             <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
-            <element signature="method#exit#0;class#HomeController#0" expanded="false" />
             <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/StudyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/AddWordController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
-          <caret line="51" column="1" lean-forward="false" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="38" />
+        <state relative-caret-position="189">
+          <caret line="90" column="12" lean-forward="true" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3067#3068#0" expanded="true" />
-            <element signature="e#3098#3099#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/TestingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="268" column="27" lean-forward="true" selection-start-line="268" selection-start-column="27" selection-end-line="268" selection-end-column="27" />
+        <state relative-caret-position="172">
+          <caret line="268" column="43" lean-forward="false" selection-start-line="268" selection-start-column="43" selection-end-line="268" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setListChoice#0;class#TestingController#0" expanded="false" />
@@ -1344,6 +1319,38 @@
             <element signature="method#next#0;class#TestingController#0" expanded="false" />
             <element signature="method#changeGroup#0;class#TestingController#0" expanded="false" />
             <element signature="method#initialize#0;class#TestingController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/FlashcardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#FrontPane#0;class#FlashcardController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/Study.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/StudyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="25" column="2" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
