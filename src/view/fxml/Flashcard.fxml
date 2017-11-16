@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.icons525.Icons525View?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="enFace" prefHeight="190.0" prefWidth="380.0" style="-fx-background-color: #04B404;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="180.0" prefWidth="370.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
+         <children>
+            <JFXButton fx:id="next" alignment="CENTER" contentDisplay="RIGHT" disable="true" graphicTextGap="5.0" layoutX="257.0" layoutY="138.0" onAction="#next" prefWidth="62.0" text="next" textFill="#f21313">
+               <graphic>
+                  <FontAwesomeIconView fill="#f21313" glyphName="ANGLE_RIGHT" size="22" />
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="level" focusColor="#083edd" layoutX="151.0" layoutY="141.0" prefHeight="25.0" prefWidth="62.0" promptText="Mức độ" />
+            <JFXButton fx:id="rotate" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="58.0" layoutY="144.0" onAction="#rotate" text=" ">
+               <graphic>
+                  <Icons525View fill="#f21313" glyphName="REFRESH" size="20" textAlignment="CENTER" />
+               </graphic>
+            </JFXButton>
+            <StackPane focusTraversable="true" prefHeight="145.0" prefWidth="370.0">
+               <children>
+                  <HBox fx:id="vnFace" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 0 0;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="145.0" prefWidth="145.0" style="-fx-background-radius: 25 0 0 0;">
+                           <children>
+                              <ImageView fx:id="imgVN" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../data/dataFile/img/Autumn.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label fx:id="vnText" alignment="CENTER" prefHeight="143.0" prefWidth="226.0" text="Tiếng Việt" textAlignment="CENTER" textFill="#00129e" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="enFace" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 0 0;">
+                     <children>
+                        <AnchorPane prefHeight="145.0" prefWidth="61.0">
+                           <children>
+                              <ImageView fx:id="icon" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../resrc/icon_img/See%20you.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="enText" alignment="CENTER" prefHeight="145.0" prefWidth="277.0" style="-fx-background-color: #D0F5A9;" text="Tiếng Anh" textAlignment="CENTER" textFill="#00129e" wrapText="true" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="close" layoutX="348.0" onAction="#close" text="X" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

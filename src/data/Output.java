@@ -16,7 +16,7 @@ import java.util.Map;
  * Created by Trong on 4/11/2017.
  */
 public class Output {
-    private String path = "E:\\Java\\testLinhTinh\\src\\outSrc\\";
+    private String path = "E:\\java\\Dictionary\\src\\data\\dataFile\\outxlsx\\";
     private String tail = ".xlsx";
 
     public Output(){}
@@ -43,10 +43,22 @@ public class Output {
         this.tail = tail;
     }
 
+    public void ghiTieuDe(XSSFSheet sheet){
+        Row row = sheet.createRow(0);
+        int cellNum = 0;
+        row.createCell(cellNum++).setCellValue("English");
+        row.createCell(cellNum++).setCellValue("Tieng Viet");
+        row.createCell(cellNum++).setCellValue("Level");
+    }
+
     public void outFile(HashMap<String, Word> map){
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet();
-        int rowNum = 0;
+
+        ghiTieuDe(sheet);
+
+        int rowNum = 1;
+        //Ghi tieu de:
 
         for(Map.Entry entry : map.entrySet()){
             Row row = sheet.createRow(rowNum++);
@@ -54,6 +66,7 @@ public class Output {
             Word word =(Word)entry.getValue();
             row.createCell(cellNum++).setCellValue(word.getEnglish());
             row.createCell(cellNum++).setCellValue(word.getVietNam());
+            row.createCell(cellNum++).setCellValue(word.getLevel().toString());
         }
         try{
             FileOutputStream out = new FileOutputStream(new File(this.path));

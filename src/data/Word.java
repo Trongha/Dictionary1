@@ -4,9 +4,11 @@ package data;
  * Created by Trong on 28/10/2017.
  */
 public class Word {
+
     private String English = "";
     private String VietNam = "";
     private String pathImage = "";
+    private Level level = Level.nothing;
 
     public Word(){}
     public Word(String english, String vietNam) {
@@ -39,6 +41,13 @@ public class Word {
         this.VietNam = vietNam;
     }
 
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
 
     public String getPathImage() {
         return pathImage;

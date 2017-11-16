@@ -8,17 +8,22 @@ import data.Test;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import manager.AppManager;
-import manager.Learning;
+import manager.TestsManager;
 
 import javafx.event.ActionEvent;
 
-public class LearningController {
+public class TestingController {
 
     @FXML
     private AnchorPane prepare;
@@ -89,9 +94,16 @@ public class LearningController {
     @FXML
     private JFXComboBox<String> groupChoice;
 
+
+    @FXML
+    private JFXButton close;
+
+    private Stage stage = new Stage();
+
+
     private int maxNumTest;
 
-    private Learning learnManager;
+    private TestsManager learnManager;
     private AppManager manager = new AppManager();
     private int nowTest = 0;
     private Group groupTest;
@@ -109,6 +121,15 @@ public class LearningController {
         for (int num = 1; num < maxNumTest; num++) {
             numTest.getItems().add(num);
         }
+    }
+
+    public void refresh(){
+        ready.setSelected(false);
+        start.setDisable(true);
+        groupChoice.setDisable(false);
+        numTest.setDisable(false);
+        prepare.toFront();
+        nowTest = 0;
     }
 
     @FXML
@@ -137,7 +158,7 @@ public class LearningController {
         } else {
             numTestWasChoose = numTest.getValue();
             groupTest = manager.getGroup(groupChoice.getValue());
-            learnManager = new Learning(groupTest.getListWords(), numTestWasChoose);
+            learnManager = new TestsManager(groupTest.getListWords(), numTestWasChoose);
             learnManager.sinhTests();
             learning.toFront();
             waiting.toFront();
@@ -205,6 +226,7 @@ public class LearningController {
     public void setFinishLabel(){
         finishLabel.setText(String.format("Điểm số của bạn là:\n%d/%d", learnManager.getScores(), learnManager.getMaxScores()));
     }
+
     public void next(ActionEvent event) {
         if (nowTest < numTestWasChoose-1){
             nowTest++;
@@ -215,12 +237,9 @@ public class LearningController {
         }
     }
 
-
     @FXML
     void reLearn(ActionEvent event) {
-        ready.setSelected(false);
-        userReady(event);
-        prepare.toFront();
+        this.refresh();
     }
 
     @FXML
@@ -229,6 +248,25 @@ public class LearningController {
         maxNumTest = manager.getGroup(groupChoice.getValue()).getListWords().size();
         System.out.println(maxNumTest);
         setListNumber();
+    }
+
+    public void show() throws Exception {
+
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Testing.fxml")).load();
+
+        GUI gui = new GUI();
+        gui.setMyStyle(stage, root);
+        stage.setTitle("Kiểm Tra");
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.showAndWait();
+    }
+
+    public void close(ActionEvent e){
+        System.out.println("da nhan");
+        this.stage.close();
     }
 
     @FXML

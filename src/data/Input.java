@@ -39,6 +39,12 @@ public class Input {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
             XSSFSheet sheet = workbook.getSheetAt( 0);
             Iterator<Row> rowIterator = sheet.iterator();
+
+            //Bor dongf ddaafu
+            if (rowIterator.hasNext()){
+                Row row = rowIterator.next();
+            }
+
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
                 Iterator<Cell> cellIterator = row.cellIterator();

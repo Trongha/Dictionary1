@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 
@@ -50,16 +51,29 @@ SearchController {
     @FXML
     private ImageView image;
 
+
+    @FXML
+    private Label outputE;
+
+
+    @FXML
+    private Label outVN;
+
     @FXML
     private ListView<String> listWord;
     private ObservableList<String> listWordData = FXCollections.observableArrayList();
-
-
+    public static Parent searchPane;
     public SearchController() {    }
 
+    public static Parent getSearchPane() {
+        return searchPane;
+    }
+
+
+
     public void reOutput2(Word word){
-        output2.clear();
-        output2.appendText(word.toString());
+        outputE.setText(word.getEnglish());
+        outVN.setText(word.getVietNam());
         if (AppManager.getAllGroup().getListWords().containsKey(word.getEnglish())){
             deleteWord.setDisable(false);
             editWord.setDisable(false);
@@ -70,12 +84,14 @@ SearchController {
         File f = new File(word.getPathImage());
         image.setImage(new Image(f.toURI().toString()));
     }
-
-
+//Search chính xác 1 từ
     public void search(ActionEvent e) {
-        Word word = manager.search(input.getText());
-        String s = String.format("%s", word.toString());
-        reOutput2(word);/*
+        if(!input.getText().trim().equals("") && input.getText()!=null){
+            Word word = manager.search(input.getText());
+            String s = String.format("%s", word.toString());
+            reOutput2(word);
+        }
+       /*
         System.out.println(s);*/
     }
 
@@ -89,8 +105,9 @@ SearchController {
         listWordData.addAll(wordEnglishs);
         listWord.setItems(listWordData);
     }
-    public void search2(ActionEvent e) {
-        search2();
+    public void search2(ActionEvent e)
+    {
+            search2();
     }
 
     public void moveAddWord(ActionEvent e) throws Exception{

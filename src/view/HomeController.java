@@ -3,11 +3,8 @@ package view;
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.NodeOrientation;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 import javafx.event.ActionEvent;
 
@@ -38,21 +35,25 @@ public class HomeController {
     @FXML
     private AnchorPane paneView;
 
+    private Parent searchPane;
+    private Parent managePane;
+    private Parent studyPane;
 
 
-    public void setPaneView(String path) {
+    public void loadParent() {
         try {
-            Parent root = new FXMLLoader(getClass().getResource(path)).load();
-            paneView.getChildren().setAll(root);
-            paneView.toFront();
-        } catch (IOException x) {
-            x.printStackTrace();
+            searchPane = new FXMLLoader(getClass().getResource("fxml/Search.fxml")).load();
+            managePane = new FXMLLoader(getClass().getResource("fxml/GroupManager.fxml")).load();
+            studyPane = new FXMLLoader(getClass().getResource("fxml/Study.fxml")).load();
+        }catch (IOException e){
+            e.printStackTrace();
         }
     }
 
     @FXML
     public void setDictionary(ActionEvent e) throws Exception {
-        this.setPaneView("fxml/Search.fxml");
+        paneView.getChildren().setAll(searchPane);
+        paneView.toFront();
     }
 
     @FXML
@@ -62,12 +63,14 @@ public class HomeController {
 
     @FXML
     public void setWordManager(ActionEvent e) throws Exception {
-        this.setPaneView("fxml/GroupManager.fxml");
+        paneView.getChildren().setAll(managePane);
+        paneView.toFront();
     }
 
     @FXML
     void setLearn(ActionEvent event) throws Exception {
-        this.setPaneView("fxml/Learning.fxml");
+        paneView.getChildren().setAll(studyPane);
+        paneView.toFront();
     }
 
     @FXML
@@ -83,6 +86,7 @@ public class HomeController {
 
     @FXML
     private void initialize() {
+        loadParent();
         homeView.toFront();
     }
 }

@@ -10,7 +10,7 @@ import java.util.HashSet;
 /**
  * Created by Trong on 4/11/2017.
  */
-public class Learning {
+public class TestsManager {
     private static HashMap<String, Word> listWords;
     private Test[] tests;
     private int numOfTest = 5;
@@ -19,15 +19,15 @@ public class Learning {
     private final int scorePerTest = 10;
     private int maxScores;
 
-    public Learning(){}
-    public Learning(HashMap<String, Word> listWords, int numOfTest) {
+    public TestsManager(){}
+    public TestsManager(HashMap<String, Word> listWords, int numOfTest) {
         setListWords(listWords);
         this.numOfTest = numOfTest;
         keyAsks = new HashSet<String>();
         this.scores = 0;
         this.maxScores = numOfTest*scorePerTest;
     }
-    public Learning(HashMap<String, Word> listWords) {
+    public TestsManager(HashMap<String, Word> listWords) {
         setListWords(listWords);
         this.numOfTest = this.listWords.size()-1;
         keyAsks = new HashSet<String>();
@@ -67,7 +67,7 @@ public class Learning {
 
 
     public static void setListWords(HashMap<String, Word> listWords) {
-        Learning.listWords = listWords;
+        TestsManager.listWords = listWords;
         System.out.println("_______________Set List Words to Learn COmplete!");
     }
 

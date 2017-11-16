@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="510.0" prefWidth="785.0" style="-fx-background-color: #CEE3F6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StudyController">
+   <children>
+      <JFXButton fx:id="test" layoutX="332.0" layoutY="100.0" onAction="#setTest" text="Kiểm tra" textFill="#f50000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="test1" layoutX="332.0" layoutY="204.0" onAction="#setStudy" text="Ôn tập" textFill="#f50000">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

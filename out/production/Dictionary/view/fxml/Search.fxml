@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +11,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -45,7 +45,7 @@
                   </JFXButton>
                   <JFXButton fx:id="deleteWord" contentDisplay="CENTER" disable="true" onAction="#setDeleteWord" prefHeight="13.0" prefWidth="39.0" text=" ">
                      <graphic>
-                        <FontAwesomeIconView fill="#d30000" glyphName="REMOVE" size="20" textAlignment="JUSTIFY" textOrigin="CENTER" />
+                        <FontAwesomeIconView fill="#d30000" glyphName="REMOVE" size="21" text="" textAlignment="JUSTIFY" textOrigin="CENTER" />
                      </graphic>
                   </JFXButton>
                </buttons>
@@ -58,15 +58,21 @@
             <AnchorPane layoutX="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="494.0" prefWidth="585.0">
                <children>
                   <TextArea fx:id="output2" layoutX="4.0" prefHeight="480.0" prefWidth="571.0" />
-                  <Pane layoutX="371.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="image" fitHeight="200.0" fitWidth="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../data/dataFile/img/nguoc.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
+                  <Label fx:id="outputE" contentDisplay="RIGHT" layoutX="21.0" layoutY="14.0" prefHeight="68.0" prefWidth="323.0" text=" " textFill="#115ba1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="image" fitHeight="230.0" fitWidth="222.0" layoutX="349.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../data/dataFile/img/nguoc.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="outVN" alignment="TOP_LEFT" layoutX="21.0" layoutY="82.0" prefHeight="393.0" prefWidth="329.0" text=" ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

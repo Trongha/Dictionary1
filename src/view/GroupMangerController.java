@@ -6,7 +6,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,8 +16,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import manager.AppManager;
 import javafx.event.ActionEvent;
-import manager.Learning;
-import org.apache.poi.util.Beta;
+import manager.TestsManager;
 
 
 import java.io.File;
@@ -101,7 +99,7 @@ public class GroupMangerController {
 
     public void moveLearn(ActionEvent e) throws Exception{
         Stage abc = new Stage();
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Learning.fxml")).load();
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Testing.fxml")).load();
         abc.setTitle("Hello World");
         abc.setScene(new Scene(root));
         abc.show();
@@ -140,7 +138,7 @@ public class GroupMangerController {
                 deleteGroupFX.setDisable(false);
 
                 setListWords(manager.getGroup(newValue));
-                Learning learn = new Learning(manager.getGroup(newValue).getListWords());
+                TestsManager learn = new TestsManager(manager.getGroup(newValue).getListWords());
                 this.learn.setDisable(false);
             }else if (listGroupSelected.size() > 1){
                 editGroupFX.setDisable(true);

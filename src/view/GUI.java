@@ -41,16 +41,14 @@ public class GUI extends Application {
     public void backHome(){
         this.move(this.getMyPath(), this.myTitle);
     }
+
     private double xOffset = 0;
     private double yOffset = 0;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        myPrimaryStage = primaryStage;
-
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Home.fxml")).load();
+    public void setMyStyle(Stage primaryStage, Parent root){
         primaryStage.initStyle(StageStyle.UNDECORATED );
 
+        //Di chuyển cửa sổ
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -65,14 +63,25 @@ public class GUI extends Application {
                 primaryStage.setY(event.getScreenY() - yOffset);
             }
         });
+    }
+
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        myPrimaryStage = primaryStage;
+        Parent root = new FXMLLoader(getClass().getResource("fxml/Home.fxml")).load();
+
+        this.setMyStyle(primaryStage, root);
 
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
         launch(args);
+
     }
 }
