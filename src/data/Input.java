@@ -52,6 +52,7 @@ public class Input {
                 String eng="" ;
                 String vie="" ;
                 String pathImage = "";
+                String level = "";
             //doc ô 1
                 if (cellIterator.hasNext()){
                     Cell keyEnglish = cellIterator.next();
@@ -67,14 +68,25 @@ public class Input {
 //                đọc ô 3
                 if (cellIterator.hasNext()){
                     Cell pathImageCell = cellIterator.next();
+                    level = pathImageCell.getStringCellValue().toString();
+                }
+                //Đọc ô 4
+                if (cellIterator.hasNext()){
+                    Cell pathImageCell = cellIterator.next();
                     pathImage = pathImageCell.getStringCellValue().toString();
-
-
                 }
 
                 if (!vie.equals("") && !eng.equals("")){
                     Word newWord = new Word(eng, vie, pathImage);
+                    
+                    for (Level level1 : Level.values()){
+                        if (level.equals(level1.toString()))
+                            newWord.setLevel(level1);
+                    }
+                    
                     map.put(newWord.getEnglish(), newWord);
+
+//                    System.out.println(newWord);
                 }
             }
         }catch (IOException e){

@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import data.Group;
 import data.Level;
 import data.Word;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -22,6 +23,8 @@ import javafx.stage.Stage;
 import manager.FlashcardsManager;
 
 import java.io.File;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class FlashcardController {
     @FXML
@@ -63,7 +66,98 @@ public class FlashcardController {
     private Group group= new Group();
     private int numCard = 0;
     private int indexCard = 1;
-    private FlashcardsManager cardManager ;
+    private FlashcardsManager flashcardsManager;
+
+
+   /* private Queue<Word> hardQueue = new LinkedList<Word>();
+    private Queue<Word> moderateQueue = new LinkedList<Word>();
+    private Queue<Word> esasyQueue = new LinkedList<Word>();
+    private static Double level1 = 0.5;
+    private static Double level2 = 0.8;
+    public void add1Word(Word _word) {
+//        System.out.println(word);
+        Word word = new Word();
+        word.clone(_word);
+        switch (word.getLevel()) {
+            case hard: {
+                hardQueue.add(word);
+                break;
+            }
+            case nothing:
+            case esasy: {
+                esasyQueue.add(word);
+                break;
+            }
+            case moderate: {
+                moderateQueue.add(word);
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+    }
+
+    public void set3Queue(Group group) {
+        System.out.println("---->  set Group to Flashcard : " + group.getName());
+        for (Word word : group.getListWords().values()) {
+            this.add1Word(word);
+            System.out.println("add" + word.getEnglish());
+        }
+        System.out.println("size hard    : " + hardQueue.size());
+        System.out.println("size moretate: " + moderateQueue.size());
+        System.out.println("size esasy   : " + esasyQueue.size());
+    }
+
+    public Word hardQueuePoll() {
+        if (!hardQueue.isEmpty()) {
+            System.out.println("----> return Word in hard");
+            return hardQueue.poll();
+        } else
+            return  new Word("", "");
+    }
+
+    public Word moderateQueuePoll() {
+        if (!moderateQueue.isEmpty()) {
+            System.out.println("----> return Word in moderate");
+            return moderateQueue.poll();
+        } else
+            return  new Word("", "");
+    }
+
+    public Word esasyQueuePoll() {
+        if (!esasyQueue.isEmpty()) {
+            System.out.println("----> return Word in esasy");
+            return esasyQueue.poll();
+        } else{
+            System.out.println(esasyQueue.size());
+            return new Word("", "");
+        }
+
+    }
+
+    public Word newWordToCard() {
+
+        if (hardQueue.size() == 0) {
+            this.level1 = 0.0;
+        }
+        if (moderateQueue.size() == 0) {
+            this.level2 = 0.0;
+        }
+
+        Double random = Math.random();
+        System.out.println(random);
+
+        if (random <= this.level1) {
+            return hardQueuePoll();
+        } else if (random <= this.level2) {
+            return moderateQueuePoll();
+        } else {
+            return esasyQueuePoll();
+        }
+    }
+*/
+
 
     @FXML
     void closeFlashcard(ActionEvent event) {
@@ -76,7 +170,10 @@ public class FlashcardController {
         System.out.println(">>>>>>>>>>>> next Flashcard!");
         waiting.toFront();
 
-        newCard(cardManager.newWordToCard());
+//        newCard(cardManager.newWordToCard());
+
+        enText.setText(String.valueOf(indexCard++));
+        vnText.setText(String.valueOf(indexCard++));
         enFace.toFront();
         frontPane = FrontPane.enFece;
     }
@@ -92,11 +189,13 @@ public class FlashcardController {
         }
     }
 
+
     public void newCard(Word word){
 
         System.out.println("dkmdkdm" + word.getVietNam());
+        System.out.println("dkmdkdm" + word.getEnglish());
 
-        Word word1 = new Word(word.getEnglish(), word.getVietNam());
+
         enText.setText((String)word.getEnglish());
         vnText.setText((String)word.getVietNam());
 
@@ -122,28 +221,36 @@ public class FlashcardController {
         this.numCard = _numCard;
 
         stage.initModality(Modality.APPLICATION_MODAL);
-        cardManager = new FlashcardsManager(_group);
 
-        Parent root = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
-        GUI gui = new GUI();
-        gui.setMyStyle(stage, root);
-        stage.setTitle("Add Word");
-        stage.setScene(new Scene(root));
+        flashcardsManager = new FlashcardsManager(_group);
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i + "   " + flashcardsManager.newWordToCard().getEnglish());
+//            enText.setText("adshnksd");
 
-        stage.showAndWait();
+            System.out.println("");
+        }
 
+            Parent root = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
+            GUI gui = new GUI();
+            gui.setMyStyle(stage, root);
 
+            stage.setScene(new Scene(root));
+
+            stage.showAndWait();
 
     }
-
     public void initialize() {
-
+        enFace.toFront();
+        Word word = flashcardsManager.newWordToCard();
+        enText.setText("fdsg");
         loadLevels();
+
+//        System.out.println(flashcardsManager.newWordToCard().getEnglish());
 
         levels.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (levels.getItems().equals(Level.nothing)){
+                if (levels.getItems().equals(Level.nothing.toString())){
                     next.setDisable(true);
                 }
                 else next.setDisable(false);

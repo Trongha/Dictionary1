@@ -49,6 +49,7 @@ public class Output {
         row.createCell(cellNum++).setCellValue("English");
         row.createCell(cellNum++).setCellValue("Tieng Viet");
         row.createCell(cellNum++).setCellValue("Level");
+        row.createCell(cellNum++).setCellValue("PathImage");
     }
 
     public void outFile(HashMap<String, Word> map){
@@ -67,6 +68,7 @@ public class Output {
             row.createCell(cellNum++).setCellValue(word.getEnglish());
             row.createCell(cellNum++).setCellValue(word.getVietNam());
             row.createCell(cellNum++).setCellValue(word.getLevel().toString());
+            row.createCell(cellNum++).setCellValue(word.getPathImage());
         }
         try{
             FileOutputStream out = new FileOutputStream(new File(this.path));

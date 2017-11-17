@@ -3,6 +3,7 @@ import data.Group;
 import data.Level;
 import data.Word;
 import manager.AppManager;
+import manager.FlashcardsManager;
 import view.GUI;
 
 public class Main {
@@ -21,14 +22,17 @@ public class Main {
            AppManager appManager = new AppManager();
            appManager.addGroup(new Group(patch));
        }
-
-
         GUI gui = new GUI();
         gui.main(args);
 
-        //consol.printAllGroup();
+       /* FlashcardsManager flashcardsManager = new FlashcardsManager(AppManager.getGroups().get(0));
 
-        /*for (Group group : AppManager.getGroups()){
+        for (int i =0 ; i<10 ; i++){
+            System.out.println(flashcardsManager.newWordToCard().getEnglish());
+            System.out.println("");
+        }*/
+
+       /* for (Group group : AppManager.getGroups()){
             group.outFile();
         }*/
       //  consol.search();

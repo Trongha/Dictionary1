@@ -15,6 +15,14 @@ public class Word {
         setVietNam(vietNam);
         setEnglish(english);
     }
+
+    public void clone(Word xWord){
+        setVietNam(xWord.getVietNam());
+        setEnglish(xWord.getVietNam());
+        setLevel(xWord.level);
+        setPathImage(xWord.getPathImage());
+    }
+
     public Word(String english, String vietNam, String pathImage) {
         setVietNam(vietNam);
         setEnglish(english);
@@ -59,6 +67,6 @@ public class Word {
 
     @Override
     public String toString() {
-        return String.format("%s:%n%s", getEnglish(), getVietNam());
+        return String.format("%s:%n%s   %s    %s", getEnglish(), getVietNam(), getLevel(), getPathImage());
     }
 }

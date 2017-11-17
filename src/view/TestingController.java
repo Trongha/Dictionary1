@@ -274,7 +274,6 @@ public class TestingController {
         stage.setTitle("Kiểm Tra");
         stage.setScene(new Scene(root));
         stage.showAndWait();
-
     }
 
     public void close(ActionEvent e){
