@@ -23,12 +23,12 @@ public class StudyController {
 
 
     public void loadParent() {
-/*        try {
+        try {
             testPane = new FXMLLoader(getClass().getResource("fxml/Testing.fxml")).load();
             studyPane = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
         }catch (IOException e){
             e.printStackTrace();
-        }*/
+        }
     }
 
     @FXML

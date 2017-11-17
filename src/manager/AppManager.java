@@ -20,8 +20,6 @@ public class AppManager {
     public AppManager(){}
 
     public static void addGroup(Group group){
-
-
         groups.add(group);
         allGroup.addGroup(group);
         allGroup.setName("allGroup");

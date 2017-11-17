@@ -4,15 +4,13 @@ import data.Group;
 import data.Level;
 import data.Word;
 
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class FlashcardsManager {
-    Queue<Word> hardQueue = new LinkedList<Word>();
-    Queue<Word> moderateQueue = new LinkedList<Word>();
-    Queue<Word> esasyQueue = new LinkedList<Word>();
+    private Queue<Word> hardQueue = new LinkedList<Word>();
+    private Queue<Word> moderateQueue = new LinkedList<Word>();
+    private Queue<Word> esasyQueue = new LinkedList<Word>();
     int numOfCard = 0;
     private static Double level1 = 0.5;
     private static Double level2 = 0.8;
@@ -90,7 +88,6 @@ public class FlashcardsManager {
     }
 
     public Word newWordToCard() {
-
         if (hardQueue.size() == 0) {
             this.level1 = 0.0;
         }

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import manager.AppManager;
 
 import java.io.IOException;
 
@@ -80,6 +81,7 @@ public class GUI extends Application {
     }
 
     public static void main(String[] args) {
+
         launch(args);
 
     }
