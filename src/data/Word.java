@@ -19,7 +19,7 @@ public class Word {
     public void clone(Word xWord){
         setVietNam(xWord.getVietNam());
         setEnglish(xWord.getVietNam());
-        setLevel(xWord.level);
+        setLevel(xWord.level.toString());
         setPathImage(xWord.getPathImage());
     }
 
@@ -53,8 +53,11 @@ public class Word {
         return level;
     }
 
-    public void setLevel(Level level) {
-        this.level = level;
+    public void setLevel(String _level) {
+        for (Level level1 : Level.values()){
+            if (_level.equals(level1.toString()))
+                this.level = level1;
+        }
     }
 
     public String getPathImage() {
@@ -63,6 +66,19 @@ public class Word {
 
     public void setPathImage(String pathImage) {
         this.pathImage = pathImage;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Word)) return false;
+
+        Word word = (Word) o;
+
+        if (!English.equals(word.English)) return false;
+        if (!VietNam.equals(word.VietNam)) return false;
+        if (!pathImage.equals(word.pathImage)) return false;
+        return level == word.level;
     }
 
     @Override

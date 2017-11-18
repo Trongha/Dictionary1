@@ -61,12 +61,17 @@ public class FlashcardController {
         enFece
     }
 
+    @FXML
+    private Label numCardSeen;
+
     private FrontPane frontPane = FrontPane.enFece;
 
     private Group group= new Group();
-    private int numCard = 0;
+    private static int numCard = 0;
     private int indexCard = 1;
     private static FlashcardsManager flashcardsManager = new FlashcardsManager();
+    private Word nowWord = new Word();
+
 
 
     @FXML
@@ -78,6 +83,8 @@ public class FlashcardController {
     @FXML
     void next(ActionEvent event) {
         System.out.println(">>>>>>>>>>>> next Flashcard!");
+        nowWord.setLevel(levels.getValue().toString());
+        flashcardsManager.add1Word(nowWord);
         waiting.toFront();
         newCard(flashcardsManager.newWordToCard());
         enFace.toFront();
@@ -95,13 +102,14 @@ public class FlashcardController {
         }
     }
 
+    void setNumCardSeen(){
+        String s = String.format("%d/%d", flashcardsManager.getNumWordSelected(), numCard);
+        numCardSeen.setText(s);
+    }
 
     public void newCard(Word word){
-
+        nowWord = word;
         System.out.println("dkmdkdm" + word.getVietNam());
-
-        System.out.println(word.getEnglish());
-        System.out.println(word.getVietNam());
 
         enText.setText(word.getEnglish());
         vnText.setText(word.getVietNam());
@@ -110,9 +118,9 @@ public class FlashcardController {
             File f = new File(word.getPathImage());
             imgVN.setImage(new Image(f.toURI().toString()));
         }
-        if (word.getLevel() != Level.nothing){
-            levels.setValue(word.getLevel().toString());
-        }
+
+        levels.setValue(word.getLevel().toString());
+        setNumCardSeen();
     }
 
     public void loadLevels(){
@@ -124,6 +132,7 @@ public class FlashcardController {
     public void show(Group _group, int _numCard) throws Exception {
         System.out.println(_group.getName());
         this.numCard = _numCard;
+        flashcardsManager = new FlashcardsManager(_group, _numCard);
 
         stage.initModality(Modality.APPLICATION_MODAL);
         Parent root = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
@@ -131,9 +140,6 @@ public class FlashcardController {
         gui.setMyStyle(stage, root);
         stage.setTitle("xxx");
         stage.setScene(new Scene(root));
-
-        flashcardsManager = new FlashcardsManager(_group);
-
 
         stage.showAndWait();
     }

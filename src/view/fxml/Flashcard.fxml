@@ -13,29 +13,32 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="idid" prefHeight="190.0" prefWidth="380.0" style="-fx-background-color: #04B404;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FlashcardController">
+<AnchorPane fx:id="idid" prefHeight="220.0" prefWidth="410.0" style="-fx-background-color: #04B404;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FlashcardController">
    <children>
-      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="180.0" prefWidth="370.0" style="-fx-background-color: #04B404; -fx-background-radius: 25 0 25 0;">
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="210.0" prefWidth="400.0" style="-fx-background-color: #04B404; -fx-background-radius: 25 0 25 0;">
          <children>
-            <JFXButton fx:id="next" alignment="CENTER" contentDisplay="RIGHT" disable="true" graphicTextGap="5.0" layoutX="257.0" layoutY="145.0" onAction="#next" prefWidth="62.0" text="next" textFill="#f21313">
-               <graphic>
-                  <FontAwesomeIconView fill="#f21313" glyphName="ANGLE_RIGHT" size="22" />
-               </graphic>
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </JFXButton>
-            <JFXComboBox fx:id="levels" focusColor="#083edd" layoutX="145.0" layoutY="149.0" prefHeight="25.0" prefWidth="74.0" promptText="moderate" />
-            <JFXButton fx:id="rotate" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="58.0" layoutY="151.0" onAction="#rotate" text=" ">
-               <graphic>
-                  <Icons525View fill="#f21313" glyphName="REFRESH" size="20" textAlignment="CENTER" />
-               </graphic>
-            </JFXButton>
-            <StackPane focusTraversable="true" prefHeight="145.0" prefWidth="370.0">
+            <StackPane focusTraversable="true" prefHeight="165.0" prefWidth="400.0">
                <children>
-                  <HBox fx:id="waiting" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;" />
-                  <HBox fx:id="enFace" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
+                  <HBox fx:id="waiting" prefHeight="165.0" prefWidth="400.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;" />
+                  <HBox fx:id="vnFace" prefHeight="165.0" prefWidth="400.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="165.0" prefWidth="165.0" style="-fx-background-radius: 25 0 0 0;">
+                           <children>
+                              <ImageView fx:id="imgVN" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../data/dataFile/img/Autumn.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <Label fx:id="vnText" alignment="CENTER" contentDisplay="CENTER" prefHeight="164.0" prefWidth="229.0" text="Tiếng Việt" textFill="#00129e" wrapText="true">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="enFace" prefHeight="165.0" prefWidth="400.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
                      <children>
                         <AnchorPane prefHeight="145.0" prefWidth="61.0">
                            <children>
@@ -46,36 +49,37 @@
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <Label fx:id="enText" alignment="CENTER" contentDisplay="CENTER" prefHeight="142.0" prefWidth="291.0" text="Tiếng Anh" textFill="#00129e" wrapText="true">
+                        <Label fx:id="enText" alignment="CENTER" contentDisplay="CENTER" prefHeight="165.0" prefWidth="321.0" text="Tiếng Anh" textFill="#00129e" wrapText="true">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <HBox fx:id="vnFace" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
-                     <children>
-                        <HBox alignment="CENTER" prefHeight="145.0" prefWidth="145.0" style="-fx-background-radius: 25 0 0 0;">
-                           <children>
-                              <ImageView fx:id="imgVN" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../data/dataFile/img/Autumn.jpg" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </HBox>
-                        <Label fx:id="vnText" alignment="CENTER" contentDisplay="CENTER" prefHeight="139.0" prefWidth="209.0" text="Tiếng Việt" textFill="#00129e" wrapText="true">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
                </children>
             </StackPane>
+            <JFXButton fx:id="next" alignment="CENTER" contentDisplay="RIGHT" disable="true" graphicTextGap="5.0" layoutX="257.0" layoutY="177.0" onAction="#next" prefWidth="62.0" text="next" textFill="#f21313">
+               <graphic>
+                  <FontAwesomeIconView fill="#f21313" glyphName="ANGLE_RIGHT" size="22" />
+               </graphic>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="levels" focusColor="#083edd" layoutX="145.0" layoutY="181.0" prefHeight="25.0" prefWidth="74.0" promptText="moderate" />
+            <JFXButton fx:id="rotate" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" graphicTextGap="5.0" layoutX="58.0" layoutY="183.0" onAction="#rotate" text=" ">
+               <graphic>
+                  <Icons525View fill="#f21313" glyphName="REFRESH" size="20" textAlignment="CENTER" />
+               </graphic>
+            </JFXButton>
+            <Label fx:id="numCardSeen" layoutX="320.0" layoutY="176.0" text="100/100" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <JFXButton fx:id="close" layoutX="348.0" onAction="#closeFlashcard" text="X" textAlignment="CENTER" textFill="RED">
+      <JFXButton fx:id="close" layoutX="378.0" onAction="#closeFlashcard" text="X" textAlignment="CENTER" textFill="RED">
          <font>
             <Font name="Copperplate Gothic Bold" size="15.0" />
          </font>

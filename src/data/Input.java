@@ -78,15 +78,8 @@ public class Input {
 
                 if (!vie.equals("") && !eng.equals("")){
                     Word newWord = new Word(eng, vie, pathImage);
-                    
-                    for (Level level1 : Level.values()){
-                        if (level.equals(level1.toString()))
-                            newWord.setLevel(level1);
-                    }
-                    
+                    newWord.setLevel(level);
                     map.put(newWord.getEnglish(), newWord);
-
-//                    System.out.println(newWord);
                 }
             }
         }catch (IOException e){
