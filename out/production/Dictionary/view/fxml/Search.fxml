@@ -11,6 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -58,7 +59,7 @@
             <AnchorPane layoutX="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="494.0" prefWidth="585.0">
                <children>
                   <TextArea fx:id="output2" layoutX="4.0" prefHeight="480.0" prefWidth="571.0" />
-                  <Label fx:id="outputE" contentDisplay="RIGHT" layoutX="21.0" layoutY="14.0" prefHeight="68.0" prefWidth="323.0" text=" " textFill="#115ba1">
+                  <Label fx:id="outputE" contentDisplay="RIGHT" layoutX="21.0" layoutY="14.0" prefHeight="68.0" prefWidth="323.0" text=" " textFill="#115ba1" wrapText="true">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
@@ -68,11 +69,22 @@
                         <Image url="@../../data/dataFile/img/nguoc.jpg" />
                      </image>
                   </ImageView>
-                  <Label fx:id="outVN" alignment="TOP_LEFT" layoutX="21.0" layoutY="82.0" prefHeight="393.0" prefWidth="329.0" text=" ">
+                  <Label fx:id="outVN" alignment="TOP_LEFT" layoutX="21.0" layoutY="82.0" prefHeight="393.0" prefWidth="329.0" text=" " wrapText="true">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <StackPane layoutX="362.0" layoutY="280.0" prefHeight="104.0" prefWidth="106.0">
+                     <children>
+                        <ImageView fx:id="waiting" fitHeight="109.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../resrc/icon_img/TakeItEasy.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </StackPane>
                </children>
             </AnchorPane>
          </children>

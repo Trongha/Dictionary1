@@ -34,13 +34,7 @@ SearchController {
     private JFXButton searchButton;
 
     @FXML
-    private JFXButton addWord;
-
-    @FXML
-    private JFXButton editWord;
-
-    @FXML
-    private JFXButton deleteWord;
+    private JFXButton addWord, editWord, deleteWord;
 
     @FXML
     private TextField input;
@@ -51,42 +45,44 @@ SearchController {
     @FXML
     private ImageView image;
 
-
     @FXML
-    private Label outputE;
-
-
-    @FXML
-    private Label outVN;
+    private Label outputE, outVN;
 
     @FXML
     private ListView<String> listWord;
-    private ObservableList<String> listWordData = FXCollections.observableArrayList();
+
+    private static ObservableList<String> listWordData = FXCollections.observableArrayList();
     public static Parent searchPane;
-    public SearchController() {    }
+
+    public SearchController() {
+    }
 
     public static Parent getSearchPane() {
         return searchPane;
     }
 
+    void refresh() {
+        search2();
+        search(new ActionEvent());
+    }
 
-
-    public void reOutput2(Word word){
+    public void reOutput2(Word word) {
         outputE.setText(word.getEnglish());
         outVN.setText(word.getVietNam());
-        if (AppManager.getAllGroup().getListWords().containsKey(word.getEnglish())){
+        if (AppManager.getAllGroup().getListWords().containsKey(word.getEnglish())) {
             deleteWord.setDisable(false);
             editWord.setDisable(false);
-        }else {
+        } else {
             deleteWord.setDisable(true);
             editWord.setDisable(true);
         }
         File f = new File(word.getPathImage());
         image.setImage(new Image(f.toURI().toString()));
     }
-//Search chính xác 1 từ
+
+    //Search chính xác 1 từ
     public void search(ActionEvent e) {
-        if(!input.getText().trim().equals("") && input.getText()!=null){
+        if (!input.getText().trim().equals("") && input.getText() != null) {
             Word word = manager.search(input.getText());
             String s = String.format("%s", word.toString());
             reOutput2(word);
@@ -95,7 +91,7 @@ SearchController {
         System.out.println(s);*/
     }
 
-    public void back(ActionEvent e){
+    public void back(ActionEvent e) {
         gui.backHome();
     }
 
@@ -105,33 +101,39 @@ SearchController {
         listWordData.addAll(wordEnglishs);
         listWord.setItems(listWordData);
     }
-    public void search2(ActionEvent e)
-    {
-            search2();
+
+    public void search2(ActionEvent e) {
+        search2();
     }
 
-    public void moveAddWord(ActionEvent e) throws Exception{
+    public void moveAddWord(ActionEvent e) throws Exception {
         AddWordController addWord = new AddWordController();
         addWord.show();
-        search2();
-        search(e);
+        refresh();
     }
+
     @FXML
     void setDeleteWord(ActionEvent event) {
 
     }
 
     @FXML
-    void setEditWord(ActionEvent event) {
+    void setEditWord(ActionEvent event) throws Exception {
 
+       /* addWord.show("Edit");
+        refresh();*/
     }
+
     @FXML
-    private void initialize(){
+    private void initialize() {
+        refresh();
         input.textProperty().addListener((observable, oldValue, newValue) -> {
             search2();
         });
         listWord.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            reOutput2(manager.search(newValue));
+            if (newValue!=null){
+                reOutput2(manager.search(newValue));
+            }
         });
     }
 }

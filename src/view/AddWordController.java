@@ -42,12 +42,14 @@ public class AddWordController {
     private JFXButton imgChoice;
 
     @FXML
-    private JFXButton add;
+    private JFXButton btnAdd;
 
     @FXML
     private ImageView img;
     @FXML
     private Label linkImg;
+
+    private static String btnOKText = "";
 
     private Stage stage = new Stage();
 
@@ -86,24 +88,36 @@ public class AddWordController {
         } else {
             AppManager manager = new AppManager();
             manager.addWord(new Word(english, vietnam), groupChoice.getValue());
-            MessageBox.show("\nAdd Complete!", "");
+            MessageBox.show("\nĐã cập nhật!", "");
 //            stage.close();
             ((Node)event.getSource()).getScene().getWindow().hide();
         }
     }
 
     public void show() throws Exception {
-
         stage.initModality(Modality.APPLICATION_MODAL);
-
         Parent root = new FXMLLoader(getClass().getResource("fxml/AddWord.fxml")).load();
         stage.setTitle("Add Word");
         stage.setScene(new Scene(root));
         stage.showAndWait();
     }
+    public void show(String title, String btnOk) throws Exception {
+        btnOKText = btnOk;
+        stage.initModality(Modality.APPLICATION_MODAL);
+        Parent root = new FXMLLoader(getClass().getResource("fxml/AddWord.fxml")).load();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+
+        stage.showAndWait();
+    }
 
     @FXML
     private void initialize() {
+        if (!btnOKText.equals("")){
+            System.out.println(btnOKText);
+            btnAdd.setText(btnOKText);
+        }
+
         setListChoice();
     }
 }

@@ -37,6 +37,7 @@ public class Group {
         while (i.hasNext()){
             keyArray[i_key++] = (String)i.next();
         }
+        Arrays.sort(keyArray);
         return keyArray;
     }
 
@@ -88,13 +89,14 @@ public class Group {
         if (this.listWords.containsKey(name))
             this.listWords.remove(name);
     }
-    public void editWord(String name, String newEnglish, String newVietNam){
+
+/*    public void editWord(String name, String newEnglish, String newVietNam){
         if (this.listWords.containsKey(name)){
             this.listWords.remove(name);
             this.listWords.put(newEnglish, new Word(newEnglish, newVietNam));
             System.out.println("delete Complete!");
         }
-    }
+    }*/
 
     public boolean delete(String englishKey){
         if (this.getListWords().containsKey(englishKey)){
@@ -113,7 +115,7 @@ public class Group {
             if (this.listWords.containsKey(key))
                 return this.listWords.get(key);
         }
-        Word error = new Word(key, "");
+        Word error = new Word(key, "", "");
         if (listWords.isEmpty()){
             error.setVietNam("groups is empty");
         }
