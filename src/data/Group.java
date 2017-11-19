@@ -10,17 +10,20 @@ public class Group {
     private HashMap<String, Word> listWords = new HashMap<>();
     private String name = "";
     private String patch = "";
-    public Group(){}
+    private int size = 0;
 
+    public Group(){}
     public Group(String name, String patch) {
         this.patch = patch;
         this.setName(name);
         this.loadFile();
+        this.size = this.listWords.size();
     }
     public Group(String patch){
         this.patch = patch;
         this.setName("");
         this.loadFile();
+        this.size = this.listWords.size();
     }
 
     /**
@@ -48,6 +51,19 @@ public class Group {
     public String[] getKeyOfGroup(){
         return getKeyOfHashMap(this.listWords);
     }
+    /*public Word[] arrWordsOfGroup(){
+        ArrayList<Word> words = new Word[size];
+        int i = 0;
+        for (Word word : this.getListWords().values()){
+            words[i++] = word;
+        }
+        Collections.sort(words, new Comparator<Word>() {
+            @Override
+            public int compare(T o1, T o2) {
+                return 0;
+            }
+        });
+    }*/
     public HashMap<String, Word> getListWords() {
         return listWords;
     }
@@ -126,7 +142,7 @@ public class Group {
     /**
      * Search English
      * @param key
-     * @return    hashmap Các từ có chứa key
+     * @return    hashmap Các từ có chứa key, Kiểu trả về là word.
      */
     public HashSet<Word> search2(String key){
         HashSet<Word> mapSearch = new HashSet<>();

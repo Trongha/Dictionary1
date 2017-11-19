@@ -68,12 +68,16 @@ public class AppManager {
         return allGroup.search(key);
     }
 
-    public ArrayList<Word> search2(String key) {
+    public ArrayList<Word> search2(String key, String nameGroupSearch) {
         key = key.toLowerCase().trim();
         HashSet<Word> mapSearch = new HashSet<>();
         if (!groups.isEmpty()) {
-            for (int i = 0; i < groups.size(); i++) {
-                mapSearch.addAll(groups.get(i).search2(key));
+            if (nameGroupSearch.equals("")){
+                for (int i = 0; i < groups.size(); i++) {
+                    mapSearch.addAll(groups.get(i).search2(key));
+                }
+            }else {
+                mapSearch.addAll(this.getGroup(nameGroupSearch).search2(key));
             }
         }
         ArrayList<Word> wordEnglishs = new ArrayList<Word>(mapSearch);

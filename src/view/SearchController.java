@@ -102,7 +102,7 @@ SearchController {
      */
     public void search2() {
         listWordData.clear();
-        ArrayList<Word> wordEnglishsSearch = manager.search2(input.getText());
+        ArrayList<Word> wordEnglishsSearch = manager.search2(input.getText(), "");
         for (Word word : wordEnglishsSearch) {
             listWordData.add(word.getEnglish());
         }
@@ -148,6 +148,7 @@ SearchController {
         System.out.println(wordOuput);
         Word newWord = addWordController.setAddWordWindow("Sửa", "",wordOuput );
         manager.editWord(newWord);
+        MessageBox.show("Đã cập nhật", "");
         refresh();
     }
 

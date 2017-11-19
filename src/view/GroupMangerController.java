@@ -9,10 +9,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import manager.AppManager;
@@ -21,13 +19,14 @@ import manager.TestsManager;
 
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroupMangerController {
     private AppManager manager = new AppManager();
     private GUI gui = new GUI();
     private static String groupSelecting = "";
-    private static String wordSelecting  = "";
+    private static Word wordSelecting  = new Word();
 
     private AddWordController addWordController = new AddWordController();
 
@@ -54,6 +53,17 @@ public class GroupMangerController {
     @FXML
     private Button learn;
 
+    @FXML
+    private TableView<Word> table;
+    ObservableList<Word> listWordOfGroupSelecting = FXCollections.observableArrayList();
+
+    @FXML
+    private TableColumn<Word, String> enOutput;
+
+    @FXML
+    private TableColumn<Word, String> vnOutput;
+
+
     public void setListGroups() {
         listGroupName.clear();
         for (Group group : AppManager.getGroups()) {
@@ -63,12 +73,18 @@ public class GroupMangerController {
         System.out.println("Set List Group Complete!");
     }
 
-    public void setListWords(Group group) {
-        groupName.setText(group.getName());
-        listWordData.clear();
-        listWordData.addAll(group.getKeyOfGroup());
-        listWords.setItems(listWordData);
-        System.out.println("Set List Word Complete!");
+    public void setTable(){
+        groupName.setText(groupSelecting);
+        listWordOfGroupSelecting.clear();
+        System.out.println(groupSelecting);
+        ArrayList<Word> wordInGroupSelecting = manager.search2("", groupSelecting);
+        listWordOfGroupSelecting.addAll(wordInGroupSelecting);
+        table.setItems(listWordOfGroupSelecting);
+    }
+
+    public void refresh(){
+        setListGroups();
+        setTable();
     }
 
     public void deleteGroup() {
@@ -106,9 +122,14 @@ public class GroupMangerController {
         Word newWord = addWordController.setAddWordWindow("Thêm", groupSelecting);
 
         if (newWord != null) {
-            manager.addWord(newWord, newWord.getWordGroup());
-            System.out.println("group: " + newWord.getWordGroup());
-            MessageBox.show("\nĐã cập nhật!", "");
+            String message = "";
+            if (manager.getGroup(groupSelecting).getListWords().containsKey(newWord.getEnglish())){
+                message = "Từ đã tồn tại";
+            }else {
+                manager.addWord(newWord, newWord.getWordGroup());
+                message = "Đã cập nhật";
+            }
+            MessageBox.show(message, "");
         }
     }
 
@@ -119,12 +140,18 @@ public class GroupMangerController {
 
     @FXML
     void setEditWord(ActionEvent event) throws Exception{
-//        addWordController.setAddWordWindow("Sửa", );
+        Word newWord = addWordController.setAddWordWindow("Sửa", wordSelecting);
+        manager.editWord(newWord);
+        MessageBox.show("Đã cập nhật", "");
+        refresh();
     }
 
     @FXML
     private void initialize() {
         setListGroups();
+        enOutput.setCellValueFactory(new PropertyValueFactory<Word, String>("English"));
+        vnOutput.setCellValueFactory(new PropertyValueFactory<Word, String>("VietNam"));
+
         listviewGroups.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         listviewGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -133,21 +160,25 @@ public class GroupMangerController {
                 editGroupFX.setDisable(false);
                 deleteGroupFX.setDisable(false);
                 groupSelecting = newValue;
-
-                setListWords(manager.getGroup(newValue));
+                setTable();
+//                setListWords(manager.getGroup(newValue));
 
             } else if (listGroupSelected.size() > 1) {
                 editGroupFX.setDisable(true);
                 deleteGroupFX.setDisable(false);
             }
         });
-
-        listWords.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
-            if (newValue != null){
-
+        table.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue!=null){
+                wordSelecting = newValue;
+                System.out.println(wordSelecting);
+                editWord.setDisable(false);
+                deleteWord.setDisable(false);
+            }else {
+                editWord.setDisable(true);
+                deleteWord.setDisable(true);
             }
         }));
-
     }
 
 }
