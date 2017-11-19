@@ -115,7 +115,7 @@ public class Group {
             if (this.listWords.containsKey(key))
                 return this.listWords.get(key);
         }
-        Word error = new Word(key, "", "");
+        Word error = new Word(key, "", "", "");
         if (listWords.isEmpty()){
             error.setVietNam("groups is empty");
         }
@@ -128,11 +128,11 @@ public class Group {
      * @param key
      * @return    hashmap Các từ có chứa key
      */
-    public HashSet<String> search2(String key){
-        HashSet<String> mapSearch = new HashSet<>();
+    public HashSet<Word> search2(String key){
+        HashSet<Word> mapSearch = new HashSet<>();
         if (!listWords.isEmpty()){
-            for(String x: getKeyOfHashMap(this.listWords)){
-                if (x.indexOf(key)==0){
+            for(Word x: this.listWords.values()){
+                if (x.getEnglish().indexOf(key)==0){
                     mapSearch.add(x);
                 }
             }

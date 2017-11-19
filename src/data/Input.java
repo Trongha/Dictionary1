@@ -15,27 +15,27 @@ import java.util.Iterator;
  * Created by Trong on 30/10/2017.
  */
 public class Input {
-    private String path = "";
+    private String patch = "";
 
     public Input() {}
 
-    public Input(String path) {
-        this.path = path;
+    public Input(String patch) {
+        this.patch = patch;
     }
 
-    public  String getPath() {
-        return this.path;
+    public  String getPatch() {
+        return this.patch;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setPatch(String patch) {
+        this.patch = patch;
     }
 
     public HashMap<String, Word> loadMap(){
         HashMap<String, Word> map = new HashMap<>();
 
         try{
-            FileInputStream inputStream = new FileInputStream(new File(path));
+            FileInputStream inputStream = new FileInputStream(new File(patch));
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
             XSSFSheet sheet = workbook.getSheetAt( 0);
             Iterator<Row> rowIterator = sheet.iterator();
@@ -48,6 +48,7 @@ public class Input {
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
                 Iterator<Cell> cellIterator = row.cellIterator();
+                String nameGroup = patch.substring(patch.lastIndexOf('\\')+1, patch.lastIndexOf('.'));
 
                 String eng="" ;
                 String vie="" ;
@@ -77,7 +78,7 @@ public class Input {
                 }
 
                 if (!vie.equals("") && !eng.equals("")){
-                    Word newWord = new Word(eng, vie, pathImage);
+                    Word newWord = new Word(eng, vie, pathImage, nameGroup);
                     newWord.setLevel(level);
                     map.put(newWord.getEnglish(), newWord);
                 }
@@ -85,7 +86,7 @@ public class Input {
         }catch (IOException e){
             e.printStackTrace();
         }
-        System.out.println(String.format("%-70s", path) + " Load Complete!");
+        System.out.println(String.format("%-70s", patch) + " Load Complete!");
         return map;
     }
 }

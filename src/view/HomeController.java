@@ -67,7 +67,7 @@ public class HomeController {
 
     @FXML
     void exit(ActionEvent event) {
-        /*Boolean save = ConfirmationBox.show("\n Lưu trước khi thoát ko?", "", "Yes", "No");
+        /*Boolean save = ConfirmationBox.setAddWordWindow("\n Lưu trước khi thoát ko?", "", "Yes", "No");
         if (save){
             System.out.println("Save");
         }else {

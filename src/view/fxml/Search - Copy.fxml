@@ -33,7 +33,7 @@
             </AnchorPane>
             <ButtonBar buttonMinWidth="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                <buttons>
-                  <JFXButton fx:id="addWord" contentDisplay="CENTER" onAction="#moveAddWord" prefHeight="28.0" prefWidth="39.0" text=" ">
+                  <JFXButton fx:id="addWord" contentDisplay="CENTER" onAction="#setAddWord" prefHeight="28.0" prefWidth="39.0" text=" ">
                      <graphic>
                         <FontAwesomeIconView fill="#0943ff" glyphName="PLUS" size="20" text="" />
                      </graphic>

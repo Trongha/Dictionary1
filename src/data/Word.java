@@ -9,6 +9,7 @@ public class Word {
     private String VietNam = "";
     private String pathImage = "";
     private Level level = Level.nothing;
+    private String wordGroup;
 
     public Word(){}
     public Word(String english, String vietNam) {
@@ -16,17 +17,19 @@ public class Word {
         setEnglish(english);
     }
 
-    public void clone(Word xWord){
-        setVietNam(xWord.getVietNam());
-        setEnglish(xWord.getVietNam());
-        setLevel(xWord.level.toString());
-        setPathImage(xWord.getPathImage());
+    public Word(String _english, String _vietNam, String _pathImage, String _wordGroup) {
+        setVietNam(_vietNam);
+        setEnglish(_english);
+        setPathImage(_pathImage);
+        setWordGroup(_wordGroup);
     }
 
-    public Word(String english, String vietNam, String pathImage) {
-        setVietNam(vietNam);
-        setEnglish(english);
-        setPathImage(pathImage);
+    public void clone(Word xWord){
+        setVietNam(xWord.getVietNam());
+        setEnglish(xWord.getEnglish());
+        setLevel(xWord.level.toString());
+        setPathImage(xWord.getPathImage());
+        setWordGroup(xWord.getWordGroup());
     }
 
     public String getEnglish() {
@@ -47,6 +50,15 @@ public class Word {
         vietNam = vietNam.trim();
         vietNam = vietNam.toLowerCase();
         this.VietNam = vietNam;
+    }
+
+    public String getWordGroup() {
+        return wordGroup;
+    }
+
+    public void setWordGroup(String _wordGroup) {
+        this.wordGroup = new String();
+        this.wordGroup = _wordGroup;
     }
 
     public Level getLevel() {
@@ -75,14 +87,15 @@ public class Word {
 
         Word word = (Word) o;
 
-        if (!English.equals(word.English)) return false;
-        if (!VietNam.equals(word.VietNam)) return false;
-        if (!pathImage.equals(word.pathImage)) return false;
-        return level == word.level;
+        if (!getEnglish().equals(word.getEnglish())) return false;
+        if (!getVietNam().equals(word.getVietNam())) return false;
+        if (!getPathImage().equals(word.getPathImage())) return false;
+        if (getLevel() != word.getLevel()) return false;
+        return getWordGroup().equals(word.getWordGroup());
     }
 
     @Override
     public String toString() {
-        return String.format("%s:%n%s   %s    %s", getEnglish(), getVietNam(), getLevel(), getPathImage());
+        return String.format("%s:%n%s   %s    %s    group:  %s", getEnglish(), getVietNam(), getLevel(), getPathImage(), getWordGroup());
     }
 }

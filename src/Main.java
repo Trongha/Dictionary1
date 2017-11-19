@@ -12,9 +12,9 @@ public class Main {
     private static String[] patchs =
             {"src\\data\\dataFile\\xlsx\\family.xlsx",
             "src\\data\\dataFile\\xlsx\\Steel.xlsx" ,
-           /* "src\\data\\dataFile\\xlsx\\Place.xlsx" ,
+            "src\\data\\dataFile\\xlsx\\Place.xlsx" ,
             "src\\data\\dataFile\\xlsx\\Region Of Viet Nam.xlsx" ,
-            "src\\data\\dataFile\\xlsx\\MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx" ,
+            /*"src\\data\\dataFile\\xlsx\\MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx" ,
             "src\\data\\dataFile\\xlsx\\building dictionary.xlsx",
             "src\\data\\dataFile\\xlsx\\Region Of The World.xlsx"*/
     };
@@ -27,7 +27,7 @@ public class Main {
         GUI gui = new GUI();
         gui.main(args);
 
-     /*   for (Group group : AppManager.getGroups()){
+       /* for (Group group : AppManager.getGroups()){
             for (Word word : group.getListWords().values()){
                 System.out.println(word);
             }

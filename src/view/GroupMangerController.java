@@ -2,6 +2,7 @@ package view;
 
 import com.jfoenix.controls.JFXButton;
 import data.Group;
+import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -25,6 +26,11 @@ import java.util.List;
 public class GroupMangerController {
     private AppManager manager = new AppManager();
     private GUI gui = new GUI();
+    private static String groupSelecting = "";
+    private static String wordSelecting  = "";
+
+    private AddWordController addWordController = new AddWordController();
+
 
     @FXML
     private ListView<String> listviewGroups;
@@ -34,86 +40,76 @@ public class GroupMangerController {
     @FXML
     private ListView<String> listWords;
     ObservableList<String> listWordData = FXCollections.observableArrayList();
-    @FXML
-    private JFXButton addGroupFX;
+
 
     @FXML
-    private JFXButton editGroupFX;
+    private JFXButton addGroupFX, editGroupFX, deleteGroupFX;
 
-    @FXML
-    private JFXButton deleteGroupFX;
     @FXML
     private Label groupName;
 
     @FXML
-    private JFXButton addWord;
-
-    @FXML
-    private JFXButton editWord;
-
-    @FXML
-    private JFXButton deleteWord;
+    private JFXButton addWord, editWord, deleteWord;
 
     @FXML
     private Button learn;
-    @FXML
-    private Button back;
 
-
-    public void setListGroups(){
+    public void setListGroups() {
         listGroupName.clear();
-        for (Group group : AppManager.getGroups()){
+        for (Group group : AppManager.getGroups()) {
             listGroupName.add(group.getName());
         }
         listviewGroups.setItems(listGroupName);
         System.out.println("Set List Group Complete!");
     }
 
-    public void setListWords(Group group){
+    public void setListWords(Group group) {
         groupName.setText(group.getName());
         listWordData.clear();
         listWordData.addAll(group.getKeyOfGroup());
         listWords.setItems(listWordData);
         System.out.println("Set List Word Complete!");
     }
-    public void deleteGroup(){
+
+    public void deleteGroup() {
 
     }
-    public void addGroupButton(ActionEvent e){
+
+    public void addGroupButton(ActionEvent e) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File("src\\data\\dataFile\\xlsx"));
         List<File> selectedFiles = fileChooser.showOpenMultipleDialog(null);
-        if (selectedFiles != null){
-            for(File file:selectedFiles){
+        if (selectedFiles != null) {
+            for (File file : selectedFiles) {
                 Group newGroup = new Group(file.getPath());
                 manager.addGroup(newGroup);
-                MessageBox.show( "Đã thêm " + newGroup.getName(), "Thêm nhóm từ");
+                MessageBox.show("Đã thêm " + newGroup.getName(), "Thêm nhóm từ");
             }
 
-        setListGroups();
+            setListGroups();
         } else {
             MessageBox.show("ERROR", "Thêm nhóm từ");
             System.out.println("File not found!");
         }
     }
 
-    public void moveLearn(ActionEvent e) throws Exception{
+    public void moveLearn(ActionEvent e) throws Exception {
         Stage abc = new Stage();
         Parent root = new FXMLLoader(getClass().getResource("fxml/Testing.fxml")).load();
         abc.setTitle("Hello World");
         abc.setScene(new Scene(root));
         abc.show();
-
-
     }
 
-    public void back(ActionEvent e){
-        gui.backHome();
-    }
     @FXML
-    void setAddWord(ActionEvent event) throws Exception{
-        AddWordController addWordController = new AddWordController();
-        addWordController.show();
+    void setAddWord(ActionEvent event) throws Exception {
+        Word newWord = addWordController.setAddWordWindow("Thêm", groupSelecting);
+
+        if (newWord != null) {
+            manager.addWord(newWord, newWord.getWordGroup());
+            System.out.println("group: " + newWord.getWordGroup());
+            MessageBox.show("\nĐã cập nhật!", "");
+        }
     }
 
     @FXML
@@ -122,29 +118,36 @@ public class GroupMangerController {
     }
 
     @FXML
-    void setEditWord(ActionEvent event) {
-
+    void setEditWord(ActionEvent event) throws Exception{
+//        addWordController.setAddWordWindow("Sửa", );
     }
 
     @FXML
-    private void initialize(){
-           setListGroups();
+    private void initialize() {
+        setListGroups();
         listviewGroups.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         listviewGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             listGroupSelected = listviewGroups.getSelectionModel().getSelectedItems();
-            if (listGroupSelected.size() == 1){
+            if (listGroupSelected.size() == 1) {
                 editGroupFX.setDisable(false);
                 deleteGroupFX.setDisable(false);
+                groupSelecting = newValue;
 
                 setListWords(manager.getGroup(newValue));
-                TestsManager learn = new TestsManager(manager.getGroup(newValue).getListWords());
-                this.learn.setDisable(false);
-            }else if (listGroupSelected.size() > 1){
+
+            } else if (listGroupSelected.size() > 1) {
                 editGroupFX.setDisable(true);
                 deleteGroupFX.setDisable(false);
             }
         });
+
+        listWords.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue != null){
+
+            }
+        }));
+
     }
 
 }
