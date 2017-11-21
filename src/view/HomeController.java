@@ -29,6 +29,7 @@ public class HomeController {
     private Parent searchPane;
     private Parent managePane;
     private Parent studyPane;
+    private StudyController studyController = new StudyController();
     private Parent statisticalPane;
 
     private AppManager manager = new AppManager();
@@ -62,10 +63,14 @@ public class HomeController {
         paneView.toFront();
     }
 
+
+
     @FXML
     void setLearn(ActionEvent event) throws Exception {
+//        studyController.reLoad();
         paneView.getChildren().setAll(studyPane);
         paneView.toFront();
+
     }
 
     @FXML

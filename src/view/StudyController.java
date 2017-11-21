@@ -106,6 +106,7 @@ public class StudyController {
     private int numTestWasChoose;
 
     public void setListChoice() {
+        groupChoice.getItems().clear();
         for (Group group : AppManager.getGroups()) {
             if(group.getListWords().size() > 0)
                 groupChoice.getItems().add(group.getName());
@@ -131,6 +132,13 @@ public class StudyController {
 
         prepare.toFront();
         nowTest = 0;
+    }
+
+    @FXML
+    void reLoad(ActionEvent event) {
+        System.out.println("reLoad List Topic");
+        setListChoice();
+//        checkToTest.setSelected(true);
     }
 
     @FXML
@@ -176,6 +184,7 @@ public class StudyController {
 
 
     }
+
 
     public void unCheck() {
         if (radio4.isSelected()) {
@@ -289,7 +298,7 @@ public class StudyController {
     public void initialize() {
         prepare.toFront();
 
-
+        //Chọn chế độ học/kiểm tra
         action.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
             if(newVal != null){
                 String ifo = newVal.toString();
@@ -314,9 +323,11 @@ public class StudyController {
         groupChoice.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                maxNumTest = manager.getGroup(groupChoice.getValue()).getListWords().size();
-                System.out.println(maxNumTest);
-                setListNumber();
+                if (newValue!=null){
+                    maxNumTest = manager.getGroup(groupChoice.getValue()).getListWords().size();
+                    System.out.println(maxNumTest);
+                    setListNumber();
+                }
             }
         });
 

@@ -29,14 +29,14 @@ public class StatisticalController {
     @FXML
     private TableColumn<Group, Integer> numEsasy;
 
-    ObservableList<Group> listGroup = FXCollections.observableArrayList();
+
 
     public void setTable(){
-
-        listGroup.clear();
+/*
+        AppManager.getListViewGroupData().clear();
 //        ArrayList<Group> listGrouppp =
-        listGroup.addAll(AppManager.getGroups());
-        table.setItems(listGroup);
+        listGroup.addAll(AppManager.getGroups());*/
+        table.setItems(AppManager.getListViewGroupData());
     }
 
     @FXML

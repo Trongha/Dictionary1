@@ -125,24 +125,54 @@
                         <Image url="@../../resrc/img/background.jpg" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="start" disable="true" layoutX="497.0" layoutY="357.0" onAction="#startLearn" text="Start Learn">
+                  <JFXButton fx:id="start" disable="true" layoutX="428.0" layoutY="353.0" onAction="#startLearn" style="-fx-background-color: #00ff26;" text="Start Learn" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="28.0" />
                      </font>
                   </JFXButton>
-                  <AnchorPane fx:id="preparePane" layoutX="117.0" layoutY="130.0" prefHeight="143.0" prefWidth="550.0">
+                  <AnchorPane fx:id="preparePane" layoutX="111.0" layoutY="90.0" prefHeight="263.0" prefWidth="572.0">
                      <children>
                         <JFXComboBox fx:id="numTest" labelFloat="true" layoutX="351.0" layoutY="91.0" prefHeight="25.0" prefWidth="80.0" promptText="Số Câu Hỏi" />
                         <JFXComboBox fx:id="groupChoice" labelFloat="true" layoutX="319.0" prefHeight="25.0" prefWidth="231.0" promptText="Chọn bộ từ" />
-                        <JFXRadioButton fx:id="checkToTest" layoutY="26.0" selected="true" text=" Kiểm tra">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="action" />
-                           </toggleGroup>
-                        </JFXRadioButton>
-                        <JFXRadioButton fx:id="checkToFlash" layoutY="108.0" text="FlashCard" toggleGroup="$action" />
+                        <VBox layoutY="17.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                           <children>
+                              <JFXRadioButton fx:id="checkToTest" prefHeight="27.0" prefWidth="122.0" selected="true" text="Kiểm tra" VBox.vgrow="ALWAYS">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="action" />
+                                 </toggleGroup>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="checkToFlash" text="Học từ" toggleGroup="$action" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="oldWords" text="Ôn từ cũ" toggleGroup="$action" VBox.vgrow="ALWAYS">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </JFXRadioButton>
+                           </children>
+                        </VBox>
+                        <JFXButton graphicTextGap="5.0" layoutX="319.0" layoutY="35.0" onAction="#reLoad" prefHeight="27.0" prefWidth="172.0" text="Cập nhật danh sách bộ từ" textFill="#ff3300">
+                           <graphic>
+                              <FontAwesomeIconView fill="#ff3300" glyphName="REFRESH" size="14" />
+                           </graphic>
+                        </JFXButton>
                      </children>
                   </AnchorPane>
-                  <JFXCheckBox fx:id="ready" layoutX="110.0" layoutY="343.0" onAction="#userReady" prefHeight="78.0" prefWidth="204.0" text="I'm Ready!" AnchorPane.bottomAnchor="89.0" AnchorPane.rightAnchor="471.0" AnchorPane.topAnchor="343.0">
+                  <JFXCheckBox fx:id="ready" layoutX="131.0" layoutY="344.0" onAction="#userReady" prefHeight="66.0" prefWidth="231.0" text="I'm Ready!" AnchorPane.bottomAnchor="88.0" AnchorPane.rightAnchor="423.0" AnchorPane.topAnchor="344.0">
                      <font>
                         <Font size="25.0" />
                      </font>

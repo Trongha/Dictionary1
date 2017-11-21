@@ -76,8 +76,6 @@ public class FlashcardController {
     private static FlashcardsManager flashcardsManager = new FlashcardsManager();
     private Word nowWord = new Word();
 
-
-
     @FXML
     void closeFlashcard(ActionEvent event) {
         System.out.println("Flashcard is Exit");
@@ -114,6 +112,15 @@ public class FlashcardController {
         System.out.println("Set Value");
     }
 
+    public void setDisableNextBtn(){
+        if (nowWord.getLevel() == Level.nothing){
+            next.setDisable(true);
+        }
+        else {
+            next.setDisable(false);
+        }
+    }
+
     public void newCard(Word word){
         nowWord = word;
         System.out.println("dkmdkdm" + word.getVietNam());
@@ -127,12 +134,15 @@ public class FlashcardController {
         }
 
         levels.setValue(word.getLevel().toString());
+        System.out.println(word.getLevel());
         setNumCardSeen();
     }
 
     public void loadLevels(){
         for (Level level : Level.values()){
-            levels.getItems().add(level.toString());
+            if (level != Level.nothing){
+                levels.getItems().add(level.toString());
+            }
         }
     }
 
@@ -158,10 +168,8 @@ public class FlashcardController {
         levels.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (levels.getItems().toString().equals(Level.nothing.toString())){
-                    next.setDisable(true);
-                }
-                else next.setDisable(false);
+                nowWord.setLevel(newValue);
+                setDisableNextBtn();
             }
 
         });
