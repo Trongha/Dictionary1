@@ -33,6 +33,7 @@ public class Group {
         this.loadFile();
         this.size = this.listWords.size();
         System.out.println(size);
+        this.outFile();
     }
 
     /**
@@ -94,6 +95,16 @@ public class Group {
             System.out.println("renamed");
         } else {
             System.out.println("Error");
+        }
+    }
+
+    public void delete(){
+        System.out.println("delete " + patch);
+        File file = new File(this.patch);
+        if (file.delete()){
+            System.out.println("Delete file complete!");
+        }else {
+            System.out.println("Can't Delete File");
         }
     }
 

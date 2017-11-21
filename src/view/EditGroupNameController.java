@@ -35,7 +35,7 @@ public class EditGroupNameController {
     @FXML
     void setOk(ActionEvent event) {
         inpNameString = inputName.getText();
-        if (inpNameString.equals("")){
+        if (inpNameString.trim().equals("")){
             MessageBox.show(Text.getTexts().get("inputEmpty"), "");
         }else {
             ((Node) event.getSource()).getScene().getWindow().hide();
@@ -53,11 +53,13 @@ public class EditGroupNameController {
     }
 
     public String setEditNameGroupWindow(String oldName) throws  Exception{
+        System.out.println(oldName);
         inpNameString = oldName;
         this.show();
         return inpNameString;
     }
 
+    @FXML
     private void initialize(){
         inputName.setText(inpNameString);
     }

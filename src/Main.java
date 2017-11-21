@@ -11,19 +11,11 @@ import view.GUI;
 import java.io.File;
 
 public class Main {
-    private static String[] patchs =
-            {"src\\data\\dataFile\\xlsx\\family.xlsx",
-            "src\\data\\dataFile\\xlsx\\Steel.xlsx" ,
-            "src\\data\\dataFile\\xlsx\\Place.xlsx" ,
-            "src\\data\\dataFile\\xlsx\\Region Of Viet Nam.xlsx" ,
-            /*"src\\data\\dataFile\\xlsx\\MINISTRIES AND MINISTRY-LEVEL AGENCIES.xlsx" ,
-            "src\\data\\dataFile\\xlsx\\building dictionary.xlsx",
-            "src\\data\\dataFile\\xlsx\\Region Of The World.xlsx"*/
-    };
 
     public static void main(String[] args) {
 
         File folder = new File ("src\\data\\dataFile\\xlsx");
+
         for (File file : folder.listFiles()){
             if (!file.isDirectory()){
                 AppManager appManager = new AppManager();

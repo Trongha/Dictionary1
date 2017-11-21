@@ -93,7 +93,7 @@ public class AppManager {
         });
     }
 
-    public void mergeGroups(String[] grName){
+    public void mergeGroups(String[] grName, String newName){
 
         Group newGroup = new Group(String.format("%s & %s", grName[0], grName[1]), this.getGroup(grName[0]),this.getGroup(grName[1]));
 
@@ -101,6 +101,10 @@ public class AppManager {
             newGroup = new Group(String.format("%s & %s", newGroup.getName(), grName[i]), newGroup,this.getGroup(grName[i]));
         }
 
+        if (!newName.trim().equals("")){
+            newGroup.setName(newName);
+        }
+        newGroup.outFile();
         this.addGroup(newGroup);
     }
 
@@ -108,8 +112,10 @@ public class AppManager {
 
     public void deleteGroup(String name) {
         for (int i = 0; i < groups.size(); i++) {
-            if (name.equals(groups.get(i).getName()))
+            if (name.equals(groups.get(i).getName())) {
+                groups.get(i).delete();
                 groups.remove(i);
+            }
         }
     }
 

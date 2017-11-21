@@ -77,7 +77,7 @@ public class AddWordController {
             englishInp.setText(wordInput.getEnglish());
             englishInp.setDisable(true);
             vietNamInp.setText(wordInput.getVietNam());
-            System.out.println("Leo: " + wordInput.getWordGroup());
+
             valueOfListGroup = wordInput.getWordGroup();
         }else {
 
@@ -170,27 +170,8 @@ public class AddWordController {
         return wordInput;
     }
 
-/*
-    public Word setAddWordWindow(String btnOk, Word word) throws Exception {
-        btnOKText = btnOk;
-        wordInput = new Word();
-        wordInput.clone(word);
-
-        this.show();
-
-        return wordInput;
-    }*/
-
     @FXML
     private void initialize() {
-
-       /* groupChoice.valueProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                groupChoiceName = newValue;
-            }
-
-        });*/
         setPropertices();
     }
 }

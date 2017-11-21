@@ -103,12 +103,23 @@ public class GroupMangerController {
     void setMerge(ActionEvent event) {
         Group newGroup = new Group();
         System.out.println("merge");
-        String[] allGroupSelecting = new String[listGroupSelected.size()];
-        int i =0;
-        for (String nameGroup : listGroupSelected){
-            allGroupSelecting[i++] = nameGroup;
+        String newName = "";
+        try{
+            newName = editGroupNameController.setEditNameGroupWindow("");
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        manager.mergeGroups(allGroupSelecting);
+        if (newName!=null && !newName.trim().equals("")){
+            String[] allGroupSelecting = new String[listGroupSelected.size()];
+            int i =0;
+            for (String nameGroup : listGroupSelected){
+                allGroupSelecting[i++] = nameGroup;
+            }
+
+            manager.mergeGroups(allGroupSelecting, newName);
+        }
+
+
         refresh();
     }
 
@@ -132,8 +143,12 @@ public class GroupMangerController {
 
     @FXML
     void setEditGroup(ActionEvent event) throws Exception {
+        System.out.println(groupSelecting);
         String newName = editGroupNameController.setEditNameGroupWindow(groupSelecting);
-        manager.getGroup(groupSelecting).reName(newName);
+
+        if (newName!=null && !newName.trim().equals("")){
+            manager.getGroup(groupSelecting).reName(newName);
+        }
         refresh();
     }
 
