@@ -18,10 +18,8 @@ public class AppManager {
     public AppManager() {
     }
 
-    public static void addGroup(Group group) {
-        groups.add(group);
-        allGroup.addGroup(group);
-        allGroup.setName("allGroup");
+    static {
+        allGroup.setName("All Group");
     }
 
     /**
@@ -36,13 +34,6 @@ public class AppManager {
                 return group;
         }
         return groups.get(0);
-    }
-
-    public void addWord(Word word, String nameGroup) {
-        Group group = this.getGroup(nameGroup);
-        group.addWord(word);
-        allGroup.addWord(word);
-        System.out.println(String.format("add %s %s to %s Complete!", word.getEnglish(), word.getVietNam(), group.getName()));
     }
 
     public static Group getAllGroup() {
@@ -91,6 +82,30 @@ public class AppManager {
         return wordEnglishs;
     }
 
+    public void addGroup(Group group) {
+        groups.add(group);
+        allGroup.addGroup(group);
+        Collections.sort(groups, new Comparator<Group>() {
+            @Override
+            public int compare(Group o1, Group o2) {
+                return o1.getName().compareToIgnoreCase(o2.getName());
+            }
+        });
+    }
+
+    public void mergeGroups(String[] grName){
+
+        Group newGroup = new Group(String.format("%s & %s", grName[0], grName[1]), this.getGroup(grName[0]),this.getGroup(grName[1]));
+
+        for (int i=2 ; i<grName.length ; i++){
+            newGroup = new Group(String.format("%s & %s", newGroup.getName(), grName[i]), newGroup,this.getGroup(grName[i]));
+        }
+
+        this.addGroup(newGroup);
+    }
+
+    public void editGroup(){}
+
     public void deleteGroup(String name) {
         for (int i = 0; i < groups.size(); i++) {
             if (name.equals(groups.get(i).getName()))
@@ -98,8 +113,26 @@ public class AppManager {
         }
     }
 
+    public void addWord(Word word, String nameGroup) {
+        Group group = this.getGroup(nameGroup);
+        group.addWord(word);
+        allGroup.addWord(word);
+        System.out.println(String.format("add %s %s to %s Complete!", word.getEnglish(), word.getVietNam(), group.getName()));
+    }
+
     public void editWord(Word word){
         this.addWord(word, word.getWordGroup());
     }
 
+    public void deleteWord(Word wordDelete){
+        System.out.println("Delete Word");
+        this.getGroup(wordDelete.getWordGroup()).deleteWord(wordDelete);
+        System.out.println("Delete Word Complete!");
+    }
+
+    public void groupOutFile(){
+        for (Group group : groups){
+            group.outFile();
+        }
+    }
 }

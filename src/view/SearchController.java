@@ -13,6 +13,7 @@ import javafx.scene.image.ImageView;
 import manager.AppManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import view.TextOutput.Text;
 
 import java.io.File;
 import java.util.*;
@@ -122,7 +123,7 @@ SearchController {
     public void setAddWord(ActionEvent e) throws Exception {
 
         String groupName = "";
-        Word newWord = addWordController.setAddWordWindow("Thêm", groupName, (Word) null);
+        Word newWord = addWordController.setAddWordWindow(Text.getTexts().get("addBtn"), groupName, (Word) null);
 
         if (newWord != null) {
             String message = "";
@@ -130,7 +131,7 @@ SearchController {
                 message = "Từ đã tồn tại";
             }else {
                 manager.addWord(newWord, newWord.getWordGroup());
-                message = "Đã cập nhật";
+                message = Text.getTexts().get("updated");
             }
             MessageBox.show(message, "");
         }
@@ -138,18 +139,27 @@ SearchController {
         refresh();
     }
 
+    public void deleteWord(Word wordDelete){
+        if (ConfirmationBox.showConfirmation(String.format("Xóa %s ?", wordDelete.getEnglish()), "Delete Word", "Yes", "No")){
+            manager.deleteWord(wordDelete);
+        };
+    }
+
     @FXML
     void setDeleteWord(ActionEvent event) {
-
+        deleteWord(wordOuput);
+        refresh();
     }
 
     @FXML
     void setEditWord(ActionEvent event) throws Exception {
         System.out.println(wordOuput);
-        Word newWord = addWordController.setAddWordWindow("Sửa", "",wordOuput );
-        manager.editWord(newWord);
-        MessageBox.show("Đã cập nhật", "");
-        refresh();
+        Word newWord = addWordController.setAddWordWindow(Text.getTexts().get("editBtn"), "",wordOuput );
+        if (newWord!=null){
+            manager.editWord(newWord);
+            MessageBox.show(Text.getTexts().get("updated"), "");
+            refresh();
+        }
     }
 
     @FXML

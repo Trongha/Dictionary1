@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="510.0" prefWidth="785.0" style="-fx-background-color: #CEE3F6;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StatisticalController">
+   <children>
+      <TableView fx:id="table" prefHeight="510.0" prefWidth="785.0">
+        <columns>
+          <TableColumn fx:id="nameGroup" prefWidth="306.0" text="Bộ từ" />
+          <TableColumn fx:id="numWords" prefWidth="153.0" text="Tổng số từ" />
+            <TableColumn fx:id="numStudied" prefWidth="163.0" text="Số từ đã học" />
+            <TableColumn fx:id="numEsasy" prefWidth="162.0" text="Số từ đã thuộc" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

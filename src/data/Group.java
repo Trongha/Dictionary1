@@ -1,5 +1,6 @@
 package data;
 
+import java.io.File;
 import java.util.*;
 
 
@@ -10,9 +11,16 @@ public class Group {
     private HashMap<String, Word> listWords = new HashMap<>();
     private String name = "";
     private String patch = "";
-    private int size = 0;
+    private Integer size = 0;
+    private Integer numWordStudied = 0;
+    private Integer numWordEsasy = 0;
 
     public Group(){}
+    public Group(String _name, Group gr1, Group gr2){
+        this.setName(_name);
+        this.listWords.putAll(gr1.listWords);
+        this.listWords.putAll(gr2.listWords);
+    }
     public Group(String name, String patch) {
         this.patch = patch;
         this.setName(name);
@@ -24,6 +32,7 @@ public class Group {
         this.setName("");
         this.loadFile();
         this.size = this.listWords.size();
+        System.out.println(size);
     }
 
     /**
@@ -51,19 +60,7 @@ public class Group {
     public String[] getKeyOfGroup(){
         return getKeyOfHashMap(this.listWords);
     }
-    /*public Word[] arrWordsOfGroup(){
-        ArrayList<Word> words = new Word[size];
-        int i = 0;
-        for (Word word : this.getListWords().values()){
-            words[i++] = word;
-        }
-        Collections.sort(words, new Comparator<Word>() {
-            @Override
-            public int compare(T o1, T o2) {
-                return 0;
-            }
-        });
-    }*/
+
     public HashMap<String, Word> getListWords() {
         return listWords;
     }
@@ -80,7 +77,24 @@ public class Group {
         _name = _name.trim();
         if (_name.equals(""))
             this.setName(patch.substring(patch.lastIndexOf('\\')+1, patch.lastIndexOf('.')));
-        else this.name = _name;
+        else {
+            this.name = _name;
+        }
+    }
+
+    public void reName(String _name){
+
+        this.setName(_name);
+
+        File oldName = new File(patch);
+        patch = patch.substring(patch.lastIndexOf('\\')) + _name + ".xlsx";
+        File newName = new File(patch);
+
+        if(oldName.renameTo(newName)) {
+            System.out.println("renamed");
+        } else {
+            System.out.println("Error");
+        }
     }
 
     public String getPatch() {
@@ -101,9 +115,9 @@ public class Group {
     public void addWord(Word newWord){
         this.listWords.put(newWord.getEnglish(), newWord);
     }
-    public void deleteWord(String name){
-        if (this.listWords.containsKey(name))
-            this.listWords.remove(name);
+    public void deleteWord(Word wordDelete){
+        if (this.listWords.containsKey(wordDelete.getEnglish()))
+            this.listWords.remove(wordDelete.getEnglish());
     }
 
 /*    public void editWord(String name, String newEnglish, String newVietNam){
@@ -137,6 +151,17 @@ public class Group {
         }
         else error.setVietNam("ko tim thay");
         return error;
+    }
+
+    public void setNum(){
+        for (Word word : this.listWords.values()){
+            if (word.getLevel() != Level.nothing){
+                numWordStudied ++;
+                if (word.getLevel() == Level.esasy){
+                    numWordEsasy++;
+                }
+            }
+        }
     }
 
     /**
@@ -173,12 +198,37 @@ public class Group {
     public Group loadFile(){
         Input inputFile = new Input(patch);
         this.listWords = inputFile.loadMap();
+        this.setNum();
         return this;
     }
     public void outFile(){
         Output outputFile = new Output(this.getName());
         outputFile.outFile(this.getListWords());
         System.out.println("OutFile Complete!");
+    }
+
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public Integer getNumWordStudied() {
+        return numWordStudied;
+    }
+
+    public void setNumWordStudied(Integer numWordStudied) {
+        this.numWordStudied = numWordStudied;
+    }
+
+    public Integer getNumWordEsasy() {
+        return numWordEsasy;
+    }
+
+    public void setNumWordEsasy(Integer numWordEsasy) {
+        this.numWordEsasy = numWordEsasy;
     }
 }
 

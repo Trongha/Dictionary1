@@ -1,7 +1,6 @@
 package view;
 
 import com.jfoenix.controls.JFXButton;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
+import manager.AppManager;
 
 import java.io.IOException;
 
@@ -20,7 +20,6 @@ public class HomeController {
     @FXML
     private JFXButton home, dictionary, wordManager, learn, statistical, exit;
 
-
     @FXML
     private AnchorPane homeView;
 
@@ -30,6 +29,9 @@ public class HomeController {
     private Parent searchPane;
     private Parent managePane;
     private Parent studyPane;
+    private Parent statisticalPane;
+
+    private AppManager manager = new AppManager();
 
 
     public void loadParent() {
@@ -37,6 +39,7 @@ public class HomeController {
             searchPane = new FXMLLoader(getClass().getResource("fxml/Search.fxml")).load();
             managePane = new FXMLLoader(getClass().getResource("fxml/GroupManager.fxml")).load();
             studyPane = new FXMLLoader(getClass().getResource("fxml/Study.fxml")).load();
+            statisticalPane = new FXMLLoader(getClass().getResource("fxml/Statistical.fxml")).load();
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -66,13 +69,20 @@ public class HomeController {
     }
 
     @FXML
+    void setStatistical(ActionEvent event) {
+        paneView.getChildren().setAll(statisticalPane);
+        paneView.toFront();
+    }
+
+    @FXML
     void exit(ActionEvent event) {
-        /*Boolean save = ConfirmationBox.setAddWordWindow("\n Lưu trước khi thoát ko?", "", "Yes", "No");
+        Boolean save = ConfirmationBox.showConfirmation("\n Lưu trước khi thoát ko?", "", "Yes", "No");
         if (save){
             System.out.println("Save");
+            manager.groupOutFile();
         }else {
             System.out.println("Don't save");
-        }*/
+        }
         GUI.myPrimaryStage.close();
     }
 

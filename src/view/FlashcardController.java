@@ -2,6 +2,7 @@ package view;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXSlider;
 import data.Group;
 import data.Level;
 import data.Word;
@@ -54,6 +55,9 @@ public class FlashcardController {
     @FXML
     private JFXButton close;
 
+    @FXML
+    private JFXSlider slider;
+
     private Stage stage = new Stage();
 
     private enum FrontPane{
@@ -105,6 +109,9 @@ public class FlashcardController {
     void setNumCardSeen(){
         String s = String.format("%d/%d", flashcardsManager.getNumWordSelected(), numCard);
         numCardSeen.setText(s);
+        System.out.println((flashcardsManager.getNumWordSelected() *100 / numCard));
+        slider.setValue(flashcardsManager.getNumWordSelected()*100/numCard);
+        System.out.println("Set Value");
     }
 
     public void newCard(Word word){

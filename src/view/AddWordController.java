@@ -25,11 +25,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import manager.AppManager;
+import view.TextOutput.Text;
 
 import java.io.File;
 
 
 public class AddWordController {
+
     @FXML
     private JFXTextField englishInp;
 
@@ -52,16 +54,15 @@ public class AddWordController {
     private Label linkImg;
 
     private static String btnOKText = "";
-
     private Stage stage = new Stage();
-
+    private GUI gui = new GUI();
     private String english = "";
     private String vietnam = "";
     private String pathImg = "";
     private static String valueOfListGroup = "";
     private static Word wordInput;
     private static String groupChoiceName = "";
-    private GUI gui = new GUI();
+
 
     public void setListChoice() {
         for (Group group : AppManager.getGroups()) {
@@ -96,6 +97,7 @@ public class AddWordController {
             btnAdd.setText(btnOKText);
         }
     }
+
     private void refresh() {
         setListChoice();
     }
@@ -120,7 +122,7 @@ public class AddWordController {
         english = englishInp.getText().trim();
         vietnam = vietNamInp.getText().trim();
         if (english.equals("") || vietnam.equals("")) {
-            MessageBox.show("\nInput is Empty", "");
+            MessageBox.show(Text.getTexts().get("inputEmpty"), "");
         } else {
             wordInput = new Word(english, vietnam, pathImg, groupChoice.getValue());
             wordInput.setWordGroup(groupChoice.getValue());
@@ -131,6 +133,7 @@ public class AddWordController {
 
     @FXML
     void cancel(ActionEvent event) {
+        wordInput = null;
         ((Node) event.getSource()).getScene().getWindow().hide();
     }
 
@@ -152,26 +155,13 @@ public class AddWordController {
      * @return
      * @throws Exception
      */
-
-    public Word setAddWordWindow(String btnOk, String groupName) throws Exception {
-
-        btnOKText = btnOk;
-        valueOfListGroup = new String(groupName);
-        System.out.println(groupName);
-        wordInput = null;
-        this.show();
-
-        return wordInput;
-    }
     public Word setAddWordWindow(String btnOk, String groupName, Word word) throws Exception {
-
+        wordInput = null;
         btnOKText = btnOk;
 
         valueOfListGroup = new String(groupName);
 
-        if (word == null){
-            wordInput = null;
-        }else {
+        if (word != null){
             wordInput = new Word();
             wordInput.clone(word);
         }
@@ -180,6 +170,7 @@ public class AddWordController {
         return wordInput;
     }
 
+/*
     public Word setAddWordWindow(String btnOk, Word word) throws Exception {
         btnOKText = btnOk;
         wordInput = new Word();
@@ -188,7 +179,7 @@ public class AddWordController {
         this.show();
 
         return wordInput;
-    }
+    }*/
 
     @FXML
     private void initialize() {

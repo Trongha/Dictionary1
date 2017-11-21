@@ -8,6 +8,8 @@ import org.openxmlformats.schemas.drawingml.x2006.main.CTNonVisualGraphicFramePr
 import view.FlashcardController;
 import view.GUI;
 
+import java.io.File;
+
 public class Main {
     private static String[] patchs =
             {"src\\data\\dataFile\\xlsx\\family.xlsx",
@@ -20,10 +22,18 @@ public class Main {
     };
 
     public static void main(String[] args) {
-       for (String patch : patchs){
+
+        File folder = new File ("src\\data\\dataFile\\xlsx");
+        for (File file : folder.listFiles()){
+            if (!file.isDirectory()){
+                AppManager appManager = new AppManager();
+                appManager.addGroup(new Group(file.getPath()));
+            }
+        }
+       /*for (String patch : patchs){
            AppManager appManager = new AppManager();
            appManager.addGroup(new Group(patch));
-       }
+       }*/
         GUI gui = new GUI();
         gui.main(args);
 

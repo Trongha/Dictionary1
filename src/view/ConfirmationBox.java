@@ -16,8 +16,8 @@ public class ConfirmationBox
 	static Stage stage;
 	static boolean btnYesClicked;
 
-	public static boolean show(String message, String title,
-							   String textYes, String textNo)
+	public static boolean showConfirmation(String message, String title,
+										   String textYes, String textNo)
 	{
 		btnYesClicked = false;
 
@@ -39,6 +39,7 @@ public class ConfirmationBox
 
 		HBox paneBtn = new HBox(20);
 		paneBtn.getChildren().addAll(btnYes, btnNo);
+		paneBtn.setAlignment(Pos.CENTER);
 
 		VBox pane = new VBox(20);
 		pane.getChildren().addAll(lbl, paneBtn);

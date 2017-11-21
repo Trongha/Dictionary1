@@ -24,6 +24,7 @@ import manager.AppManager;
 import manager.TestsManager;
 
 import javafx.event.ActionEvent;
+import view.TextOutput.Text;
 
 import java.io.IOException;
 
@@ -146,16 +147,12 @@ public class StudyController {
         }
     }
 
-    public void LearnLearn() {
-
-    }
-
     @FXML
     void startLearn(ActionEvent event) {
         if (groupChoice.getValue() == null) {
-            MessageBox.show("Chưa chọn bộ từ", "");
+            MessageBox.show(Text.getTexts().get("ChuaChonBoTu"), "");
         } else if (numTest.getValue() == null) {
-            MessageBox.show("Chưa chọn số lượng test", "");
+            MessageBox.show(Text.getTexts().get("ChuaChonSoLuong"), "");
         } else{
             numTestWasChoose = numTest.getValue();
             groupTest = manager.getGroup(groupChoice.getValue());
@@ -192,6 +189,9 @@ public class StudyController {
         }
     }
 
+    /**
+     * Lạp dữ liệu cho câu hỏi mới
+     */
     public void setAsk() {
         unCheck();
         waiting.toFront();
@@ -202,9 +202,13 @@ public class StudyController {
         radio3.setText(test.getDapAn()[2]);
         radio4.setText(test.getDapAn()[3]);
         choiceDapAn.setDisable(false);
-        scores.setText(String.format("Scores:\n%d/%d", learnManager.getScores(), learnManager.getMaxScores()));
+        scores.setText(String.format("%s:\n%d/%d",Text.getTexts().get("Scores"), learnManager.getScores(), learnManager.getMaxScores()));
     }
 
+    /**
+     * Hiện icon đúng/sai
+     * @param rightOrWrong
+     */
     public void setKetQua(boolean rightOrWrong) {
         choiceDapAn.setDisable(true);
         if (rightOrWrong == true) {
@@ -216,6 +220,10 @@ public class StudyController {
 
     }
 
+    /**
+     * Check đáp án
+     * @param event
+     */
     public void check(ActionEvent event) {
         String dapan = "";
         if (radio1.isSelected()) {
@@ -228,19 +236,19 @@ public class StudyController {
             dapan += radio4.getText();
         }
         setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapan));
-//        ketQua.setText(learn.getTests()[nowTest].checkDapAn(dapan) ? "Đúng" : "Sai");
-        /*for (RadioButton chose : radio){
-            if (chose.isSelected()){
-                dapan += chose.getText();
-                System.out.println(dapan);
-            }
-        }*/
     }
 
+    /**
+     * Thông báo điểm số
+     */
     public void setFinishLabel(){
         finishLabel.setText(String.format("Điểm số của bạn là:\n%d/%d", learnManager.getScores(), learnManager.getMaxScores()));
     }
 
+    /**
+     * Next câu hỏi
+     * @param event
+     */
     public void next(ActionEvent event) {
         if (nowTest < numTestWasChoose-1){
             nowTest++;
@@ -251,19 +259,19 @@ public class StudyController {
         }
     }
 
+    /**
+     * Nhấn vào reLearn --> Thi lại
+     * @param event
+     */
     @FXML
     void reLearn(ActionEvent event) {
         this.refresh();
     }
 
-    @FXML
-    void changeGroup(ActionEvent event) throws Exception {
-        System.out.println("change");
-        maxNumTest = manager.getGroup(groupChoice.getValue()).getListWords().size();
-        System.out.println(maxNumTest);
-        setListNumber();
-    }
-
+    /**
+     * SHOW
+     * @throws Exception
+     */
     public void show() throws Exception {
 
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -277,14 +285,10 @@ public class StudyController {
         stage.showAndWait();
     }
 
-    public void close(ActionEvent e){
-        System.out.println("Testing is Exit");
-        ((Node)e.getSource()).getScene().getWindow().hide();
-    }
-
     @FXML
     public void initialize() {
         prepare.toFront();
+
 
         action.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
             if(newVal != null){
@@ -304,7 +308,9 @@ public class StudyController {
         });
         setListChoice();
 
-
+        /**
+         * Xem sự thay đổi của việc chọn nhóm
+         */
         groupChoice.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {

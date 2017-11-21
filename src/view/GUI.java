@@ -15,12 +15,9 @@ import manager.AppManager;
 import java.io.IOException;
 
 public class GUI extends Application {
-    private String myPath = "fxml/Welcome.fxml";
+
     private String myTitle = "Hello World";
 
-    public String getMyPath() {
-        return myPath;
-    }
 
     public String getMyTitle() {
         return myTitle;
@@ -37,10 +34,6 @@ public class GUI extends Application {
         }catch(IOException e){
             e.printStackTrace();
         }
-    }
-
-    public void backHome(){
-        this.move(this.getMyPath(), this.myTitle);
     }
 
     private double xOffset = 0;

@@ -15,7 +15,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import manager.AppManager;
 import javafx.event.ActionEvent;
-import manager.TestsManager;
+import view.TextOutput.Text;
 
 
 import java.io.File;
@@ -29,6 +29,7 @@ public class GroupMangerController {
     private static Word wordSelecting  = new Word();
 
     private AddWordController addWordController = new AddWordController();
+    private EditGroupNameController editGroupNameController = new EditGroupNameController();
 
 
     @FXML
@@ -42,7 +43,7 @@ public class GroupMangerController {
 
 
     @FXML
-    private JFXButton addGroupFX, editGroupFX, deleteGroupFX;
+    private JFXButton addGroupFX, editGroupFX, deleteGroupFX, merge;
 
     @FXML
     private Label groupName;
@@ -87,8 +88,28 @@ public class GroupMangerController {
         setTable();
     }
 
-    public void deleteGroup() {
+    @FXML
+    void setDeleteGroup(ActionEvent event) {
+        for (String groupName : listGroupSelected){
+            System.out.println(groupName);
+            if(ConfirmationBox.showConfirmation(String.format("Xóa %s", groupName), "Delete", "Yes", "No")){
+                manager.deleteGroup(groupName);
+            }
+        }
+        refresh();
+    }
 
+    @FXML
+    void setMerge(ActionEvent event) {
+        Group newGroup = new Group();
+        System.out.println("merge");
+        String[] allGroupSelecting = new String[listGroupSelected.size()];
+        int i =0;
+        for (String nameGroup : listGroupSelected){
+            allGroupSelecting[i++] = nameGroup;
+        }
+        manager.mergeGroups(allGroupSelecting);
+        refresh();
     }
 
     public void addGroupButton(ActionEvent e) {
@@ -109,6 +130,13 @@ public class GroupMangerController {
         }
     }
 
+    @FXML
+    void setEditGroup(ActionEvent event) throws Exception {
+        String newName = editGroupNameController.setEditNameGroupWindow(groupSelecting);
+        manager.getGroup(groupSelecting).reName(newName);
+        refresh();
+    }
+
     public void moveLearn(ActionEvent e) throws Exception {
         Stage abc = new Stage();
         Parent root = new FXMLLoader(getClass().getResource("fxml/Testing.fxml")).load();
@@ -119,7 +147,7 @@ public class GroupMangerController {
 
     @FXML
     void setAddWord(ActionEvent event) throws Exception {
-        Word newWord = addWordController.setAddWordWindow("Thêm", groupSelecting);
+        Word newWord = addWordController.setAddWordWindow("Thêm", groupSelecting, null);
 
         if (newWord != null) {
             String message = "";
@@ -135,15 +163,18 @@ public class GroupMangerController {
 
     @FXML
     void setDeleteWord(ActionEvent event) {
-
+        SearchController searchController = new SearchController();
+        searchController.deleteWord(wordSelecting);
     }
 
     @FXML
     void setEditWord(ActionEvent event) throws Exception{
-        Word newWord = addWordController.setAddWordWindow("Sửa", wordSelecting);
-        manager.editWord(newWord);
-        MessageBox.show("Đã cập nhật", "");
-        refresh();
+        Word newWord = addWordController.setAddWordWindow(Text.getTexts().get("editBtn"),"", wordSelecting);
+        if (newWord != null){
+            manager.editWord(newWord);
+            MessageBox.show(Text.getTexts().get("updated"), "");
+            refresh();
+        }
     }
 
     @FXML
@@ -156,14 +187,25 @@ public class GroupMangerController {
 
         listviewGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             listGroupSelected = listviewGroups.getSelectionModel().getSelectedItems();
-            if (listGroupSelected.size() == 1) {
+            System.out.println(listGroupSelected.size());
+            if(listGroupSelected.size() == 0){
+                merge.setDisable(true);
+                editGroupFX.setDisable(true);
+                deleteGroupFX.setDisable(true);
+            }
+            else if (listGroupSelected.size() == 1) {
+
+                merge.setDisable(true);
                 editGroupFX.setDisable(false);
                 deleteGroupFX.setDisable(false);
+
                 groupSelecting = newValue;
                 setTable();
 //                setListWords(manager.getGroup(newValue));
 
             } else if (listGroupSelected.size() > 1) {
+
+                merge.setDisable(false);
                 editGroupFX.setDisable(true);
                 deleteGroupFX.setDisable(false);
             }
@@ -171,6 +213,8 @@ public class GroupMangerController {
         table.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue!=null){
                 wordSelecting = newValue;
+//                wordSelecting.setWordGroup(groupSelecting);
+                System.out.println(wordSelecting);
                 System.out.println(wordSelecting);
                 editWord.setDisable(false);
                 deleteWord.setDisable(false);

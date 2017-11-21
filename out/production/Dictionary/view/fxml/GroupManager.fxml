@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
@@ -34,12 +35,17 @@
                                     <FontAwesomeIconView fill="#0943ff" glyphName="PLUS" size="20" text="" />
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="editGroupFX" contentDisplay="CENTER" disable="true" prefHeight="28.0" prefWidth="39.0" text=" ">
+                              <JFXButton fx:id="merge" disable="true" onAction="#setMerge" text=" ">
+                                 <graphic>
+                                    <MaterialIconView fill="#9f00a4" glyphName="MERGE_TYPE" size="20" />
+                                 </graphic>
+                              </JFXButton>
+                              <JFXButton fx:id="editGroupFX" contentDisplay="CENTER" disable="true" onAction="#setEditGroup" prefHeight="28.0" prefWidth="39.0" text=" ">
                                  <graphic>
                                     <FontAwesomeIconView fill="#0c9024" glyphName="PENCIL_SQUARE_ALT" size="20" text="" />
                                  </graphic>
                               </JFXButton>
-                              <JFXButton fx:id="deleteGroupFX" contentDisplay="CENTER" disable="true" prefHeight="13.0" prefWidth="39.0" text=" ">
+                              <JFXButton fx:id="deleteGroupFX" contentDisplay="CENTER" disable="true" onAction="#setDeleteGroup" prefHeight="13.0" prefWidth="39.0" text=" ">
                                  <graphic>
                                     <FontAwesomeIconView fill="#d30000" glyphName="REMOVE" size="20" textAlignment="JUSTIFY" textOrigin="CENTER" />
                                  </graphic>

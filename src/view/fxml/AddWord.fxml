@@ -39,11 +39,11 @@
             <Font name="Monospace 821 Bold BT" size="15.0" />
          </font>
       </JFXButton>
-      <AnchorPane layoutX="-4.0" prefHeight="350.0" prefWidth="30.0" style="-fx-background-color: #47A4E9;" />
+      <AnchorPane layoutX="-4.0" prefHeight="350.0" prefWidth="31.0" style="-fx-background-color: #47A4E9;" />
       <Label fx:id="linkImg" layoutX="36.0" layoutY="243.0" prefHeight="17.0" prefWidth="160.0" />
-      <JFXButton fx:id="cancel" alignment="CENTER" contentDisplay="CENTER" layoutX="-6.0" layoutY="1.0" onAction="#cancel" prefHeight="28.0" prefWidth="30.0" text=" ">
+      <JFXButton fx:id="cancel" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="-3.0" layoutY="1.0" onAction="#cancel" prefHeight="30.0" prefWidth="7.0" text=" ">
          <graphic>
-            <FontAwesomeIconView fill="RED" glyphName="CLOSE" size="20" />
+            <FontAwesomeIconView fill="RED" glyphName="CLOSE" size="18" text="" />
          </graphic>
       </JFXButton>
       <JFXComboBox fx:id="groupChoice" focusColor="RED" labelFloat="true" layoutX="52.0" layoutY="159.0" prefHeight="25.0" prefWidth="126.0" promptText="Bộ từ:" />

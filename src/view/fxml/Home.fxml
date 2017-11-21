@@ -77,7 +77,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="statistical" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="35.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="statistical" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setStatistical" prefHeight="35.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
