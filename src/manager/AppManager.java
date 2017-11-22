@@ -2,6 +2,8 @@ package manager;
 
 import data.Group;
 import data.Word;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import sun.java2d.opengl.WGLSurfaceData;
 
 import java.util.*;
@@ -14,12 +16,14 @@ import java.util.*;
 public class AppManager {
     private static ArrayList<Group> groups = new ArrayList<>();
     private static Group allGroup = new Group();
+    private static ObservableList<Group> listViewGroupData = FXCollections.observableArrayList();
 
     public AppManager() {
     }
 
     static {
-        allGroup.setName("All Group");
+        allGroup.setName("All Topic");
+        groups.add(allGroup);
     }
 
     /**
@@ -34,6 +38,14 @@ public class AppManager {
                 return group;
         }
         return groups.get(0);
+    }
+
+    public static ObservableList<Group> getListViewGroupData() {
+        return listViewGroupData;
+    }
+
+    public static void setListViewGroupData(ObservableList<Group> listViewGroupData) {
+        AppManager.listViewGroupData = listViewGroupData;
     }
 
     public static Group getAllGroup() {
@@ -82,15 +94,27 @@ public class AppManager {
         return wordEnglishs;
     }
 
-    public void addGroup(Group group) {
-        groups.add(group);
-        allGroup.addGroup(group);
+    public boolean addGroup(Group newGroup) {
+        System.out.println("add Group");
+        boolean add = true;
+        for (Group oldGroup : groups){
+            if (oldGroup.getName().equals(newGroup.getName())){
+                System.out.println("Trùng tên");
+                return false;
+            }
+        }
+
+        groups.add(newGroup);
+        allGroup.addGroup(newGroup);
         Collections.sort(groups, new Comparator<Group>() {
             @Override
             public int compare(Group o1, Group o2) {
                 return o1.getName().compareToIgnoreCase(o2.getName());
             }
         });
+        listViewGroupData.clear();
+        listViewGroupData.addAll(groups);
+        return add;
     }
 
     public void mergeGroups(String[] grName, String newName){
@@ -107,8 +131,6 @@ public class AppManager {
         newGroup.outFile();
         this.addGroup(newGroup);
     }
-
-    public void editGroup(){}
 
     public void deleteGroup(String name) {
         for (int i = 0; i < groups.size(); i++) {

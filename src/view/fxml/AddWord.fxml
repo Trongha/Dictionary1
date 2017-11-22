@@ -34,9 +34,9 @@
             </ImageView>
          </children>
       </HBox>
-      <JFXButton fx:id="btnAdd" layoutX="56.0" layoutY="299.0" onAction="#addWord" ripplerFill="RED" style="-fx-background-color: #47A4E9;" text="Add" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnAdd" layoutX="79.0" layoutY="303.0" onAction="#addWord" ripplerFill="RED" style="-fx-background-color: #47A4E9;" text="Add" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Monospace 821 Bold BT" size="15.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
       <AnchorPane layoutX="-4.0" prefHeight="350.0" prefWidth="31.0" style="-fx-background-color: #47A4E9;">

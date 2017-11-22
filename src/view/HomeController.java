@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.event.ActionEvent;
@@ -19,6 +20,9 @@ public class HomeController {
 
     @FXML
     private JFXButton home, dictionary, wordManager, learn, statistical, exit;
+
+    @FXML
+    private Label desktop;
 
     @FXML
     private AnchorPane homeView;
@@ -48,33 +52,35 @@ public class HomeController {
 
     @FXML
     public void setDictionary(ActionEvent e) throws Exception {
+        desktop.setText("Dictionary");
         paneView.getChildren().setAll(searchPane);
         paneView.toFront();
+
     }
 
     @FXML
     public void setHome(ActionEvent e) throws Exception {
+        desktop.setText("Home");
         homeView.toFront();
     }
 
     @FXML
     public void setWordManager(ActionEvent e) throws Exception {
+        desktop.setText("Words Manager");
         paneView.getChildren().setAll(managePane);
         paneView.toFront();
     }
 
-
-
     @FXML
     void setLearn(ActionEvent event) throws Exception {
-//        studyController.reLoad();
+        desktop.setText("Study");
         paneView.getChildren().setAll(studyPane);
         paneView.toFront();
-
     }
 
     @FXML
     void setStatistical(ActionEvent event) {
+        desktop.setText("Statistical");
         paneView.getChildren().setAll(statisticalPane);
         paneView.toFront();
     }
