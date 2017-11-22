@@ -65,9 +65,6 @@ public class FlashcardController {
         enFece
     }
 
-    @FXML
-    private Label numCardSeen;
-
     private FrontPane frontPane = FrontPane.enFece;
 
     private Group group= new Group();
@@ -105,8 +102,6 @@ public class FlashcardController {
     }
 
     void setNumCardSeen(){
-        String s = String.format("%d/%d", flashcardsManager.getNumWordSelected(), numCard);
-        numCardSeen.setText(s);
         System.out.println((flashcardsManager.getNumWordSelected() *100 / numCard));
         slider.setValue(flashcardsManager.getNumWordSelected()*100/numCard);
         System.out.println("Set Value");
@@ -123,7 +118,7 @@ public class FlashcardController {
 
     public void newCard(Word word){
         nowWord = word;
-        System.out.println("dkmdkdm" + word.getVietNam());
+        System.out.println(word.getVietNam());
 
         enText.setText(word.getEnglish());
         vnText.setText(word.getVietNam());

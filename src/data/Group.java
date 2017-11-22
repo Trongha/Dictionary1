@@ -33,7 +33,7 @@ public class Group {
         this.loadFile();
         this.size = this.listWords.size();
         System.out.println(size);
-        this.outFile();
+//        this.outFile();
     }
 
     /**
@@ -168,7 +168,7 @@ public class Group {
         for (Word word : this.listWords.values()){
             if (word.getLevel() != Level.nothing){
                 numWordStudied ++;
-                if (word.getLevel() == Level.esasy){
+                if (word.getLevel() == Level.easy){
                     numWordEsasy++;
                 }
             }

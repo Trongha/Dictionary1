@@ -11,7 +11,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -66,7 +65,7 @@
                   </Label>
                   <ImageView fx:id="image" fitHeight="230.0" fitWidth="222.0" layoutX="349.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../data/dataFile/img/nguoc.jpg" />
+                        <Image url="@../../resrc/img/default.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="outVN" alignment="TOP_LEFT" layoutX="21.0" layoutY="82.0" prefHeight="393.0" prefWidth="329.0" text=" " wrapText="true">
@@ -74,17 +73,6 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <StackPane layoutX="362.0" layoutY="280.0" prefHeight="104.0" prefWidth="106.0">
-                     <children>
-                        <ImageView fx:id="waiting" fitHeight="109.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../resrc/icon_img/TakeItEasy.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </StackPane>
                </children>
             </AnchorPane>
          </children>

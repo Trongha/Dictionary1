@@ -16,14 +16,12 @@ import java.util.*;
 public class AppManager {
     private static ArrayList<Group> groups = new ArrayList<>();
     private static Group allGroup = new Group();
-    private static ObservableList<Group> listViewGroupData = FXCollections.observableArrayList();
 
     public AppManager() {
     }
 
     static {
         allGroup.setName("All Topic");
-        groups.add(allGroup);
     }
 
     /**
@@ -38,14 +36,6 @@ public class AppManager {
                 return group;
         }
         return groups.get(0);
-    }
-
-    public static ObservableList<Group> getListViewGroupData() {
-        return listViewGroupData;
-    }
-
-    public static void setListViewGroupData(ObservableList<Group> listViewGroupData) {
-        AppManager.listViewGroupData = listViewGroupData;
     }
 
     public static Group getAllGroup() {
@@ -106,14 +96,13 @@ public class AppManager {
 
         groups.add(newGroup);
         allGroup.addGroup(newGroup);
+
         Collections.sort(groups, new Comparator<Group>() {
             @Override
             public int compare(Group o1, Group o2) {
                 return o1.getName().compareToIgnoreCase(o2.getName());
             }
         });
-        listViewGroupData.clear();
-        listViewGroupData.addAll(groups);
         return add;
     }
 
@@ -155,6 +144,18 @@ public class AppManager {
     public void deleteWord(Word wordDelete){
         System.out.println("Delete Word");
         this.getGroup(wordDelete.getWordGroup()).deleteWord(wordDelete);
+        System.out.println("Delete Word Complete!");
+    }
+
+    public void deleteWordInAllGroup(Word wordDelete){
+        System.out.println("Delete Word");
+        for (Group group : groups){
+            if (group.getListWords().containsKey(wordDelete.getEnglish())){
+                System.out.println("Delete in " + group.getName());
+                group.delete(wordDelete.getEnglish());
+            }
+        }
+        allGroup.delete(wordDelete.getEnglish());
         System.out.println("Delete Word Complete!");
     }
 

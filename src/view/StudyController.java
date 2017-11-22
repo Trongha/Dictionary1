@@ -106,11 +106,13 @@ public class StudyController {
     private int numTestWasChoose;
 
     public void setListChoice() {
+        System.out.println("setListChoice");
         groupChoice.getItems().clear();
         for (Group group : AppManager.getGroups()) {
             if(group.getListWords().size() > 0)
                 groupChoice.getItems().add(group.getName());
         }
+        groupChoice.getItems().add(AppManager.getAllGroup().getName());
         //groupChoice.setValue(AppManager.getGroups().get(0).getName());
     }
 

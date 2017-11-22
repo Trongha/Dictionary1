@@ -44,7 +44,6 @@ public class HomeController {
             searchPane = new FXMLLoader(getClass().getResource("fxml/Search.fxml")).load();
             managePane = new FXMLLoader(getClass().getResource("fxml/GroupManager.fxml")).load();
             studyPane = new FXMLLoader(getClass().getResource("fxml/Study.fxml")).load();
-            statisticalPane = new FXMLLoader(getClass().getResource("fxml/Statistical.fxml")).load();
         }catch (IOException e){
             e.printStackTrace();
         }
@@ -79,8 +78,9 @@ public class HomeController {
     }
 
     @FXML
-    void setStatistical(ActionEvent event) {
+    void setStatistical(ActionEvent event) throws Exception {
         desktop.setText("Statistical");
+        statisticalPane = new FXMLLoader(getClass().getResource("fxml/Statistical.fxml")).load();
         paneView.getChildren().setAll(statisticalPane);
         paneView.toFront();
     }

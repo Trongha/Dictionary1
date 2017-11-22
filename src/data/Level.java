@@ -2,7 +2,7 @@ package data;
 
 public enum  Level {
     nothing,
-    esasy,
+    easy,
     moderate,
     hard
 }

@@ -141,7 +141,7 @@ SearchController {
 
     public void deleteWord(Word wordDelete){
         if (ConfirmationBox.showConfirmation(String.format("Xóa %s ?", wordDelete.getEnglish()), "Delete Word", "Yes", "No")){
-            manager.deleteWord(wordDelete);
+            manager.deleteWordInAllGroup(wordDelete);
         };
     }
 

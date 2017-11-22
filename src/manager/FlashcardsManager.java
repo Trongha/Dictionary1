@@ -1,7 +1,6 @@
 package manager;
 
 import data.Group;
-import data.Level;
 import data.Word;
 
 import java.util.HashSet;
@@ -43,7 +42,7 @@ public class FlashcardsManager {
                 break;
             }
             case nothing:
-            case esasy: {
+            case easy: {
                 esasyQueue.add(word);
                 break;
             }
@@ -74,7 +73,7 @@ public class FlashcardsManager {
 
         System.out.println("  size hard    : " + hardQueue.size());
         System.out.println("  size moretate: " + moderateQueue.size());
-        System.out.println("  size esasy   : " + esasyQueue.size());
+        System.out.println("  size easy   : " + esasyQueue.size());
     }
 
     public int getNumOfCard() {
@@ -109,12 +108,12 @@ public class FlashcardsManager {
     }
 
     /**
-     * Lấy ra 1 từ mức esasy
+     * Lấy ra 1 từ mức easy
      *
      * @return
      */
     public Word esasyQueuePoll() {
-        System.out.println("----> return Word in esasy");
+        System.out.println("----> return Word in easy");
         return esasyQueue.poll();
     }
 

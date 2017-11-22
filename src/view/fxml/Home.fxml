@@ -17,11 +17,11 @@
    <children>
       <VBox fx:id="menuPane" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="225.0" prefHeight="580.0" prefWidth="124.0" style="-fx-background-color: #1194F6;" stylesheets="@../css/Home.css">
          <children>
-            <HBox alignment="CENTER" prefHeight="123.0" prefWidth="126.0">
+            <HBox alignment="CENTER" prefHeight="105.0" prefWidth="126.0">
                <children>
                   <ImageView fitHeight="155.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../resrc/icon_img/HomeButton.gif" />
+                        <Image url="@../../resrc/img/HomeButton.gif" />
                      </image>
                      <effect>
                         <Blend mode="GREEN" opacity="0.0" />
@@ -29,7 +29,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <JFXButton fx:id="home" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="20.0" prefWidth="225.0" style="-fx-background-image: resrc\icon_img\HomeButton.jpg;" text="Home" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="home" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setHome" prefHeight="55.0" prefWidth="225.0" text="Home" textOverrun="CENTER_WORD_ELLIPSIS" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
@@ -40,7 +40,7 @@
                   <Insets />
                </VBox.margin>
             </JFXButton>
-            <JFXButton fx:id="learn" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setLearn" prefHeight="35.0" prefWidth="225.0" text="Study" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="learn" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setLearn" prefHeight="55.0" prefWidth="225.0" text="Study" textOverrun="CENTER_WORD_ELLIPSIS" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
@@ -54,7 +54,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="dictionary" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setDictionary" prefHeight="40.0" prefWidth="225.0" text="Dictionary" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="dictionary" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setDictionary" prefHeight="55.0" prefWidth="225.0" text="Dictionary" textOverrun="CENTER_WORD_ELLIPSIS" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
@@ -68,7 +68,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="wordManager" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setWordManager" prefHeight="35.0" prefWidth="225.0" text="Words Manager" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="wordManager" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setWordManager" prefHeight="55.0" prefWidth="225.0" text="Words Manager" textOverrun="CENTER_WORD_ELLIPSIS" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
@@ -82,7 +82,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="statistical" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#setStatistical" prefHeight="35.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="statistical" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setStatistical" prefHeight="55.0" prefWidth="225.0" text="Statistical" textOverrun="CENTER_WORD_ELLIPSIS" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
@@ -96,7 +96,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="exit" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#exit" prefHeight="50.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="exit" alignment="TOP_CENTER" buttonType="RAISED" contentDisplay="TOP" graphicTextGap="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#exit" prefHeight="55.0" prefWidth="225.0" text="Exit" textOverrun="CENTER_WORD_ELLIPSIS" VBox.vgrow="ALWAYS">
                <font>
                   <Font name="Dutch 801 Bold BT" size="15.0" />
                </font>
