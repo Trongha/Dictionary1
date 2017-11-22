@@ -15,27 +15,27 @@ import java.util.Iterator;
  * Created by Trong on 30/10/2017.
  */
 public class Input {
-    private String patch = "";
+    private String path = "";
 
     public Input() {}
 
-    public Input(String patch) {
-        this.patch = patch;
+    public Input(String path) {
+        this.path = path;
     }
 
-    public  String getPatch() {
-        return this.patch;
+    public  String getPath() {
+        return this.path;
     }
 
-    public void setPatch(String patch) {
-        this.patch = patch;
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public HashMap<String, Word> loadMap(){
         HashMap<String, Word> map = new HashMap<>();
 
         try{
-            FileInputStream inputStream = new FileInputStream(new File(patch));
+            FileInputStream inputStream = new FileInputStream(new File(path));
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
             XSSFSheet sheet = workbook.getSheetAt( 0);
             Iterator<Row> rowIterator = sheet.iterator();
@@ -48,7 +48,7 @@ public class Input {
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
                 Iterator<Cell> cellIterator = row.cellIterator();
-                String nameGroup = patch.substring(patch.lastIndexOf('\\')+1, patch.lastIndexOf('.'));
+                String nameGroup = path.substring(path.lastIndexOf('\\')+1, path.lastIndexOf('.'));
 
                 String eng="" ;
                 String vie="" ;
@@ -86,7 +86,7 @@ public class Input {
         }catch (IOException e){
             e.printStackTrace();
         }
-        System.out.println(String.format("%-70s", patch) + " Load Complete!");
+        System.out.println(String.format("%-70s", path) + " Load Complete!");
         return map;
     }
 }

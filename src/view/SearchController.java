@@ -72,7 +72,15 @@ SearchController {
             wordOuput.clone(word);
             outputE.setText(word.getEnglish());
             outVN.setText(word.getVietNam());
-            File f = new File(word.getPathImage());
+            String pathImg = "";
+            if (!word.getPathImage().equals("")){
+                pathImg = word.getPathImage();
+            }else {
+                pathImg = Text.getPaths().get("imgDefual");
+                System.out.println("Set img defaul");
+            }
+            System.out.println(pathImg);
+            File f = new File(pathImg);
             image.setImage(new Image(f.toURI().toString()));
         }
 

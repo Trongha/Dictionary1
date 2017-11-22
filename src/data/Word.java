@@ -89,8 +89,6 @@ public class Word {
 
         if (!getEnglish().equals(word.getEnglish())) return false;
         if (!getVietNam().equals(word.getVietNam())) return false;
-        if (!getPathImage().equals(word.getPathImage())) return false;
-        if (getLevel() != word.getLevel()) return false;
         return getWordGroup().equals(word.getWordGroup());
     }
 

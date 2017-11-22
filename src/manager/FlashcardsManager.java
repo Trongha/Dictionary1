@@ -1,6 +1,7 @@
 package manager;
 
 import data.Group;
+import data.OldWord;
 import data.Word;
 
 import java.util.HashSet;
@@ -14,7 +15,8 @@ public class FlashcardsManager {
     private HashSet<String> wordSelected = new HashSet<String>(); //Lưu các từ tiếng anh đã học
     private Word oldWord = new Word();
     private Word newWord = new Word();
-    int numOfCard = 0;
+    private int numOfCard = 0;
+
 
     //Mật độ sinh thẻ theo cấp độ
     private static Double hard = 0.5;
@@ -152,6 +154,9 @@ public class FlashcardsManager {
                 this.add1Word(newWord);
         }while (newWord.equals(oldWord));
         wordSelected.add(newWord.getEnglish());
+        OldWord.addOldWord(newWord);
         return newWord;
     }
+
+
 }

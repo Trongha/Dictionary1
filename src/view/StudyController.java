@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import data.Group;
+import data.OldWord;
 import data.Test;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,6 +15,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -26,6 +28,7 @@ import manager.TestsManager;
 import javafx.event.ActionEvent;
 import view.TextOutput.Text;
 
+import java.io.File;
 import java.io.IOException;
 
 public class StudyController {
@@ -87,13 +90,16 @@ public class StudyController {
     private String groupChoicePromptText = "";
 
     @FXML
-    private JFXRadioButton checkToTest, checkToFlash;
+    private JFXRadioButton checkToTest, checkToFlash, newWords, oldWords;
 
     @FXML
     private ToggleGroup action;
 
     @FXML
     private JFXButton close;
+
+    @FXML
+    private ImageView imgFinish;
 
     private Stage stage = new Stage();
 
@@ -102,8 +108,9 @@ public class StudyController {
     private TestsManager learnManager;
     private AppManager manager = new AppManager();
     private int nowTest = 0;
-    private Group groupTest;
+    private static Group groupTest;
     private int numTestWasChoose;
+    private OldWord oldWord = new OldWord();
 
     public void setListChoice() {
         System.out.println("setListChoice");
@@ -128,6 +135,7 @@ public class StudyController {
         userReady( new ActionEvent());
         start.setDisable(true);
 
+        groupChoice.setDisable(false);
         groupChoice.setPromptText(groupChoicePromptText);
         numTest.setPromptText(numTestPromptText);
 
@@ -165,7 +173,7 @@ public class StudyController {
             MessageBox.show(Text.getTexts().get("ChuaChonSoLuong"), "");
         } else{
             numTestWasChoose = numTest.getValue();
-            groupTest = manager.getGroup(groupChoice.getValue());
+
             if (checkToTest.isSelected()){
                 System.out.println("----->goto Test");
                 learnManager = new TestsManager(groupTest.getListWords(), numTestWasChoose);
@@ -183,8 +191,6 @@ public class StudyController {
                 }
             }
         }
-
-
     }
 
 
@@ -299,6 +305,9 @@ public class StudyController {
     @FXML
     public void initialize() {
         prepare.toFront();
+        oldWord.input();
+
+        imgFinish.setImage(new Image((new File(Text.getPaths().get("imgFinish"))).toURI().toString()));
 
         //Chọn chế độ học/kiểm tra
         action.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
@@ -309,15 +318,24 @@ public class StudyController {
                     groupChoicePromptText = "Nhóm muốn kiểm tra: ";
                     numTestPromptText = "Số câu hỏi: ";
                     refresh();
-                }else if(ifo.indexOf(checkToFlash.getId()) > 0){
+                }else {
                     System.out.println("choice Flashcard");
                     groupChoicePromptText = "Nhóm muốn học: ";
                     numTestPromptText = "Số thẻ: ";
                     refresh();
+                    if(ifo.indexOf(checkToFlash.getId()) < 0){
+                        groupChoice.setDisable(true);
+                        if (ifo.indexOf(oldWords.getId()) > 0){
+                            groupChoice.setValue("Từ lâu nhất chưa ôn");
+
+                        }else {
+                            groupChoice.setValue("Từ mới");
+                        }
+
+                    }
                 }
             }
         });
-        setListChoice();
 
         /**
          * Xem sự thay đổi của việc chọn nhóm
@@ -326,13 +344,15 @@ public class StudyController {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue!=null){
-                    maxNumTest = manager.getGroup(groupChoice.getValue()).getListWords().size();
+                    groupTest = manager.getGroup(groupChoice.getValue());
+                    maxNumTest = groupTest.getListWords().size();
                     System.out.println(maxNumTest);
                     setListNumber();
                 }
             }
         });
 
+        // nghe kết quả phần kiểm tra
         DapAn.selectedToggleProperty().addListener((observable, oldVal, newVal) -> {
                     if(newVal!=null){
                         System.out.println(newVal.toString());
@@ -340,8 +360,7 @@ public class StudyController {
                         System.out.println(newVal + " was selected");
                         setKetQua(learnManager.getTests()[nowTest].checkDapAn(dapAnSelected[1]));
                     }
-                }
-        );
+                });
 
     }
 }
