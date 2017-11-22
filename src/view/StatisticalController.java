@@ -29,8 +29,6 @@ public class StatisticalController {
     @FXML
     private TableColumn<Group, Integer> numEsasy;
 
-
-
     public void setTable(){
 /*
         AppManager.getListViewGroupData().clear();

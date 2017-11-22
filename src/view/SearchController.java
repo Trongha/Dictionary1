@@ -103,7 +103,7 @@ SearchController {
      */
     public void search2() {
         listWordData.clear();
-        ArrayList<Word> wordEnglishsSearch = manager.search2(input.getText(), "");
+        ArrayList<Word> wordEnglishsSearch = manager.search2(input.getText(), AppManager.getAllGroup().getName());
         for (Word word : wordEnglishsSearch) {
             listWordData.add(word.getEnglish());
         }

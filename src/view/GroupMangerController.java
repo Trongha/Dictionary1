@@ -123,22 +123,26 @@ public class GroupMangerController {
         refresh();
     }
 
+    @FXML
     public void addGroupButton(ActionEvent e) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File("src\\data\\dataFile\\xlsx"));
         List<File> selectedFiles = fileChooser.showOpenMultipleDialog(null);
+
         if (selectedFiles != null) {
             for (File file : selectedFiles) {
                 Group newGroup = new Group(file.getPath());
-                manager.addGroup(newGroup);
-                MessageBox.show("Đã thêm " + newGroup.getName(), "Thêm nhóm từ");
+                if (manager.addGroup(newGroup)){
+                    MessageBox.show("Đã thêm " + newGroup.getName(), "Thêm nhóm từ");
+                }else {
+                    MessageBox.show("ERROR", "Thêm nhóm từ");
+                }
             }
-
-            setListGroups();
         } else {
             MessageBox.show("ERROR", "Thêm nhóm từ");
             System.out.println("File not found!");
         }
+        setListGroups();
     }
 
     @FXML
@@ -174,12 +178,14 @@ public class GroupMangerController {
             }
             MessageBox.show(message, "");
         }
+        refresh();
     }
 
     @FXML
     void setDeleteWord(ActionEvent event) {
         SearchController searchController = new SearchController();
         searchController.deleteWord(wordSelecting);
+        refresh();
     }
 
     @FXML

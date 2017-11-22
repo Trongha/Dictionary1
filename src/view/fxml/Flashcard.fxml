@@ -27,7 +27,7 @@
                            <children>
                               <ImageView fx:id="imgVN" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../data/dataFile/img/Autumn.jpg" />
+                                    <Image url="@../../resrc/icon_img/default.jpg" />
                                  </image>
                               </ImageView>
                            </children>
@@ -41,16 +41,16 @@
                   </HBox>
                   <HBox fx:id="enFace" prefHeight="165.0" prefWidth="400.0" style="-fx-background-color: #D0F5A9; -fx-background-radius: 25 0 25 0;">
                      <children>
-                        <AnchorPane prefHeight="145.0" prefWidth="61.0">
+                        <AnchorPane prefHeight="165.0" prefWidth="47.0">
                            <children>
-                              <ImageView fx:id="icon" fitHeight="50.0" fitWidth="50.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="icon" fitHeight="42.0" fitWidth="36.0" layoutX="11.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../resrc/icon_img/See%20you.png" />
+                                    <Image url="@../../resrc/icon_img/iconFlashcard.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </AnchorPane>
-                        <Label fx:id="enText" alignment="CENTER" contentDisplay="CENTER" prefHeight="165.0" prefWidth="321.0" text="Tiếng Anh" textFill="#00129e" wrapText="true">
+                        <Label fx:id="enText" alignment="CENTER" contentDisplay="CENTER" prefHeight="165.0" prefWidth="344.0" text="Tiếng Anh" textFill="#00129e" wrapText="true">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
@@ -73,11 +73,6 @@
                   <Icons525View fill="#f21313" glyphName="REFRESH" size="20" textAlignment="CENTER" />
                </graphic>
             </JFXButton>
-            <Label fx:id="numCardSeen" layoutX="320.0" layoutY="176.0" text="100/100" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
             <StackPane layoutX="-6.0" layoutY="168.0" nodeOrientation="LEFT_TO_RIGHT">
                <children>
                   <JFXSlider fx:id="slider" prefHeight="0.0" prefWidth="410.0" stylesheets="@../css/Slider.css" StackPane.alignment="CENTER" />
