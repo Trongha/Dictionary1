@@ -1,6 +1,8 @@
 package manager;
 
+import com.sun.xml.internal.ws.addressing.W3CWsaClientTube;
 import data.Group;
+import data.Level;
 import data.OldWord;
 import data.Word;
 import javafx.collections.FXCollections;
@@ -18,6 +20,7 @@ import java.util.*;
 public class AppManager {
     private static ArrayList<Group> groups = new ArrayList<>();
     private static Group allGroup = new Group();
+    private static Group wordsStudied = new Group();
     private static String pathFileXlsx = "src\\data\\dataFile\\xlsx";
     private OldWord oldWord = new OldWord();
 
@@ -26,6 +29,7 @@ public class AppManager {
 
     static {
         allGroup.setName("All Topic");
+        wordsStudied.setName("Words is studied");
     }
 
     /**
@@ -47,6 +51,7 @@ public class AppManager {
         allGroup.getListWords().clear();
         for (Group group : groups){
             allGroup.getListWords().putAll(group.getListWords());
+            add1GroupToWordsStudied(group);
         }
     }
 
@@ -62,6 +67,17 @@ public class AppManager {
         AppManager.groups = groups;
     }
 
+    public static Group getWordsStudied() {
+        return wordsStudied;
+    }
+
+    public static void add1GroupToWordsStudied(Group group){
+        for (Word word : group.getListWords().values()){
+            if (word.getLevel() != Level.nothing){
+                wordsStudied.addWord(word);
+            }
+        }
+    }
     /**
      * Search Chính xác
      *
@@ -94,6 +110,7 @@ public class AppManager {
 
         groups.add(newGroup);
         allGroup.addGroup(newGroup);
+        add1GroupToWordsStudied(newGroup);
 
         Collections.sort(groups, new Comparator<Group>() {
             @Override
@@ -167,7 +184,7 @@ public class AppManager {
         }
     }
 
-    public void groupOutFile() {
+    public void OutFile() {
         for (Group group : groups) {
             group.outFile();
         }

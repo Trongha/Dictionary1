@@ -4,9 +4,7 @@ import data.Group;
 import data.OldWord;
 import data.Word;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class FlashcardsManager {
     private Queue<Word> hardQueue = new LinkedList<Word>();
@@ -28,7 +26,6 @@ public class FlashcardsManager {
     public FlashcardsManager(Group _group, int _numOfCard) {
         setNumOfCard(_numOfCard);
         set3Queue(_group);
-
     }
 
     /**
@@ -64,9 +61,15 @@ public class FlashcardsManager {
      * @param group
      */
     public void set3Queue(Group group) {
+
         int i = 0;
         System.out.println("---->  set Group to Flashcard : " + group.getName());
-        for (Word word : group.getListWords().values()) {
+
+        //Shuffle List
+        List<Word> listWord = new ArrayList<Word>(group.getListWords().values());
+        Collections.shuffle(listWord);
+
+        for (Word word : listWord) {
             i++;
             this.add1Word(word);
             if (i == numOfCard)
@@ -152,7 +155,7 @@ public class FlashcardsManager {
             }
             if (newWord.equals(oldWord))
                 this.add1Word(newWord);
-        }while (newWord.equals(oldWord));
+        }while (newWord.equals(oldWord) && this.numOfCard > 1);
         wordSelected.add(newWord.getEnglish());
         OldWord.addOldWord(newWord);
         return newWord;

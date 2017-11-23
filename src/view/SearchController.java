@@ -3,6 +3,9 @@ package view;
 
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
+import data.Group;
+import data.Level;
 import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,6 +31,7 @@ SearchController {
     private GUI gui = new GUI();
     private AddWordController addWordController = new AddWordController();
     private static Word wordOuput = new Word();
+    private Group groupSearch = new Group();
 
     @FXML
     private JFXButton searchButton;
@@ -47,14 +51,12 @@ SearchController {
     @FXML
     private ListView<String> listWord;
 
+    @FXML
+    private JFXCheckBox studied;
+
     private static ObservableList<String> listWordData = FXCollections.observableArrayList();
-    public static Parent searchPane;
 
     public SearchController() {
-    }
-
-    public static Parent getSearchPane() {
-        return searchPane;
     }
 
     void refresh() {
@@ -97,8 +99,14 @@ SearchController {
     public void search(ActionEvent e) {
         if (!input.getText().trim().equals("") && input.getText() != null) {
             Word word = manager.search(input.getText());
+
             String s = String.format("%s", word.toString());
             reOutput(word);
+            if (studied.isSelected()){
+                if (word.getLevel() == Level.nothing){
+                    reOutput(new Word(input.getText(), "Chưa học từ này!"));
+                }
+            }
         }
        /*
         System.out.println(s);*/
@@ -111,7 +119,13 @@ SearchController {
      */
     public void search2() {
         listWordData.clear();
-        ArrayList<Word> wordEnglishsSearch = manager.search(input.getText(), AppManager.getAllGroup());
+        ArrayList<Word> wordEnglishsSearch = new ArrayList<Word>();
+        if (studied.isSelected()){
+             wordEnglishsSearch = manager.search(input.getText(), AppManager.getWordsStudied());
+        }else {
+             wordEnglishsSearch = manager.search(input.getText(), AppManager.getAllGroup());
+        }
+
         for (Word word : wordEnglishsSearch) {
             listWordData.add(word.getEnglish());
         }
@@ -171,6 +185,12 @@ SearchController {
     }
 
     @FXML
+    void checkStudied(ActionEvent event) {
+        search(event);
+        search2();
+    }
+
+    @FXML
     private void initialize() {
         refresh();
 
@@ -178,6 +198,7 @@ SearchController {
         input.textProperty().addListener((observable, oldValue, newValue) -> {
             search2();
         });
+
 
         // nghe even trên List view
         listWord.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {

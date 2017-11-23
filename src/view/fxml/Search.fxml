@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -31,6 +33,15 @@
                   </JFXButton>
                </children>
             </AnchorPane>
+            <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="423.0">
+               <children>
+                  <JFXCheckBox fx:id="studied" onAction="#checkStudied" text="Từ đã học">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </JFXCheckBox>
+               </children>
+            </HBox>
             <ButtonBar buttonMinWidth="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                <buttons>
                   <JFXButton fx:id="addWord" contentDisplay="CENTER" onAction="#setAddWord" prefHeight="28.0" prefWidth="39.0" text=" ">
