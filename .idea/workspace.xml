@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dc3ecc4-e4f2-4c79-87ef-23900a27b47f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/building dictionary.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/building dictionary.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/family.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/family.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/test.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/test.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/HomeController.java" afterPath="$PROJECT_DIR$/src/view/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/InputIntegerController.java" afterPath="$PROJECT_DIR$/src/view/InputIntegerController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Home.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Home.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,8 +35,8 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="102" column="54" lean-forward="true" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
+            <state relative-caret-position="174">
+              <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding>
                 <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
                 <element signature="method#setDictionary#0;class#HomeController#0" expanded="false" />
@@ -744,7 +746,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511444162881</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Thêm xong tính năng học nhanh từ mới">
+      <created>1511445412099</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1511445412099</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -820,7 +829,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update giao diện" />
     <MESSAGE value="Thêm close" />
     <MESSAGE value="Sắp xong Learning, lỗi ko uncheck được" />
     <MESSAGE value="Sắp xong learn rồi" />
@@ -845,7 +853,8 @@
     <MESSAGE value="Đang sửa cái study" />
     <MESSAGE value="đang dắt chỗ từ cũ bên controller study" />
     <MESSAGE value="Thêm xong tính năng ôn từ cũ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm xong tính năng ôn từ cũ" />
+    <MESSAGE value="Thêm xong tính năng học nhanh từ mới" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thêm xong tính năng học nhanh từ mới" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -874,16 +883,16 @@
         <state relative-caret-position="238">
           <caret line="154" column="47" lean-forward="true" selection-start-line="154" selection-start-column="47" selection-end-line="154" selection-end-column="47" />
           <folding>
-            <marker date="1511445348110" expanded="true" signature="10700:10761" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="10700:10810" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="10700:10855" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="10700:10893" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="10700:11639" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="10700:11676" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="10966:11600" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="11010:11562" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="11312:11517" ph="..." />
-            <marker date="1511445348110" expanded="true" signature="11358:11468" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="10700:10761" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="10700:10810" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="10700:10855" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="10700:10893" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="12525:12647" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="12525:12684" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="12525:12608" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="12525:12570" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="11312:11517" ph="..." />
+            <marker date="1511446852787" expanded="true" signature="11358:11468" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1038,8 +1047,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="102" column="54" lean-forward="true" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
+        <state relative-caret-position="174">
+          <caret line="100" column="0" lean-forward="true" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding>
             <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
             <element signature="method#setDictionary#0;class#HomeController#0" expanded="false" />

@@ -107,10 +107,9 @@ public class HomeController {
             if (n > 0){
                 FlashcardController flashcardController = new FlashcardController();
                 flashcardController.show(newWordsGroup, n);
+                unNewWords.toFront();
             }
         }
-
-        unNewWords.toFront();
     }
 
     @FXML

@@ -146,47 +146,58 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <StackPane layoutX="106.0" layoutY="70.0" prefHeight="92.0" prefWidth="350.0">
+                        <StackPane layoutX="83.0" layoutY="58.0" prefHeight="92.0" prefWidth="350.0">
                            <children>
                               <HBox fx:id="unOldWords" alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="350.0">
                                  <children>
-                                    <ImageView fitHeight="75.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="83.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../resrc/img/clock.png" />
                                        </image>
                                     </ImageView>
+                                    <AnchorPane prefHeight="92.0" prefWidth="275.0">
+                                       <children>
+                                          <FontAwesomeIconView fill="#06ae00" glyphName="CHECK" layoutX="199.0" layoutY="59.0" size="35" wrappingWidth="30.0" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </HBox>
                               <HBox prefHeight="92.0" prefWidth="350.0">
                                  <children>
-                                    <JFXButton fx:id="oldWords" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setOldWords" prefHeight="58.0" prefWidth="242.0" text="Ôn nhanh từ cũ" textAlignment="RIGHT" underline="true" HBox.hgrow="ALWAYS">
+                                    <JFXButton fx:id="oldWords" alignment="CENTER_RIGHT" buttonType="RAISED" graphicTextGap="2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setOldWords" prefHeight="58.0" prefWidth="242.0" text="Ôn nhanh từ cũ" textAlignment="RIGHT" underline="true" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </JFXButton>
-                                    <Pane prefHeight="92.0" prefWidth="85.0" />
+                                    <Pane prefHeight="92.0" prefWidth="79.0" style="-fx-background-color: #CEE3f6;" />
                                  </children>
                               </HBox>
                            </children>
                         </StackPane>
-                        <StackPane layoutX="241.0" layoutY="190.0" prefHeight="92.0" prefWidth="304.0">
+                        <StackPane layoutX="218.0" layoutY="178.0" prefHeight="92.0" prefWidth="378.0">
                            <children>
-                              <HBox fx:id="unNewWords" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="248.0">
+                              <HBox fx:id="unNewWords" alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="350.0">
                                  <children>
-                                    <ImageView fitHeight="75.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="83.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../resrc/img/clock.png" />
                                        </image>
                                     </ImageView>
+                                    <AnchorPane prefHeight="92.0" prefWidth="275.0">
+                                       <children>
+                                          <FontAwesomeIconView fill="#06ae00" glyphName="CHECK" layoutX="209.0" layoutY="59.0" size="35" wrappingWidth="30.0" />
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </HBox>
                               <HBox prefHeight="92.0" prefWidth="258.0">
                                  <children>
-                                    <JFXButton fx:id="newWords" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setNewWords" prefHeight="58.0" prefWidth="242.0" text="Học Nhanh từ mới" textAlignment="RIGHT" underline="true" HBox.hgrow="ALWAYS">
+                                    <JFXButton fx:id="newWords" alignment="CENTER_RIGHT" buttonType="RAISED" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setNewWords" prefHeight="58.0" prefWidth="242.0" text="Từ mới hôm nay" textAlignment="RIGHT" underline="true" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </JFXButton>
+                                    <Pane prefHeight="92.0" prefWidth="96.0" style="-fx-background-color: #CEE3f6;" />
                                  </children>
                               </HBox>
                            </children>
