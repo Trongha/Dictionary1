@@ -78,7 +78,7 @@ public class HomeController {
         desktop.setText(dictionary.getText());
         paneView.getChildren().setAll(searchPane);
         paneView.toFront();
-
+        imgInHome.setVisible(false);
     }
 
     @FXML
@@ -163,7 +163,7 @@ public class HomeController {
         Boolean save = ConfirmationBox.showConfirmation("\n Lưu trước khi thoát ko?", "", "Yes", "No");
         if (save){
             System.out.println("Save");
-            manager.groupOutFile();
+            manager.OutFile();
         }else {
             System.out.println("Don't save");
         }

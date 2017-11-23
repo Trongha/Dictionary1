@@ -181,6 +181,7 @@ public class StudyController {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                reLearn(event);
             }
         }
     }
@@ -326,7 +327,12 @@ public class StudyController {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue!=null){
-                    groupTest = manager.getGroup(groupChoice.getValue());
+                    String groupNameSelecting = groupChoice.getValue();
+                    if (groupNameSelecting.equals(AppManager.getAllGroup().getName())){
+                        groupTest = AppManager.getAllGroup();
+                    }else {
+                        groupTest = manager.getGroup(groupNameSelecting);
+                    }
                     maxNumTest = groupTest.getListWords().size();
                     System.out.println(maxNumTest);
                     setListNumber();

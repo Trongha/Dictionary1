@@ -22,6 +22,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import manager.FlashcardsManager;
+import view.TextOutput.Text;
 
 import java.io.File;
 import java.util.LinkedList;
@@ -123,10 +124,14 @@ public class FlashcardController {
         enText.setText(word.getEnglish());
         vnText.setText(word.getVietNam());
 
+        File f;
         if(!word.getPathImage().equals("")){
-            File f = new File(word.getPathImage());
-            imgVN.setImage(new Image(f.toURI().toString()));
+            f = new File(word.getPathImage());
+
+        }else{
+            f = new File(Text.getPaths().get("imgDefual"));
         }
+        imgVN.setImage(new Image(f.toURI().toString()));
 
         levels.setValue(word.getLevel().toString());
         System.out.println(word.getLevel());
@@ -142,6 +147,12 @@ public class FlashcardController {
         }
     }
 
+    /**
+     * hàm này để tạo cửa sổ, tạo cái thẻ
+     * @param _group
+     * @param _numCard
+     * @throws Exception
+     */
     public void show(Group _group, int _numCard) throws Exception {
         System.out.println(_group.getName());
 

@@ -21,15 +21,18 @@
          <font>
             <Font size="14.0" />
          </font></JFXTextField>
-      <JFXButton fx:id="imgChoice" buttonType="RAISED" layoutX="53.0" layoutY="213.0" onAction="#choiceImg" text="Image Chose File" textAlignment="CENTER">
+      <JFXButton fx:id="imgChoice" buttonType="RAISED" graphicTextGap="5.0" layoutX="53.0" layoutY="213.0" onAction="#choiceImg" text="Image" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
-         </font></JFXButton>
-      <HBox alignment="CENTER" layoutX="201.0" layoutY="144.0" prefHeight="190.0" prefWidth="190.0">
+         </font>
+         <graphic>
+            <FontAwesomeIconView glyphName="FILE_IMAGE_ALT" size="16" />
+         </graphic></JFXButton>
+      <HBox alignment="CENTER" layoutX="225.0" layoutY="159.0" prefHeight="170.0" prefWidth="170.0">
          <children>
-            <ImageView fx:id="img" fitHeight="190.0" fitWidth="190.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img" fitHeight="141.0" fitWidth="155.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../data/dataFile/img/nguoc.jpg" />
+                  <Image url="@../../resrc/img/default.png" />
                </image>
             </ImageView>
          </children>

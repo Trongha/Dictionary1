@@ -79,9 +79,17 @@ public class AddWordController {
             vietNamInp.setText(wordInput.getVietNam());
 
             valueOfListGroup = wordInput.getWordGroup();
-        }else {
 
+            File f;
+            if(!wordInput.getPathImage().equals("")){
+                f = new File(wordInput.getPathImage());
+            }else{
+                f = new File(Text.getPaths().get("imgDefual"));
+            }
+            img.setImage(new Image(f.toURI().toString()));
+            linkImg.setText(wordInput.getPathImage());
         }
+
         setListChoice();
 
         if (valueOfListGroup == null|| valueOfListGroup.equals("") ) {
@@ -96,6 +104,8 @@ public class AddWordController {
             System.out.println(btnOKText);
             btnAdd.setText(btnOKText);
         }
+
+
     }
 
     private void refresh() {
