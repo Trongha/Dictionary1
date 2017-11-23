@@ -85,6 +85,7 @@ public class HomeController {
     public void setHome(ActionEvent e) throws Exception {
         desktop.setText("Home");
         homeView.toFront();
+        imgInHome.setVisible(true);
     }
 
     @FXML
@@ -137,6 +138,7 @@ public class HomeController {
         desktop.setText("Words Manager");
         paneView.getChildren().setAll(managePane);
         paneView.toFront();
+        imgInHome.setVisible(false);
     }
 
     @FXML
@@ -144,6 +146,7 @@ public class HomeController {
         desktop.setText("Study");
         paneView.getChildren().setAll(studyPane);
         paneView.toFront();
+        imgInHome.setVisible(false);
     }
 
     @FXML
@@ -152,6 +155,7 @@ public class HomeController {
         statisticalPane = new FXMLLoader(getClass().getResource("fxml/Statistical.fxml")).load();
         paneView.getChildren().setAll(statisticalPane);
         paneView.toFront();
+        imgInHome.setVisible(false);
     }
 
     @FXML
@@ -164,10 +168,6 @@ public class HomeController {
             System.out.println("Don't save");
         }
         GUI.myPrimaryStage.close();
-    }
-
-    public VBox getMenuPane() {
-        return menuPane;
     }
 
     public static void setMenuPaneDisable(boolean disable) {

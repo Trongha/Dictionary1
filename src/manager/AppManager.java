@@ -21,7 +21,6 @@ public class AppManager {
     private static String pathFileXlsx = "src\\data\\dataFile\\xlsx";
     private OldWord oldWord = new OldWord();
 
-
     public AppManager() {
     }
 
@@ -41,6 +40,14 @@ public class AppManager {
                 return group;
         }
         return groups.get(0);
+    }
+
+    public void reLoadAllGroup(){
+        System.out.println("ReLoad group AllGroup");
+        allGroup.getListWords().clear();
+        for (Group group : groups){
+            allGroup.getListWords().putAll(group.getListWords());
+        }
     }
 
     public static Group getAllGroup() {
@@ -66,26 +73,12 @@ public class AppManager {
         return allGroup.search(key);
     }
 
-    public ArrayList<Word> search2(String key, String nameGroupSearch) {
+    public ArrayList<Word> search(String key, Group group){
         key = key.toLowerCase().trim();
         HashSet<Word> mapSearch = new HashSet<>();
-        if (!groups.isEmpty()) {
-            if (nameGroupSearch.equals("")) {
-                for (int i = 0; i < groups.size(); i++) {
-                    mapSearch.addAll(groups.get(i).search2(key));
-                }
-            } else {
-                mapSearch.addAll(this.getGroup(nameGroupSearch).search2(key));
-            }
-        }
+        mapSearch.addAll(group.search2(key));
         ArrayList<Word> wordEnglishs = new ArrayList<Word>(mapSearch);
-
-        Collections.sort(wordEnglishs, new Comparator<Word>() {
-            @Override
-            public int compare(Word o1, Word o2) {
-                return o1.getEnglish().compareToIgnoreCase(o2.getEnglish());
-            }
-        });
+        Collections.sort(wordEnglishs);
         return wordEnglishs;
     }
 
@@ -146,12 +139,10 @@ public class AppManager {
         this.addWord(word, word.getWordGroup());
     }
 
-    public void deleteWord(Word wordDelete) {
-        System.out.println("Delete Word");
-        this.getGroup(wordDelete.getWordGroup()).deleteWord(wordDelete);
-        System.out.println("Delete Word Complete!");
-    }
-
+    /**
+     * Xóa một từ khỏi tất cả các nhớm
+     * @param wordDelete
+     */
     public void deleteWordInAllGroup(Word wordDelete) {
         System.out.println("Delete Word");
         for (Group group : groups) {
@@ -164,7 +155,9 @@ public class AppManager {
         System.out.println("Delete Word Complete!");
     }
 
-
+    /**
+     * Load Data File
+     */
     public void loadFile() {
         File folder = new File(pathFileXlsx);
         for (File file : folder.listFiles()) {
@@ -172,7 +165,6 @@ public class AppManager {
                 this.addGroup(new Group(file.getPath()));
             }
         }
-
     }
 
     public void groupOutFile() {
