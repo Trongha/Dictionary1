@@ -204,7 +204,7 @@ public class StudyController {
         unCheck();
         waiting.toFront();
         Test test = new Test(learnManager.getTests()[nowTest]);
-        keyAsk.setText((nowTest + 1) + ". " + test.getKeyAsk().getEnglish());
+        keyAsk.setText((nowTest + 1) + ". " + test.getKeyAskString());
         radio1.setText(test.getDapAn()[0]);
         radio2.setText(test.getDapAn()[1]);
         radio3.setText(test.getDapAn()[2]);

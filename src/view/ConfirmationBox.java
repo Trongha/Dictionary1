@@ -22,6 +22,7 @@ public class ConfirmationBox
 		btnYesClicked = false;
 
 		stage = new Stage();
+
 		stage.initModality(Modality.APPLICATION_MODAL);
 		stage.setTitle(title);
 		stage.setMinWidth(250);
@@ -46,6 +47,7 @@ public class ConfirmationBox
 		pane.setAlignment(Pos.CENTER);
 
 		Scene scene = new Scene(pane);
+
 		stage.setScene(scene);
 		stage.showAndWait();
 		return btnYesClicked;
