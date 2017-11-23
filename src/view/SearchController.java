@@ -111,7 +111,7 @@ SearchController {
      */
     public void search2() {
         listWordData.clear();
-        ArrayList<Word> wordEnglishsSearch = manager.search2(input.getText(), AppManager.getAllGroup().getName());
+        ArrayList<Word> wordEnglishsSearch = manager.search(input.getText(), AppManager.getAllGroup());
         for (Word word : wordEnglishsSearch) {
             listWordData.add(word.getEnglish());
         }
@@ -173,9 +173,13 @@ SearchController {
     @FXML
     private void initialize() {
         refresh();
+
+        //Nghe even trên TextFiel input
         input.textProperty().addListener((observable, oldValue, newValue) -> {
             search2();
         });
+
+        // nghe even trên List view
         listWord.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 reOutput(manager.search(newValue));

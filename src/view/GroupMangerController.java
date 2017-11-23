@@ -31,16 +31,11 @@ public class GroupMangerController {
     private AddWordController addWordController = new AddWordController();
     private EditGroupNameController editGroupNameController = new EditGroupNameController();
 
-
     @FXML
     private ListView<String> listviewGroups;
     //Danh sách tất cả group đang chạy
     ObservableList<String> listGroupName = FXCollections.observableArrayList();
     ObservableList<String> listGroupSelected = FXCollections.observableArrayList();
-    @FXML
-    private ListView<String> listWords;
-    ObservableList<String> listWordData = FXCollections.observableArrayList();
-
 
     @FXML
     private JFXButton addGroupFX, editGroupFX, deleteGroupFX, merge;
@@ -78,7 +73,7 @@ public class GroupMangerController {
         groupName.setText(groupSelecting);
         listWordOfGroupSelecting.clear();
         System.out.println(groupSelecting);
-        ArrayList<Word> wordInGroupSelecting = manager.search2("", groupSelecting);
+        ArrayList<Word> wordInGroupSelecting = manager.search("", manager.getGroup(groupSelecting));
         listWordOfGroupSelecting.addAll(wordInGroupSelecting);
         table.setItems(listWordOfGroupSelecting);
     }
@@ -183,9 +178,11 @@ public class GroupMangerController {
 
     @FXML
     void setDeleteWord(ActionEvent event) {
-        SearchController searchController = new SearchController();
-        searchController.deleteWord(wordSelecting);
-        refresh();
+        if (ConfirmationBox.showConfirmation(String.format("Xóa %s ?", wordSelecting.getEnglish()), "Delete Word", "Yes", "No")){
+            manager.getGroup(groupSelecting).deleteWord(wordSelecting);
+            manager.reLoadAllGroup();
+            refresh();
+        }
     }
 
     @FXML
@@ -206,6 +203,7 @@ public class GroupMangerController {
 
         listviewGroups.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
+        //Nghe Even List Groups
         listviewGroups.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             listGroupSelected = listviewGroups.getSelectionModel().getSelectedItems();
             System.out.println(listGroupSelected.size());
@@ -219,10 +217,8 @@ public class GroupMangerController {
                 merge.setDisable(true);
                 editGroupFX.setDisable(false);
                 deleteGroupFX.setDisable(false);
-
                 groupSelecting = newValue;
                 setTable();
-//                setListWords(manager.getGroup(newValue));
 
             } else if (listGroupSelected.size() > 1) {
 
@@ -231,8 +227,11 @@ public class GroupMangerController {
                 deleteGroupFX.setDisable(false);
             }
         });
+
+        // Nghe even trên bảng
         table.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue!=null){
+
                 wordSelecting = newValue;
 //                wordSelecting.setWordGroup(groupSelecting);
                 System.out.println(wordSelecting);

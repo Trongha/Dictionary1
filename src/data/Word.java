@@ -3,7 +3,7 @@ package data;
 /**
  * Created by Trong on 28/10/2017.
  */
-public class Word {
+public class Word implements Comparable<Word>{
 
     private String English = "";
     private String VietNam = "";
@@ -90,6 +90,11 @@ public class Word {
         if (!getEnglish().equals(word.getEnglish())) return false;
         if (!getVietNam().equals(word.getVietNam())) return false;
         return getWordGroup().equals(word.getWordGroup());
+    }
+
+    @Override
+    public int compareTo(Word that) {
+        return this.getEnglish().compareToIgnoreCase(that.getEnglish());
     }
 
     @Override
