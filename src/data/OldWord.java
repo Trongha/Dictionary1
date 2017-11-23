@@ -14,6 +14,7 @@ import java.util.*;
 public class OldWord {
     private static Queue<Word> oldWordQueue = new LinkedList<Word>();
     private final String path = "src\\data\\dataFile\\xlsx\\oldWord\\oldWord.xlsx";
+    private static int size =0;
 
     public OldWord() {
     }
@@ -71,6 +72,7 @@ public class OldWord {
         }catch (IOException e){
             e.printStackTrace();
         }
+        this.size = oldWordQueue.size();
         System.out.println(String.format("%-70s", path) + " Load Complete!");
     }
 
@@ -141,6 +143,10 @@ public class OldWord {
         group.setName("Oldest Words");
         group.setListWords(this.getOldestWords(n));
         return group;
+    }
+
+    public static int getSize() {
+        return size;
     }
 
     @Override

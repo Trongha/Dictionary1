@@ -1,11 +1,13 @@
 package manager;
 
 import data.Group;
+import data.OldWord;
 import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sun.java2d.opengl.WGLSurfaceData;
 
+import java.io.File;
 import java.util.*;
 
 
@@ -16,6 +18,9 @@ import java.util.*;
 public class AppManager {
     private static ArrayList<Group> groups = new ArrayList<>();
     private static Group allGroup = new Group();
+    private static String pathFileXlsx = "src\\data\\dataFile\\xlsx";
+    private OldWord oldWord = new OldWord();
+
 
     public AppManager() {
     }
@@ -65,11 +70,11 @@ public class AppManager {
         key = key.toLowerCase().trim();
         HashSet<Word> mapSearch = new HashSet<>();
         if (!groups.isEmpty()) {
-            if (nameGroupSearch.equals("")){
+            if (nameGroupSearch.equals("")) {
                 for (int i = 0; i < groups.size(); i++) {
                     mapSearch.addAll(groups.get(i).search2(key));
                 }
-            }else {
+            } else {
                 mapSearch.addAll(this.getGroup(nameGroupSearch).search2(key));
             }
         }
@@ -87,8 +92,8 @@ public class AppManager {
     public boolean addGroup(Group newGroup) {
         System.out.println("add Group");
         boolean add = true;
-        for (Group oldGroup : groups){
-            if (oldGroup.getName().equals(newGroup.getName())){
+        for (Group oldGroup : groups) {
+            if (oldGroup.getName().equals(newGroup.getName())) {
                 System.out.println("Trùng tên");
                 return false;
             }
@@ -106,15 +111,15 @@ public class AppManager {
         return add;
     }
 
-    public void mergeGroups(String[] grName, String newName){
+    public void mergeGroups(String[] grName, String newName) {
 
-        Group newGroup = new Group(String.format("%s & %s", grName[0], grName[1]), this.getGroup(grName[0]),this.getGroup(grName[1]));
+        Group newGroup = new Group(String.format("%s & %s", grName[0], grName[1]), this.getGroup(grName[0]), this.getGroup(grName[1]));
 
-        for (int i=2 ; i<grName.length ; i++){
-            newGroup = new Group(String.format("%s & %s", newGroup.getName(), grName[i]), newGroup,this.getGroup(grName[i]));
+        for (int i = 2; i < grName.length; i++) {
+            newGroup = new Group(String.format("%s & %s", newGroup.getName(), grName[i]), newGroup, this.getGroup(grName[i]));
         }
 
-        if (!newName.trim().equals("")){
+        if (!newName.trim().equals("")) {
             newGroup.setName(newName);
         }
         newGroup.outFile();
@@ -137,20 +142,20 @@ public class AppManager {
         System.out.println(String.format("add %s %s to %s Complete!", word.getEnglish(), word.getVietNam(), group.getName()));
     }
 
-    public void editWord(Word word){
+    public void editWord(Word word) {
         this.addWord(word, word.getWordGroup());
     }
 
-    public void deleteWord(Word wordDelete){
+    public void deleteWord(Word wordDelete) {
         System.out.println("Delete Word");
         this.getGroup(wordDelete.getWordGroup()).deleteWord(wordDelete);
         System.out.println("Delete Word Complete!");
     }
 
-    public void deleteWordInAllGroup(Word wordDelete){
+    public void deleteWordInAllGroup(Word wordDelete) {
         System.out.println("Delete Word");
-        for (Group group : groups){
-            if (group.getListWords().containsKey(wordDelete.getEnglish())){
+        for (Group group : groups) {
+            if (group.getListWords().containsKey(wordDelete.getEnglish())) {
                 System.out.println("Delete in " + group.getName());
                 group.delete(wordDelete.getEnglish());
             }
@@ -159,9 +164,21 @@ public class AppManager {
         System.out.println("Delete Word Complete!");
     }
 
-    public void groupOutFile(){
-        for (Group group : groups){
+
+    public void loadFile() {
+        File folder = new File(pathFileXlsx);
+        for (File file : folder.listFiles()) {
+            if (!file.isDirectory()) {
+                this.addGroup(new Group(file.getPath()));
+            }
+        }
+
+    }
+
+    public void groupOutFile() {
+        for (Group group : groups) {
             group.outFile();
         }
+        oldWord.output();
     }
 }

@@ -20,6 +20,7 @@ public class Text {
 
         paths.put("imgDefual", "src\\resrc\\img\\default.png");
         paths.put("imgFinish", "src\\resrc\\img\\giphy.gif");
+        paths.put("imgInHome", "src\\resrc\\img\\imgInHome.jpg");
 
     }
 

@@ -1,16 +1,22 @@
 package view;
 
 import com.jfoenix.controls.JFXButton;
+import data.OldWord;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.event.ActionEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import manager.AppManager;
+import view.TextOutput.Text;
 
+import java.io.File;
 import java.io.IOException;
 
 public class HomeController {
@@ -29,6 +35,21 @@ public class HomeController {
 
     @FXML
     private AnchorPane paneView;
+
+    @FXML
+    private ImageView imgInHome;
+
+    @FXML
+    private HBox unOldWords;
+
+    @FXML
+    private JFXButton oldWords;
+
+    @FXML
+    private HBox unNewWords;
+
+    @FXML
+    private JFXButton newWords;
 
     private Parent searchPane;
     private Parent managePane;
@@ -61,6 +82,32 @@ public class HomeController {
     public void setHome(ActionEvent e) throws Exception {
         desktop.setText("Home");
         homeView.toFront();
+    }
+
+    @FXML
+    void setNewWords(ActionEvent event) {
+
+        unNewWords.toFront();
+    }
+
+    @FXML
+    void setOldWords(ActionEvent event) throws Exception{
+        OldWord oldWord = new OldWord();
+        oldWord.input();
+
+        FlashcardController flashcardController = new FlashcardController();
+        InputIntegerController inputInteger = new InputIntegerController();
+
+        int n = inputInteger.setAddIntegerWindow();
+        if (n > 0){
+            if (OldWord.getSize() < n){
+                MessageBox.show("Không có đủ từ cũ :))", "ERROR");
+            }else{
+                flashcardController.show(oldWord.getGroupOldestWord(5), 5);
+                unOldWords.toFront();
+            }
+        }
+
     }
 
     @FXML
@@ -108,6 +155,8 @@ public class HomeController {
     @FXML
     private void initialize() {
         loadParent();
+        imgInHome.setImage(new Image((new File(Text.getPaths().get("imgInHome"))).toURI().toString()));
+
         homeView.toFront();
     }
 }

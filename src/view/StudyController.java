@@ -90,7 +90,7 @@ public class StudyController {
     private String groupChoicePromptText = "";
 
     @FXML
-    private JFXRadioButton checkToTest, checkToFlash, newWords, oldWords;
+    private JFXRadioButton checkToTest, checkToFlash;
 
     @FXML
     private ToggleGroup action;
@@ -110,7 +110,6 @@ public class StudyController {
     private int nowTest = 0;
     private static Group groupTest;
     private int numTestWasChoose;
-    private OldWord oldWord = new OldWord();
 
     public void setListChoice() {
         System.out.println("setListChoice");
@@ -142,13 +141,6 @@ public class StudyController {
 
         prepare.toFront();
         nowTest = 0;
-    }
-
-    @FXML
-    void reLoad(ActionEvent event) {
-        System.out.println("reLoad List Topic");
-        setListChoice();
-//        checkToTest.setSelected(true);
     }
 
     @FXML
@@ -193,7 +185,6 @@ public class StudyController {
         }
     }
 
-
     public void unCheck() {
         if (radio4.isSelected()) {
             radio4.setSelected(false);
@@ -234,7 +225,7 @@ public class StudyController {
         } else {
             falseIcon.toFront();
         }
-
+        scores.setText(String.format("%s:\n%d/%d",Text.getTexts().get("Scores"), learnManager.getScores(), learnManager.getMaxScores()));
     }
 
     /**
@@ -305,7 +296,6 @@ public class StudyController {
     @FXML
     public void initialize() {
         prepare.toFront();
-        oldWord.input();
 
         imgFinish.setImage(new Image((new File(Text.getPaths().get("imgFinish"))).toURI().toString()));
 
@@ -314,25 +304,17 @@ public class StudyController {
             if(newVal != null){
                 String ifo = newVal.toString();
                 if (ifo.indexOf(checkToTest.getId()) > 0){
+                    //Chọn kiểm tra
                     System.out.println("choice Test");
                     groupChoicePromptText = "Nhóm muốn kiểm tra: ";
                     numTestPromptText = "Số câu hỏi: ";
                     refresh();
                 }else {
+                    //Chọn học tù nói chung
                     System.out.println("choice Flashcard");
                     groupChoicePromptText = "Nhóm muốn học: ";
                     numTestPromptText = "Số thẻ: ";
                     refresh();
-                    if(ifo.indexOf(checkToFlash.getId()) < 0){
-                        groupChoice.setDisable(true);
-                        if (ifo.indexOf(oldWords.getId()) > 0){
-                            groupChoice.setValue("Từ lâu nhất chưa ôn");
-
-                        }else {
-                            groupChoice.setValue("Từ mới");
-                        }
-
-                    }
                 }
             }
         });
