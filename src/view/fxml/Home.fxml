@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -145,9 +146,9 @@
                               </ImageView>
                            </children>
                         </HBox>
-                        <StackPane layoutX="106.0" layoutY="70.0" prefHeight="92.0" prefWidth="271.0">
+                        <StackPane layoutX="106.0" layoutY="70.0" prefHeight="92.0" prefWidth="350.0">
                            <children>
-                              <HBox fx:id="unOldWords" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="248.0">
+                              <HBox fx:id="unOldWords" alignment="CENTER_LEFT" prefHeight="92.0" prefWidth="350.0">
                                  <children>
                                     <ImageView fitHeight="75.0" fitWidth="104.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -156,13 +157,14 @@
                                     </ImageView>
                                  </children>
                               </HBox>
-                              <HBox prefHeight="92.0" prefWidth="258.0">
+                              <HBox prefHeight="92.0" prefWidth="350.0">
                                  <children>
                                     <JFXButton fx:id="oldWords" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#setOldWords" prefHeight="58.0" prefWidth="242.0" text="Ôn nhanh từ cũ" textAlignment="RIGHT" underline="true" HBox.hgrow="ALWAYS">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </JFXButton>
+                                    <Pane prefHeight="92.0" prefWidth="85.0" />
                                  </children>
                               </HBox>
                            </children>

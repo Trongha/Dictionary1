@@ -25,6 +25,7 @@ public class InputIntegerController {
     private JFXComboBox<Integer> inputInt;
 
     private static int intInp = 0;
+    private static int max = 20;
     private GUI gui = new GUI();
 
     @FXML
@@ -55,13 +56,21 @@ public class InputIntegerController {
     }
 
     public int setAddIntegerWindow() throws Exception{
+        this.max = 20;
+        this.show();
+        return intInp;
+    }
+    public int setAddIntegerWindow(int _max) throws Exception{
+        if (_max > 0){
+            max = _max;
+        }
         this.show();
         return intInp;
     }
 
     @FXML
     private void initialize(){
-        for (int i=1 ; i<20 ; i++){
+        for (int i=1 ; i < max ; i++){
             inputInt.getItems().add(i);
         }
     }

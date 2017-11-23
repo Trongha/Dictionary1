@@ -1,7 +1,10 @@
 package view;
 
 import com.jfoenix.controls.JFXButton;
+import data.Group;
+import data.Level;
 import data.OldWord;
+import data.Word;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -85,7 +88,27 @@ public class HomeController {
     }
 
     @FXML
-    void setNewWords(ActionEvent event) {
+    void setNewWords(ActionEvent event) throws Exception {
+        Group newWordsGroup = new Group();
+        int num = 0;
+        for (Word word : AppManager.getAllGroup().getListWords().values()){
+            if (word.getLevel() == Level.nothing){
+                newWordsGroup.addWord(word);
+                if (++num == 20)
+                    break;
+            }
+        }
+
+        if (num == 0){
+            MessageBox.show("Không có từ mới", ":))");
+        }else {
+            InputIntegerController inpInt = new InputIntegerController();
+            int n = inpInt.setAddIntegerWindow(num);
+            if (n > 0){
+                FlashcardController flashcardController = new FlashcardController();
+                flashcardController.show(newWordsGroup, n);
+            }
+        }
 
         unNewWords.toFront();
     }
@@ -95,15 +118,15 @@ public class HomeController {
         OldWord oldWord = new OldWord();
         oldWord.input();
 
-        FlashcardController flashcardController = new FlashcardController();
         InputIntegerController inputInteger = new InputIntegerController();
-
         int n = inputInteger.setAddIntegerWindow();
+
         if (n > 0){
             if (OldWord.getSize() < n){
                 MessageBox.show("Không có đủ từ cũ :))", "ERROR");
             }else{
-                flashcardController.show(oldWord.getGroupOldestWord(5), 5);
+                FlashcardController flashcardController = new FlashcardController();
+                flashcardController.show(oldWord.getGroupOldestWord(5), n);
                 unOldWords.toFront();
             }
         }
