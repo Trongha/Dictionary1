@@ -67,7 +67,7 @@ public class FlashcardController {
 
     private FrontPane frontPane = FrontPane.enFece;
 
-    private Group group= new Group();
+//    private Group group= new Group();
     private static int numCard = 0;
     private int indexCard = 1;
     private static FlashcardsManager flashcardsManager = new FlashcardsManager();
@@ -131,6 +131,7 @@ public class FlashcardController {
         levels.setValue(word.getLevel().toString());
         System.out.println(word.getLevel());
         setNumCardSeen();
+        setDisableNextBtn();
     }
 
     public void loadLevels(){
@@ -143,9 +144,9 @@ public class FlashcardController {
 
     public void show(Group _group, int _numCard) throws Exception {
         System.out.println(_group.getName());
+
         this.numCard = _numCard;
         flashcardsManager = new FlashcardsManager(_group, _numCard);
-
         stage.initModality(Modality.APPLICATION_MODAL);
         Parent root = new FXMLLoader(getClass().getResource("fxml/Flashcard.fxml")).load();
         GUI gui = new GUI();
@@ -154,6 +155,8 @@ public class FlashcardController {
         stage.setScene(new Scene(root));
 
         stage.showAndWait();
+
+        _group.refresh();
     }
 
     public void initialize() {

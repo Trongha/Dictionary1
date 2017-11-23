@@ -36,6 +36,19 @@ public class Group {
 //        this.outFile();
     }
 
+    public void refresh(){
+        size = this.listWords.size();
+        numWordStudied = 0;
+        numWordEsasy = 0;
+        for (Word word : this.listWords.values()){
+            if (word.getLevel() != Level.nothing){
+                numWordStudied++;
+                if (word.getLevel() == Level.easy){
+                    numWordEsasy++;
+                }
+            }
+        }
+    }
     /**
      * Lấy tất cả key của map
      * @param map

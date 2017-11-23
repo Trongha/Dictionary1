@@ -4,6 +4,7 @@ import data.Group;
 import data.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -31,9 +32,10 @@ public class StatisticalController {
     private ObservableList<Group> listViewGroupData = FXCollections.observableArrayList();
 
     public void setTable(){
-        ArrayList<Group> listGroup = AppManager.getGroups();
+        if (listViewGroupData.size() > 0){
+            listViewGroupData.clear();
+        }
         listViewGroupData.addAll(AppManager.getGroups());
-
         table.setItems(listViewGroupData);
     }
 

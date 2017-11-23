@@ -57,7 +57,7 @@ public class HomeController {
     private Parent searchPane;
     private Parent managePane;
     private Parent studyPane;
-    private StudyController studyController = new StudyController();
+
     private Parent statisticalPane;
 
     private AppManager manager = new AppManager();
@@ -75,7 +75,7 @@ public class HomeController {
 
     @FXML
     public void setDictionary(ActionEvent e) throws Exception {
-        desktop.setText("Dictionary");
+        desktop.setText(dictionary.getText());
         paneView.getChildren().setAll(searchPane);
         paneView.toFront();
 
@@ -83,7 +83,7 @@ public class HomeController {
 
     @FXML
     public void setHome(ActionEvent e) throws Exception {
-        desktop.setText("Home");
+        desktop.setText(home.getText());
         homeView.toFront();
         imgInHome.setVisible(true);
     }
@@ -135,7 +135,7 @@ public class HomeController {
 
     @FXML
     public void setWordManager(ActionEvent e) throws Exception {
-        desktop.setText("Words Manager");
+        desktop.setText(wordManager.getText());
         paneView.getChildren().setAll(managePane);
         paneView.toFront();
         imgInHome.setVisible(false);
@@ -143,7 +143,7 @@ public class HomeController {
 
     @FXML
     void setLearn(ActionEvent event) throws Exception {
-        desktop.setText("Study");
+        desktop.setText(learn.getText());
         paneView.getChildren().setAll(studyPane);
         paneView.toFront();
         imgInHome.setVisible(false);
@@ -151,9 +151,9 @@ public class HomeController {
 
     @FXML
     void setStatistical(ActionEvent event) throws Exception {
-        desktop.setText("Statistical");
-        statisticalPane = new FXMLLoader(getClass().getResource("fxml/Statistical.fxml")).load();
-        paneView.getChildren().setAll(statisticalPane);
+        desktop.setText(statistical.getText());
+        Parent statisticalPaneLocal = new FXMLLoader(getClass().getResource("fxml/Statistical.fxml")).load();
+        paneView.getChildren().setAll(statisticalPaneLocal);
         paneView.toFront();
         imgInHome.setVisible(false);
     }
@@ -168,10 +168,6 @@ public class HomeController {
             System.out.println("Don't save");
         }
         GUI.myPrimaryStage.close();
-    }
-
-    public static void setMenuPaneDisable(boolean disable) {
-        menuPane.setDisable(disable);
     }
 
     @FXML

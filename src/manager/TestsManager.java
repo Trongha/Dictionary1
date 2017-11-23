@@ -10,27 +10,41 @@ import java.util.HashSet;
 /**
  * Created by Trong on 4/11/2017.
  */
+
+/**
+ *
+ */
 public class TestsManager {
+    //Map lưu các từ để hỏi, tài nguyên để hỏi
     private static HashMap<String, Word> listWords;
+    //List các Tét sinh ra
     private Test[] tests;
     private int numOfTest = 5;
-    private static HashSet<String> keyAsks;
+    // HashSet lưu các từ đã được hỏi trong lần test này. mục đích ko hỏi trùng
+    private static HashSet<String> wordAsks;
     private int scores = 0;
     private final int scorePerTest = 10;
     private int maxScores;
 
     public TestsManager(){}
+
+    /**
+     * Thường dùng contructor này
+     * @param listWords
+     * @param numOfTest
+     */
     public TestsManager(HashMap<String, Word> listWords, int numOfTest) {
         setListWords(listWords);
         this.numOfTest = numOfTest;
-        keyAsks = new HashSet<String>();
+        wordAsks = new HashSet<String>();
         this.scores = 0;
         this.maxScores = numOfTest*scorePerTest;
     }
+
     public TestsManager(HashMap<String, Word> listWords) {
         setListWords(listWords);
         this.numOfTest = this.listWords.size()-1;
-        keyAsks = new HashSet<String>();
+        wordAsks = new HashSet<String>();
     }
 
     public int getScores() {
@@ -65,7 +79,6 @@ public class TestsManager {
         return listWords;
     }
 
-
     public static void setListWords(HashMap<String, Word> listWords) {
         TestsManager.listWords = listWords;
         System.out.println("_______________Set List Words to Learn COmplete!");
@@ -75,32 +88,43 @@ public class TestsManager {
         return tests;
     }
 
-    public Test sinh1Test( String[] listKey){
-        int numOfGroup = listKey.length-1;
+    /**
+     * Hàm sinh 1 test
+     * @param listKeyEnglish List các từ để hỏi
+     * @return
+     */
+    public Test sinh1Test(String[] listKeyEnglish){
+
+        int numKeyE = listKeyEnglish.length-1;
         Test newtest = new Test();
+
+        //Set Kiểu câu hỏi (Anh -Việt hay Việt Anh)
+        Boolean typeAnhViet = (Math.random() >= 0.5) ? true : false;
+        newtest.setTypeAnhViet(typeAnhViet);
+        System.out.println("typeAnhViet : " + typeAnhViet);
+
         int indexOfListKey=0;
         //Sinh key hỏi
         do{
-            indexOfListKey = (int)Math.round(Math.random() * (numOfGroup-1));
-            System.out.println(listKey[indexOfListKey]);
-          /*  for (String s : this.keyAsks){
-                System.out.println(s);
-            }*/
-        }while (keyAsks.contains(listKey[indexOfListKey]));
-        keyAsks.add(listKey[indexOfListKey]);
-        newtest.setKeyAsk(listWords.get(listKey[indexOfListKey]));
+            indexOfListKey = (int)Math.round(Math.random() * (numKeyE-1));
+            System.out.println(listKeyEnglish[indexOfListKey]);
+        }while (wordAsks.contains(listKeyEnglish[indexOfListKey]));
+        wordAsks.add(listKeyEnglish[indexOfListKey]);
+        newtest.setKeyAsk(listWords.get(listKeyEnglish[indexOfListKey]));
 
         //Sinh đáp án
-        HashSet<String> dapAnArray = new HashSet<String>();
-        dapAnArray.add(listWords.get(listKey[indexOfListKey]).getVietNam());
+        HashSet<Word> dapAnArray = new HashSet<Word>();
+
+        dapAnArray.add(listWords.get(listKeyEnglish[indexOfListKey]));
+
         for (int i=1 ; i<Test.getNumDapAn() ; i++){
             do{
-                indexOfListKey = (int)Math.round(Math.random() * (numOfGroup-1));
-//                System.out.println(indexOfListKey);
-            }while (dapAnArray.contains(listWords.get(listKey[indexOfListKey]).getVietNam()));
-            dapAnArray.add(listWords.get(listKey[indexOfListKey]).getVietNam());
+                indexOfListKey = (int)Math.round(Math.random() * (numKeyE-1));
+            }while (dapAnArray.contains(listWords.get(listKeyEnglish[indexOfListKey])));
+            dapAnArray.add(listWords.get(listKeyEnglish[indexOfListKey]));
         }
-        newtest.setDapAn(dapAnArray.toArray(new String[dapAnArray.size()]));
+
+        newtest.setDapAn(dapAnArray.toArray(new Word[dapAnArray.size()]));
         return newtest;
     }
 

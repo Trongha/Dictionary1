@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9dc3ecc4-e4f2-4c79-87ef-23900a27b47f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resrc/img/Home button.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resrc/img/Layer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resrc/img/Learn_E_ez.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/resrc/img/bcg.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/data/Test.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/data/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Dictionary/view/ConfirmationBox.class" afterPath="$PROJECT_DIR$/out/production/Dictionary/view/ConfirmationBox.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/building dictionary.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/building dictionary.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/family.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/family.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/oldWord/oldWord.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/oldWord/oldWord.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/dataFile/xlsx/test.xlsx" afterPath="$PROJECT_DIR$/src/data/dataFile/xlsx/test.xlsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Test.java" afterPath="$PROJECT_DIR$/src/data/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/ConfirmationBox.java" afterPath="$PROJECT_DIR$/src/view/ConfirmationBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/StudyController.java" afterPath="$PROJECT_DIR$/src/view/StudyController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/Group.java" afterPath="$PROJECT_DIR$/src/data/Group.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/manager/TestsManager.java" afterPath="$PROJECT_DIR$/src/manager/TestsManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/FlashcardController.java" afterPath="$PROJECT_DIR$/src/view/FlashcardController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/HomeController.java" afterPath="$PROJECT_DIR$/src/view/HomeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/StatisticalController.java" afterPath="$PROJECT_DIR$/src/view/StatisticalController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Statistical.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Statistical.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/fxml/Study.fxml" afterPath="$PROJECT_DIR$/src/view/fxml/Study.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,41 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/data/Word.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="26" column="16" lean-forward="false" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudyController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/StudyController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="206" column="58" lean-forward="true" selection-start-line="206" selection-start-column="58" selection-end-line="206" selection-end-column="58" />
-              <folding>
-                <element signature="method#setListChoice#0;class#StudyController#0" expanded="false" />
-                <element signature="method#refresh#0;class#StudyController#0" expanded="false" />
-                <element signature="method#userReady#0;class#StudyController#0" expanded="false" />
-                <element signature="method#startLearn#0;class#StudyController#0" expanded="false" />
-                <element signature="method#unCheck#0;class#StudyController#0" expanded="false" />
-                <element signature="method#setKetQua#0;class#StudyController#0" expanded="false" />
-                <element signature="method#check#0;class#StudyController#0" expanded="false" />
-                <element signature="method#setFinishLabel#0;class#StudyController#0" expanded="false" />
-                <element signature="method#next#0;class#StudyController#0" expanded="false" />
-                <element signature="method#show#0;class#StudyController#0" expanded="false" />
-                <element signature="method#initialize#0;class#StudyController#0" expanded="false" />
-                <element signature="e#8001#8735#0" expanded="false" />
-                <element signature="e#9424#9846#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestsManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestsManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/manager/TestsManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="714">
@@ -93,6 +57,81 @@
                 <element signature="e#2999#3005#0" expanded="true" />
                 <element signature="method#sinhTests#0;class#TestsManager#0" expanded="false" />
                 <element signature="method#toString#0;class#TestsManager#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+              <folding>
+                <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
+                <element signature="method#setDictionary#0;class#HomeController#0" expanded="false" />
+                <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
+                <element signature="method#setNewWords#0;class#HomeController#0" expanded="false" />
+                <element signature="method#setOldWords#0;class#HomeController#0" expanded="false" />
+                <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
+                <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
+                <element signature="method#exit#0;class#HomeController#0" expanded="false" />
+                <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatisticalController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/StatisticalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+              <folding>
+                <element signature="method#Group#1;class#Group#0" expanded="false" />
+                <element signature="method#Group#2;class#Group#0" expanded="false" />
+                <element signature="method#Group#3;class#Group#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlashcardsManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/manager/FlashcardsManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-205">
+              <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+              <folding>
+                <element signature="method#add1Word#0;class#FlashcardsManager#0" expanded="false" />
+                <element signature="method#set3Queue#0;class#FlashcardsManager#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlashcardController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/FlashcardController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="158" column="25" lean-forward="true" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
+              <folding>
+                <element signature="class#FrontPane#0;class#FlashcardController#0" expanded="false" />
+                <element signature="method#next#0;class#FlashcardController#0" expanded="false" />
+                <element signature="method#rotate#0;class#FlashcardController#0" expanded="false" />
+                <element signature="method#setNumCardSeen#0;class#FlashcardController#0" expanded="false" />
+                <element signature="method#setDisableNextBtn#0;class#FlashcardController#0" expanded="false" />
+                <element signature="method#newCard#0;class#FlashcardController#0" expanded="false" />
+                <element signature="method#loadLevels#0;class#FlashcardController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -168,14 +207,10 @@
         <option value="$PROJECT_DIR$/src/data/Output.java" />
         <option value="$PROJECT_DIR$/src/view/AddWordController.java" />
         <option value="$PROJECT_DIR$/src/view/EditGroupNameController.java" />
-        <option value="$PROJECT_DIR$/src/data/Group.java" />
         <option value="$PROJECT_DIR$/src/data/Level.java" />
-        <option value="$PROJECT_DIR$/src/view/StatisticalController.java" />
-        <option value="$PROJECT_DIR$/src/view/FlashcardController.java" />
         <option value="$PROJECT_DIR$/src/data/oldWord.java" />
         <option value="$PROJECT_DIR$/src/data/Input.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/manager/FlashcardsManager.java" />
         <option value="$PROJECT_DIR$/src/view/TextOutput/Text.java" />
         <option value="$PROJECT_DIR$/src/view/fxml/Home.fxml" />
         <option value="$PROJECT_DIR$/src/view/fxml/inputInteger.fxml" />
@@ -186,11 +221,15 @@
         <option value="$PROJECT_DIR$/src/view/SearchController.java" />
         <option value="$PROJECT_DIR$/src/manager/AppManager.java" />
         <option value="$PROJECT_DIR$/src/view/GroupMangerController.java" />
-        <option value="$PROJECT_DIR$/src/view/HomeController.java" />
         <option value="$PROJECT_DIR$/src/view/ConfirmationBox.java" />
         <option value="$PROJECT_DIR$/src/view/StudyController.java" />
         <option value="$PROJECT_DIR$/src/data/Test.java" />
         <option value="$PROJECT_DIR$/src/manager/TestsManager.java" />
+        <option value="$PROJECT_DIR$/src/view/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/data/Group.java" />
+        <option value="$PROJECT_DIR$/src/manager/FlashcardsManager.java" />
+        <option value="$PROJECT_DIR$/src/view/FlashcardController.java" />
+        <option value="$PROJECT_DIR$/src/view/StatisticalController.java" />
       </list>
     </option>
   </component>
@@ -278,6 +317,13 @@
               <item name="Dictionary" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Dictionary" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dictionary" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="fxml" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -785,7 +831,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511456357036</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Thêm trắc nghiệm 2 chiều">
+      <created>1511465269589</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1511465269590</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -809,7 +862,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35015774" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4400631" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10567823" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42902207" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -820,7 +873,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2665615" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2665615" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -861,7 +914,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Thêm một chút css" />
     <MESSAGE value="chinh sua in/out" />
     <MESSAGE value="vẽ xong thẻ&#10;sửa cấu trúc Study" />
     <MESSAGE value="Chạy được 1 flashcard" />
@@ -886,7 +938,8 @@
     <MESSAGE value="Sửa xong cái Search với xóa từ trong GroupManager" />
     <MESSAGE value="Sửa tý giao diện" />
     <MESSAGE value="Thêm trắc nghiệm 2 chiều" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thêm trắc nghiệm 2 chiều" />
+    <MESSAGE value="Chắc ko thêm gì nữa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chắc ko thêm gì nữa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1148,14 +1201,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="182" column="25" lean-forward="false" selection-start-line="182" selection-start-column="25" selection-end-line="182" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/manager/AppManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -1233,25 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding>
-            <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setDictionary#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setNewWords#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setOldWords#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
-            <element signature="method#setStatistical#0;class#HomeController#0" expanded="false" />
-            <element signature="method#exit#0;class#HomeController#0" expanded="false" />
-            <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/Word.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -1308,6 +1334,90 @@
             <element signature="e#2999#3005#0" expanded="true" />
             <element signature="method#sinhTests#0;class#TestsManager#0" expanded="false" />
             <element signature="method#toString#0;class#TestsManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/fxml/GroupManager.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="method#Group#1;class#Group#0" expanded="false" />
+            <element signature="method#Group#2;class#Group#0" expanded="false" />
+            <element signature="method#Group#3;class#Group#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manager/FlashcardsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-205">
+          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="method#add1Word#0;class#FlashcardsManager#0" expanded="false" />
+            <element signature="method#set3Queue#0;class#FlashcardsManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/FlashcardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="158" column="25" lean-forward="true" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
+          <folding>
+            <element signature="class#FrontPane#0;class#FlashcardController#0" expanded="false" />
+            <element signature="method#next#0;class#FlashcardController#0" expanded="false" />
+            <element signature="method#rotate#0;class#FlashcardController#0" expanded="false" />
+            <element signature="method#setNumCardSeen#0;class#FlashcardController#0" expanded="false" />
+            <element signature="method#setDisableNextBtn#0;class#FlashcardController#0" expanded="false" />
+            <element signature="method#newCard#0;class#FlashcardController#0" expanded="false" />
+            <element signature="method#loadLevels#0;class#FlashcardController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/StatisticalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="2407" column="17" lean-forward="false" selection-start-line="2407" selection-start-column="17" selection-end-line="2407" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+          <folding>
+            <element signature="method#loadParent#0;class#HomeController#0" expanded="false" />
+            <element signature="method#setDictionary#0;class#HomeController#0" expanded="false" />
+            <element signature="method#setHome#0;class#HomeController#0" expanded="false" />
+            <element signature="method#setNewWords#0;class#HomeController#0" expanded="false" />
+            <element signature="method#setOldWords#0;class#HomeController#0" expanded="false" />
+            <element signature="method#setWordManager#0;class#HomeController#0" expanded="false" />
+            <element signature="method#setLearn#0;class#HomeController#0" expanded="false" />
+            <element signature="method#exit#0;class#HomeController#0" expanded="false" />
+            <element signature="method#initialize#0;class#HomeController#0" expanded="false" />
           </folding>
         </state>
       </provider>
