@@ -63,7 +63,15 @@ public class Input {
             // đọc ô 2
                 if (cellIterator.hasNext()){
                     Cell keyVietNam = cellIterator.next();
-                    vie = keyVietNam.getStringCellValue();
+                    switch (keyVietNam.getCellType()) {
+                        case Cell.CELL_TYPE_NUMERIC:
+                            vie = String.valueOf(keyVietNam.getNumericCellValue());
+                            break;
+                        case Cell.CELL_TYPE_STRING:
+                            vie = keyVietNam.getStringCellValue();
+                            break;
+                    }
+
                     vie = vie.trim();
                 }
 //                đọc ô 3

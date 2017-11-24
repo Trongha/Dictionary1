@@ -16,6 +16,7 @@ public class Text {
         texts.put("ChuaChonSoLuong", "Chưa chọn số lượng");
         texts.put("Scores", "Điểm");
         texts.put("Scores", "Điểm");
+        texts.put("ERROR", "Yêu cầu không thể thực hiện :(");
 
 
         paths.put("imgDefual", "src\\resrc\\img\\default.png");

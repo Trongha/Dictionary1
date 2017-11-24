@@ -128,14 +128,19 @@ public class TestsManager {
         return newtest;
     }
 
-    public void sinhTests() {
+    public Boolean sinhTests() {
+        Boolean ok = true;
+
         String[] listKey = Group.getKeyOfHashMap(listWords);    //Lấy tất cả các từ tiếng anh
+        if (listKey.length <= 4){
+            return false;
+        }
         System.out.println("Size list sinh test: " + listWords.size());
         tests = new Test[numOfTest];
         for (int i=0 ; i<numOfTest ; i++){
             tests[i] = new Test(this.sinh1Test(listKey));
         }
-
+        return ok;
     }
 
     public void trueIncrease(){

@@ -169,10 +169,14 @@ public class StudyController {
             if (checkToTest.isSelected()){
                 System.out.println("----->goto Test");
                 learnManager = new TestsManager(groupTest.getListWords(), numTestWasChoose);
-                learnManager.sinhTests();
-                learning.toFront();
-                waiting.toFront();
-                setAsk();
+                if (learnManager.sinhTests()){
+                    learning.toFront();
+                    waiting.toFront();
+                    setAsk();
+                }else {
+                    MessageBox.show(Text.getTexts().get("ERROR"), ":(");
+                }
+
             }else {
                 System.out.println("----->goto Fashcard");
                 FlashcardController flashcardController = new FlashcardController();

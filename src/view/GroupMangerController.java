@@ -87,13 +87,17 @@ public class GroupMangerController {
     void setDeleteGroup(ActionEvent event) {
         for (String groupName : listGroupSelected){
             System.out.println(groupName);
-            if(ConfirmationBox.showConfirmation(String.format("Xóa %s", groupName), "Delete", "Yes", "No")){
+            if(ConfirmationBox.showConfirmation(String.format("Xóa Topic %s? %nThao tác này không thể hoàn tác!", groupName), "Delete", "Yes", "No")){
                 manager.deleteGroup(groupName);
             }
         }
         refresh();
     }
 
+    /**
+     * Gộp 2 topic
+     * @param event
+     */
     @FXML
     void setMerge(ActionEvent event) {
         Group newGroup = new Group();
