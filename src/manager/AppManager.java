@@ -19,9 +19,13 @@ import java.util.*;
 
 public class AppManager {
     private static ArrayList<Group> groups = new ArrayList<>();
+    //List chứa tất cả các tù
     private static Group allGroup = new Group();
+    //List chứa các tù đã học
     private static Group wordsStudied = new Group();
+    //path folder chứa data mặc định
     private static String pathFileXlsx = "src\\data\\dataFile\\xlsx";
+
     private OldWord oldWord = new OldWord();
 
     public AppManager() {
@@ -34,7 +38,6 @@ public class AppManager {
 
     /**
      * Tìm Group theo tên
-     *
      * @param nameGroup
      * @return
      */
@@ -46,6 +49,9 @@ public class AppManager {
         return groups.get(0);
     }
 
+    /**
+     * Load lại tất cả các từ
+     */
     public void reLoadAllGroup(){
         System.out.println("ReLoad group AllGroup");
         allGroup.getListWords().clear();
@@ -55,6 +61,10 @@ public class AppManager {
         }
     }
 
+    /**
+     * Tất cả các từ
+     * @return
+     */
     public static Group getAllGroup() {
         return allGroup;
     }
@@ -89,6 +99,12 @@ public class AppManager {
         return allGroup.search(key);
     }
 
+    /**
+     * Search trả về list từ có key ở đầu của từ tiếng anh
+     * @param key
+     * @param group
+     * @return
+     */
     public ArrayList<Word> search(String key, Group group){
         key = key.toLowerCase().trim();
         HashSet<Word> mapSearch = new HashSet<>();
@@ -98,6 +114,11 @@ public class AppManager {
         return wordEnglishs;
     }
 
+    /**
+     * Thêm một từ vào, hàm
+     * @param newGroup
+     * @return
+     */
     public boolean addGroup(Group newGroup) {
         System.out.println("add Group");
         boolean add = true;
@@ -184,7 +205,7 @@ public class AppManager {
         }
     }
 
-    public void OutFile() {
+    public void outFile() {
         for (Group group : groups) {
             group.outFile();
         }

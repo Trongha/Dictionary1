@@ -163,7 +163,7 @@ public class HomeController {
         Boolean save = ConfirmationBox.showConfirmation("\n Lưu trước khi thoát ko?", "", "Yes", "No");
         if (save){
             System.out.println("Save");
-            manager.OutFile();
+            manager.outFile();
         }else {
             System.out.println("Don't save");
         }
@@ -174,7 +174,6 @@ public class HomeController {
     private void initialize() {
         loadParent();
         imgInHome.setImage(new Image((new File(Text.getPaths().get("imgInHome"))).toURI().toString()));
-
         homeView.toFront();
     }
 }

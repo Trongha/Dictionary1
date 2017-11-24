@@ -183,7 +183,7 @@ public class GroupMangerController {
     @FXML
     void setDeleteWord(ActionEvent event) {
         if (ConfirmationBox.showConfirmation(String.format("Xóa %s ?", wordSelecting.getEnglish()), "Delete Word", "Yes", "No")){
-            manager.getGroup(groupSelecting).deleteWord(wordSelecting);
+            manager.getGroup(groupSelecting).delete(wordSelecting.getEnglish());
             manager.reLoadAllGroup();
             refresh();
         }

@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by Trong on 29/10/2017.
  */
-public class Group {
+public class Group{
     private HashMap<String, Word> listWords = new HashMap<>();
     private String name = "";
     private String patch = "";
@@ -136,21 +136,17 @@ public class Group {
     public void setPatch(String patch) {
         this.patch = patch;
     }
+
     public void addWord(Word newWord){
         this.listWords.put(newWord.getEnglish(), newWord);
     }
+/*
+
     public void deleteWord(Word wordDelete){
         if (this.listWords.containsKey(wordDelete.getEnglish()))
             this.listWords.remove(wordDelete.getEnglish());
     }
-
-/*    public void editWord(String name, String newEnglish, String newVietNam){
-        if (this.listWords.containsKey(name)){
-            this.listWords.remove(name);
-            this.listWords.put(newEnglish, new Word(newEnglish, newVietNam));
-            System.out.println("delete Complete!");
-        }
-    }*/
+*/
 
     public boolean delete(String englishKey){
         if (this.getListWords().containsKey(englishKey)){
@@ -162,6 +158,11 @@ public class Group {
         return  true;
     }
 
+    /**
+     * Search chính xác một từ trong nhớm
+     * @param key
+     * @return
+     */
     public Word search(String key){
         System.out.println("List dang search: " + this.getName());
         if (!listWords.isEmpty()){
@@ -173,7 +174,7 @@ public class Group {
         if (listWords.isEmpty()){
             error.setVietNam("groups is empty");
         }
-        else error.setVietNam("ko tim thay");
+        else error.setVietNam("Khong tim thay");
         return error;
     }
 
@@ -235,6 +236,10 @@ public class Group {
         return size;
     }
 
+    /**
+     * Số lượng từ trong topic
+     * @param size
+     */
     public void setSize(Integer size) {
         this.size = size;
     }

@@ -16,7 +16,7 @@ import java.util.Map;
  * Created by Trong on 4/11/2017.
  */
 public class Output {
-    private String path = "E:\\java\\Dictionary\\src\\data\\dataFile\\xlsx\\";
+    private String path = "src\\data\\dataFile\\xlsx\\";
     private String tail = ".xlsx";
 
     public Output(){}
